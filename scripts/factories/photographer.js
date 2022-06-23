@@ -10,7 +10,7 @@ function photographerFactory(data) {
         h2.textContent = name;
         const h3 = document.createElement('h3');
         h3.setAttribute("class", "city");
-        h3.textContent = city;
+        h3.textContent = city+', ';
         const h4 = document.createElement('h4');
         h4.setAttribute("class", "country");
         h4.textContent = country;
@@ -19,14 +19,17 @@ function photographerFactory(data) {
         p.textContent = tagline;
         const div = document.createElement('div');
         div.setAttribute("class", "price");
-        div.textContent = price;
+        div.textContent = price+'€/jour';
+        let lien = document.createElement('a');
+        lien.setAttribute("href", "photographer.html?idphotographe="+id);
         article.appendChild(img);
         article.appendChild(h2);
         article.appendChild(h3);
         article.appendChild(h4);
         article.appendChild(p);
         article.appendChild(div);
-        return (article);
+        lien.appendChild(article)
+        return(lien);
     }
     return { name, picture, getUserCardDOM }
 }

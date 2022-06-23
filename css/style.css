@@ -1,7 +1,7 @@
 @import url("photographer.css");
 
 body {
-    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-family: "DM Sans", sans-serif;
     margin: 0;
 }
 
@@ -38,6 +38,7 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: black;
     cursor: pointer;
 }
 
@@ -45,6 +46,7 @@ h1 {
     color: #D3573C;
     font-size: 36px;
     margin-bottom: 0px;
+    font-weight: 400;
 }
 
 .photographer_section article img {
@@ -58,4 +60,12 @@ h1 {
     margin: 0px;
     font-size: 14px;
     display: contents;
+}
+
+.photographer_section article p {
+    margin: 0px;
+}
+
+.photographer_section a {
+    text-decoration: none;
 }

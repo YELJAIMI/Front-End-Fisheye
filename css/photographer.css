@@ -3,9 +3,39 @@
 }
 
 .photograph-header {
+    display: flex;
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    justify-content: space-between;
+}
+
+.media{
+    width: 100%;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.container{
+    height: 8em;
+    width: 10em;
+    object-fit: contain;
+}
+
+.media h2{
+    display: ruby;
+    font-family: 'DM sans';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 20px;
+    color: #911C1C;
+}
+
+.profil{
+    height: 10em;
+    width: 10em;
+    margin: 4.4rem;
+    border-radius: 5em;
 }
 
 .contact_button {
@@ -18,8 +48,44 @@
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
-    cursor: pointer;
-    margin-left: 450px;
+    margin-right: 6em;
+    margin-top: 7rem;
+    cursor: pointer
+}
+
+.photograph-header h1{
+    color: #D3573C;
+    left: 9%;
+    top: 9rem;
+    bottom: 54%;
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+
+.containerImg{
+    width: 15em;
+    height: 15em;
+    object-fit: cover;
+    border-radius: 0.2rem;
+}
+
+.media img{
+    width: 18em;
+    height: 15em;
+    object-fit: cover;
+    border-radius: 0.2rem;
+}
+
+#main-media {
+    padding: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+#main-media span{
+    color: #901C1C;
+    margin: 5rem;
 }
 
 .modal {
@@ -54,6 +120,10 @@ form {
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
+}
+
+form #message {
+    width: 100%;
 }
 
 form label {

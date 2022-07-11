@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2a0a28c39a.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
     </header>
-    <main id="main">
+    <main id="main-photograph">
       <div class="photograph-header">
-        <div id="main-photographer"></div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button id="contact_button" class="contact_button" onclick="displayModal()">Contactez-moi</button>
 
-        <div id="main-media"></div>
       </div>
+      <div id="main-media"></div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
@@ -28,7 +28,13 @@
 				<form>
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input aria-label="Prenom" type="text" id="first" placeholder="">
+            <label>Nom</label>
+            <input aria-label="Nom" type="text" id="name" placeholder="">
+            <label>Email</label>
+            <input aria-label="Email" type="text" id="Email" placeholder="">
+            <label>Votre message</label>
+            <textarea aria-label="Votre message" type="text" id="message" placeholder="" rows="8"></textarea> 
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>

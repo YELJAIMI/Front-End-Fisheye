@@ -10,7 +10,7 @@ return result.photographers;
 })
 }
 */
-    async function getPhotographers() {
+async function getPhotographers() {
         // Penser à remplacer par les données récupérées dans le json
         let photographers = null;
         await fetch('../../data/photographers.json')

@@ -33,36 +33,59 @@ async function init() {
     }
     );
     
-    console.log(+photographer.name);
-
-    /*for (i=0;i<photographers.length;i++){
-        if(photographers[i].id==idphotographe){
-            photographer=photographers[i];
-        }
-    }*/
+    console.log(photographer.name);
     
     const media = medias.filter(function(media){
         return media.photographerId == idphotographe;
     }
     );
     console.log(media);
-
-    const mainphotographer = document.getElementById('main-photographer');
+    //début header photographe
+    const mainphotographer = document.querySelector('.photograph-header');
     const photographerTitle = document.createElement('h1');
+    const button = document.getElementById('contact_button');
     photographerTitle.innerHTML = photographer.name;
-    mainphotographer.appendChild(photographerTitle);
+    //mainphotographer.appendChild(photographerTitle)
+    const profil = document.createElement('img');
+    profil.setAttribute('src',"/assets/photographers/"+photographer.portrait);
+    profil.setAttribute('class',"profil");
+    //mainphotographer.appendChild(profil);
+    button.insertAdjacentHTML('beforebegin', photographerTitle.outerHTML);
+    button.insertAdjacentHTML('afterend', profil.outerHTML);
 
     // Création de la liste des médias
     const mediaList = document.getElementById('main-media');
     for (i=0;i<media.length;i++){
-        const mediadiv = document.createElement('div');
-        mediadiv.className = 'media';
-        const mediaImg = document.createElement('img');
-        mediaImg.setAttribute('src',"assets/images/"+media[i].image+"");
+        const mediaDiv = document.createElement('article');
+        mediaDiv.className = 'media';
+        let mediaImg = null;
+        if(media[i].image){
+        mediaImg = document.createElement('img');
+        mediaImg.setAttribute('src',"/assets/images/" +media[i].image+"");
+        
         mediaImg.setAttribute('alt',media[i].title);
-        mediaImg.style.width = '400px';
-        mediadiv.appendChild(mediaImg);
-        mediaList.appendChild(mediadiv);
+        mediaImg.style.width = '';
+        }else{
+            mediaImg = document.createElement('video');
+            mediaImg.setAttribute('src',"/assets/images/" +media[i].video+"");
+            mediaImg.setAttribute('class', 'containerImg');
+            mediaImg.setAttribute('alt',media[i].title);
+            mediaImg.setAttribute('controls','controls');
+            mediaImg.style.width = '';
+        }
+
+        const mediaTitle = document.createElement('h2');
+        const icone = document.createElement('i');
+        const medialikes = document.createElement('span');
+        icone.setAttribute('class','fas fa-heart');
+        mediaTitle.innerText=media[i].title;
+        medialikes.innerText=media[i].likes;
+
+        mediaDiv.appendChild(mediaImg);
+        mediaDiv.appendChild(mediaTitle);
+        mediaDiv.appendChild(icone);
+        mediaDiv.appendChild(medialikes);
+        mediaList.appendChild(mediaDiv);
     }
 
 };

@@ -10,7 +10,7 @@
 }
 
 .media{
-    width: 100%;
+    width: 60%;
     display: inline-block;
     margin: 1rem;
 }
@@ -63,7 +63,7 @@
 }
 
 .containerImg{
-    width: 15em;
+    width: 18em;
     height: 15em;
     object-fit: cover;
     border-radius: 0.2rem;
@@ -76,16 +76,29 @@
     border-radius: 0.2rem;
 }
 
+.media .fas{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -1rem;
+    margin-right: -1.9rem;
+    color: #911C1C;
+}
+
 #main-media {
-    padding: 2%;
+    padding: 2rem 2rem 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    cursor: pointer;
 }
 
 #main-media span{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -1rem;
+    margin-right: -0.8rem;
+    line-height: 16px;
     color: #901C1C;
-    margin: 5rem;
 }
 
 .modal {
@@ -124,6 +137,7 @@ form {
 
 form #message {
     width: 100%;
+    font-size: 18px;
 }
 
 form label {
@@ -144,4 +158,5 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 26px;
 }

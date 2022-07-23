@@ -59,7 +59,21 @@
     top: 9rem;
     bottom: 54%;
     margin-left: 2rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
+}
+
+.country {
+    position: absolute;
+    margin-left: 1.8em;
+    margin-top: 7em;
+    color: #D3573C;
+}
+
+.tag {
+    position: absolute;
+    margin-left: 2.1em;
+    margin-top: 10.5em;
+    color: #D3573C;
 }
 
 .containerImg{
@@ -73,7 +87,7 @@
     width: 18em;
     height: 15em;
     object-fit: cover;
-    border-radius: 0.2rem;
+    border-radius: 0.3rem;
 }
 
 .media .fas{
@@ -111,6 +125,9 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    position: absolute;
+    top: 6em;
+    margin-left: 20em;
 }
 
 .modal header {

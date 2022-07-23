@@ -32,7 +32,7 @@ async function init() {
         return photographer.id == idphotographe;
     }
     );
-    
+
     console.log(photographer.name);
     
     const media = medias.filter(function(media){
@@ -43,14 +43,24 @@ async function init() {
     //début header photographe
     const mainphotographer = document.querySelector('.photograph-header');
     const photographerTitle = document.createElement('h1');
+    const country = document.createElement('h3');
+    //const city = document.createElement('h4');
+    const tagline = document.createElement('p');
     const button = document.getElementById('contact_button');
     photographerTitle.innerHTML = photographer.name;
+    country.innerHTML = photographer.country+', '+photographer.city;
+    tagline.innerHTML = photographer.tagline;
+    //city.innerHTML = photographer.city;
     //mainphotographer.appendChild(photographerTitle)
     const profil = document.createElement('img');
     profil.setAttribute('src',"/assets/photographers/"+photographer.portrait);
     profil.setAttribute('class',"profil");
+    country.setAttribute("class", "country");
+    tagline.setAttribute("class", "tag");
     //mainphotographer.appendChild(profil);
     button.insertAdjacentHTML('beforebegin', photographerTitle.outerHTML);
+    button.insertAdjacentHTML('beforebegin', country.outerHTML);
+    button.insertAdjacentHTML('beforebegin', tagline.outerHTML);
     button.insertAdjacentHTML('afterend', profil.outerHTML);
 
     // Création de la liste des médias

@@ -73,7 +73,8 @@
     position: absolute;
     margin-left: 2.1em;
     margin-top: 10.5em;
-    color: #D3573C;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .containerImg{

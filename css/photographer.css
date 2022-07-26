@@ -55,17 +55,15 @@
 
 .photograph-header h1{
     color: #D3573C;
-    left: 9%;
-    top: 9rem;
-    bottom: 54%;
     margin-left: 2rem;
     margin-top: 5rem;
+    font-size: 50px;
 }
 
 .country {
     position: absolute;
     margin-left: 1.8em;
-    margin-top: 7em;
+    margin-top: 8em;
     color: #D3573C;
 }
 
@@ -74,7 +72,7 @@
     margin-left: 2.1em;
     margin-top: 10.5em;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 60px;
 }
 
 .containerImg{
@@ -117,16 +115,16 @@
 }
 
 .modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+    align-items: center;
+    flex-wrap: nowrap;
     position: absolute;
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 600px;
+    padding: 15px 35px;
     top: 6em;
     margin-left: 20em;
 }

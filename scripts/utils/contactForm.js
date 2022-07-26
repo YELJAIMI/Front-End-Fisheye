@@ -6,54 +6,57 @@ function displayModal() {
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+
+    document.getElementById("form").reset();
+
 }
 
-function closeModal(){ 
-    closeModal(); 
-    
-    const modalbg = document.querySelector("contact_modal");
-    modalbg.innerHTML  = "contact_modal";
-    
-    form.style.display = "block"; 
-    form.reset(); 
-    modalbg.appendChild(form);
+function domModul(){
+  const FormData = document.querySelector('.formData');
+  const envoyer = document.getElementsByClassName("contact_button");
+  const header = document.querySele6ctor(".modal header");
+  const {name} = this.filterphotographer[0];
+  const namephotograph = document.createElement('span');
+  header.appendChild(namephotograph);
+  namephotograph.textContent = '${name}';
+  namephotograph.setAttribute("class", "namephotograph");
 }
 
-
-function ValidModal(){
-    const prenom = document.getElementById("first").value;
-    const nom = document.getElementById("last").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+  function InputValidModal(){
+    const inputprenom = document.getElementById("first").value;
+    const inputnom = document.getElementById("last").value;
+    const inputemail = document.getElementById("email").value;
+    const inputmessage = document.getElementById("message").value;
   
-    const ValidnameReturn = Validname(nom);
-    const ValidfirstReturn = Validfirst(prenom);
-    const ValidmailReturn = Validmail(email);
-    const ValidMessageReturn = ValidMessage(message);
+    const ValidnameReturn = Validname(inputnom);
+    const ValidfirstReturn = Validfirst(inputprenom);
+    const ValidmailReturn = Validmail(inputemail);
+    const ValidMessageReturn = ValidMessage(inputmessage);
 
-    const formIsValid =
+    const formInputIsValid =
     ValidnameReturn &&      
     ValidfirstReturn&&   
     ValidmailReturn&&     
     ValidMessageReturn&&
 
-    console.log(formIsValid);
+    console.log(formInputIsValid);
 
-    if(formIsValid){
+    if(formInputIsValid){
     Valid();
     }
-}
+  }
+
 //vérification prenom
 function Validfirst(prenom){
-    const regexprenom = /^[a-zA-Z '.-]+$/;
+  const regexprenom = /^[a-zA-Z '.-]+$/;
     console.log(prenom);
     if(prenom.length>2 && regexprenom.test(prenom)){
-      form[0].setAttribute("data-error-visible", "false");
+      FormData[0].setAttribute("data-error-visible", "false");
       return true;
     }
     else{
-      form[0].setAttribute("data-error-visible", "true");
-      form[0].setAttribute("data-error", "veuillez entrée un prenom valide");
+      FormData[0].setAttribute("data-error-visible", "true");
+      FormData[0].setAttribute("data-error", "veuillez entrée un prenom valide");
       return false;
     }
 }
@@ -63,45 +66,26 @@ function Validfirst(prenom){
     const regexnom = /^[a-zA-Z '.-]*$/;
     console.log(nom);
     if(nom.length>2 && regexnom.test(nom)){
-      form[1].setAttribute("data-error-visible", "false");
+      FormData[1].setAttribute("data-error-visible", "false");
       return true;
     }
     else{
-      form[1].setAttribute("data-error-visible", "true");
-      form[1].setAttribute("data-error", "veuillez entrée un nom valide");
+      FormData[1].setAttribute("data-error-visible", "true");
+      FormData[1].setAttribute("data-error", "veuillez entrée un nom valide");
       return false;
     }
   }
+
   //verify e-mail
   function Validmail(email){
-    const regexmail = /^\S+@\S+\.\S+$/;
+    const regexmail = '^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$';
     console.log(email);
     if(regexmail.test(email)){
-      form[2].setAttribute("data-error-visible", "false");
+      FormData[2].setAttribute("data-error-visible", "false");
       return true;
     }else{
-      form[2].setAttribute("data-error-visible", "true");
-      form[2].setAttribute("data-error", "veuillez entrée un e-mail valide");
+      FormData[2].setAttribute("data-error-visible", "true");
+      FormData[2].setAttribute("data-error", "veuillez entrée un e-mail valide");
       return false;
     }
-}
-
-//close modal
-function Valid() {
-    closeModal();
-    form.style.display = "none";
-  
-    const modal = document.querySelector(".modal");
-    modal.innerHTML =+ "<div class='Modal' id='contact_Modal'>"+
-        " <div class='modal'>"+
-            "  <p class='message'>Merci pour votre message</p>"+
-            "  <button class='contact_button'>Fermer</button>"+
-          "  </div>"+
-        "  </div>"+
-      " </div>";
-  
-        launchModal();
-  
-       const contact_modal = document.querySelector(".Modal");
-       contact_modal.addEventListener("click",closeModal); 
-}
+  }

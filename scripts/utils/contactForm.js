@@ -7,85 +7,106 @@ function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 
-    document.getElementById("form").reset();
-
+    form.reset(); 
+    modal.appendChild(form);
 }
 
-function domModul(){
-  const FormData = document.querySelector('.formData');
-  const envoyer = document.getElementsByClassName("contact_button");
-  const header = document.querySele6ctor(".modal header");
+/*function domModul(){
+  const formData = document.querySelector(".formData");
+  const envoyer = document.getElementById("send");
+  const header = document.querySelector(".modal header");
   const {name} = this.filterphotographer[0];
-  const namephotograph = document.createElement('span');
-  header.appendChild(namephotograph);
-  namephotograph.textContent = '${name}';
-  namephotograph.setAttribute("class", "namephotograph");
-}
+  const namephotographer = document.createElement('span');
+  header.appendChild(namephotographer);
+  formData.appendChild(contact_modal);
+  envoyer.appendChild(contact_modal);
+  namephotographer.textContent = $;{name};
+  namephotographer.setAttribute("class", "namephotographer");
+}*/
 
-  function InputValidModal(){
+
+  const formData = document.querySelectorAll(".formData");
+  const envoyer = document.getElementById("send");
+  envoyer.addEventListener('click', InputValidModal);
+
+  function InputValidModal(e){
+    e.preventDefault();
     const inputprenom = document.getElementById("first").value;
-    const inputnom = document.getElementById("last").value;
+    const inputnom = document.getElementById("name").value;
     const inputemail = document.getElementById("email").value;
     const inputmessage = document.getElementById("message").value;
   
-    const ValidnameReturn = Validname(inputnom);
     const ValidfirstReturn = Validfirst(inputprenom);
+    const ValidnameReturn = Validname(inputnom);
     const ValidmailReturn = Validmail(inputemail);
-    const ValidMessageReturn = ValidMessage(inputmessage);
+    const ValidmessageReturn = Validmessage(inputmessage);
 
     const formInputIsValid =
     ValidnameReturn &&      
     ValidfirstReturn&&   
     ValidmailReturn&&     
-    ValidMessageReturn&&
+    ValidmessageReturn&&
 
     console.log(formInputIsValid);
-
     if(formInputIsValid){
-    Valid();
+      console.log(inputprenom);
+      console.log(inputnom);
+      console.log(inputemail);
+      console.log(inputmessage);
     }
   }
 
 //vérification prenom
-function Validfirst(prenom){
-  const regexprenom = /^[a-zA-Z '.-]+$/;
-    console.log(prenom);
-    if(prenom.length>2 && regexprenom.test(prenom)){
-      FormData[0].setAttribute("data-error-visible", "false");
+function Validfirst(inputprenom){
+  const regexprenom = /^[a-zA-Z '.-]\s+$/;
+    console.log(inputprenom);
+    if(inputprenom.length>2 && regexprenom.test(inputprenom)){
+      formData[0].setAttribute("data-error-visible", "false");
       return true;
     }
     else{
-      FormData[0].setAttribute("data-error-visible", "true");
-      FormData[0].setAttribute("data-error", "veuillez entrée un prenom valide");
+      formData[0].setAttribute("data-error-visible", "true");
+      formData[0].setAttribute("data-error", "veuillez entrée un prenom valide");
       return false;
     }
 }
 
   //verification nom
-  function Validname(nom){
-    const regexnom = /^[a-zA-Z '.-]*$/;
-    console.log(nom);
-    if(nom.length>2 && regexnom.test(nom)){
-      FormData[1].setAttribute("data-error-visible", "false");
+  function Validname(inputnom){
+    const regexnom = /^[a-zA-Z '.-]\s*$/;
+    console.log(inputnom);
+    if(inputnom.length>2 && regexnom.test(inputnom)){
+      formData[1].setAttribute("data-error-visible", "false");
       return true;
-    }
-    else{
-      FormData[1].setAttribute("data-error-visible", "true");
-      FormData[1].setAttribute("data-error", "veuillez entrée un nom valide");
+    }else{
+      formData[1].setAttribute("data-error-visible", "true");
+      formData[1].setAttribute("data-error", "veuillez entrée un nom valide");
       return false;
     }
   }
 
   //verify e-mail
-  function Validmail(email){
-    const regexmail = '^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$';
-    console.log(email);
-    if(regexmail.test(email)){
-      FormData[2].setAttribute("data-error-visible", "false");
+  function Validmail(inputemail){
+    const regexmail = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
+    console.log(inputemail);
+    if(regexmail.test(inputemail)){
+      formData[2].setAttribute("data-error-visible", "false");
       return true;
     }else{
-      FormData[2].setAttribute("data-error-visible", "true");
-      FormData[2].setAttribute("data-error", "veuillez entrée un e-mail valide");
+      formData[2].setAttribute("data-error-visible", "true");
+      formData[2].setAttribute("data-error", "veuillez entrée un e-mail valide");
       return false;
     }
   }
+
+// texte  avec caractères minimum
+function Validmessage(inputmessage) {
+    if (message.value.trim().length > 1) {
+      message.style.display = "none";
+      console.log(inputmessage);
+      return true;
+    } else {
+      inputmessage.textContent = "Vous devez laisser un message";
+      return false;
+    }
+}

@@ -25,18 +25,18 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form method="get">
+				<form onsubmit="return false">
 					<div class="formData">
 						<label>Prénom</label>
-						<input aria-label="Prenom" type="text" id="first" placeholder="">
+						<input aria-label="Prenom" type="text" id="first" class="formData" placeholder="">
             <label>Nom</label>
-            <input aria-label="Nom" type="text" id="name" placeholder="">
+            <input aria-label="Nom" type="text" id="name" class="formData" placeholder="">
             <label>Email</label>
-            <input aria-label="Email" type="text" id="Email" placeholder="">
+            <input aria-label="Email" type="text" id="email" class="formData" placeholder="">
             <label>Votre message</label>
-            <textarea aria-label="Votre message" type="text" id="message" placeholder="" rows="8"></textarea> 
+            <textarea aria-label="Votre message" type="text" id="message" class="formData" placeholder="" rows="8"></textarea> 
 					</div>
-          <button class="contact_button" id="send">Envoyer</button>
+          <button type="submit" class="contact_button" id="send">Envoyer</button>
 				</form>
 			</div>
 		</div>

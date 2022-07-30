@@ -26,15 +26,23 @@
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
 				<form onsubmit="return false">
-					<div class="formData">
-						<label>Prénom</label>
-						<input aria-label="Prenom" type="text" id="first" class="formData" placeholder="">
-            <label>Nom</label>
-            <input aria-label="Nom" type="text" id="name" class="formData" placeholder="">
-            <label>Email</label>
-            <input aria-label="Email" type="text" id="email" class="formData" placeholder="">
-            <label>Votre message</label>
-            <textarea aria-label="Votre message" type="text" id="message" class="formData" placeholder="" rows="8"></textarea> 
+					<div class="form">
+            <div class="formData"> 
+						<label >Prénom</label>
+						<input aria-label="Prenom" type="text" id="first"  placeholder="">
+          </div>
+          <div class="formData"> 
+            <label >Nom</label>
+            <input aria-label="Nom" type="text" id="name"  placeholder="">
+          </div>
+          <div class="formData"> 
+            <label >Email</label>
+            <input aria-label="Email" type="text" id="email" placeholder="">
+          </div>
+          <div class="formData"> 
+            <label>Votre Message</label>
+            <textarea aria-label="Votre message" type="text" id="message"  placeholder="" rows="8"></textarea>
+          </div> 
 					</div>
           <button type="submit" class="contact_button" id="send">Envoyer</button>
 				</form>

@@ -97,7 +97,6 @@ async function init() {
         mediaDiv.appendChild(medialikes);
         mediaList.appendChild(mediaDiv);
     }
-
 };
 
 init();

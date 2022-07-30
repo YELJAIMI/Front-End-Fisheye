@@ -1,29 +1,15 @@
+//launch modal
 function displayModal() {
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
 }
-
+//fermeture de la modal
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 
-    form.reset(); 
-    modal.appendChild(form);
+    document.getElementsByName("form").reset();
 }
-
-/*function domModul(){
-  const formData = document.querySelector(".formData");
-  const envoyer = document.getElementById("send");
-  const header = document.querySelector(".modal header");
-  const {name} = this.filterphotographer[0];
-  const namephotographer = document.createElement('span');
-  header.appendChild(namephotographer);
-  formData.appendChild(contact_modal);
-  envoyer.appendChild(contact_modal);
-  namephotographer.textContent = $;{name};
-  namephotographer.setAttribute("class", "namephotographer");
-}*/
-
 
   const formData = document.querySelectorAll(".formData");
   const envoyer = document.getElementById("send");
@@ -34,12 +20,12 @@ function closeModal() {
     const inputprenom = document.getElementById("first").value;
     const inputnom = document.getElementById("name").value;
     const inputemail = document.getElementById("email").value;
-    const inputmessage = document.getElementById("message").value;
+    const textarea = document.getElementById("message").value;
   
     const ValidfirstReturn = Validfirst(inputprenom);
     const ValidnameReturn = Validname(inputnom);
     const ValidmailReturn = Validmail(inputemail);
-    const ValidmessageReturn = Validmessage(inputmessage);
+    const ValidmessageReturn = Validmessage(textarea);
 
     const formInputIsValid =
     ValidnameReturn &&      
@@ -52,9 +38,18 @@ function closeModal() {
       console.log(inputprenom);
       console.log(inputnom);
       console.log(inputemail);
-      console.log(inputmessage);
+      console.log(textarea);
     }
   }
+
+  // header du formulaire
+/*const header = document.querySelector(".modal header");
+const {name} = this.filterPhotographer[0];
+
+const namePhotograph = document.createElement('span');
+header.appendChild(namePhotograph);
+namePhotograph.textContent = 'name';
+namePhotograph.setAttribute("class","namephotograph");*/
 
 //vérification prenom
 function Validfirst(inputprenom){
@@ -94,19 +89,21 @@ function Validfirst(inputprenom){
       return true;
     }else{
       formData[2].setAttribute("data-error-visible", "true");
-      formData[2].setAttribute("data-error", "veuillez entrée un e-mail valide");
+      formData[2].setAttribute("data-error", "veuillez entrer un e-mail valide");
       return false;
     }
   }
 
-// texte  avec caractères minimum
-function Validmessage(inputmessage) {
-    if (message.value.trim().length > 1) {
-      message.style.display = "none";
-      console.log(inputmessage);
+  // texte  avec caractères minimum
+  function Validmessage(textarea) {
+
+    if (textarea.trim().length > 1) {
+      console.log(textarea);
+      formData[3].setAttribute("data-error-visible", "false");
       return true;
     } else {
-      inputmessage.textContent = "Vous devez laisser un message";
+      formData[3].setAttribute("data-error-visible", "true");
+      formData[3].setAttribute("data-error", "veuillez entrer un message valide");
       return false;
     }
-}
+  }

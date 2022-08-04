@@ -21,7 +21,7 @@ loadImage(url){
     loader.classList.add('lightbox__loader');
     container.appendChild(loader);
     images.onload = function(){
-        console.log('chargé');
+        console.log('charger');
     container.removeChild(loader);
     container.appendChild(images)
     }

@@ -68,9 +68,17 @@ async function init() {
     for (i=0;i<media.length;i++){
         const mediaDiv = document.createElement('article');
         mediaDiv.className = 'media';
+        const lienImg = document.createElement('a');
+        lienImg.className = 'lienimg';
+        lienImg.setAttribute("href",media[i].video);
+        lienImg.setAttribute("href",media[i].image);   
+        lienImg.setAttribute("title",media[i].title);
+        lienImg.setAttribute("aria-label",media[i].title);
         let mediaImg = null;
         if(media[i].image){
         mediaImg = document.createElement('img');
+        lienImg.setAttribute("href", media[i].video);
+        mediaImg.setAttribute("class", "artImg");
         mediaImg.setAttribute('src',"/assets/images/" +media[i].image+"");
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
@@ -90,6 +98,8 @@ async function init() {
         mediaTitle.innerText=media[i].title;
         medialikes.innerText=media[i].likes;
         
+        lienImg.appendChild(mediaImg);
+        mediaDiv.appendChild(lienImg);
         mediaDiv.appendChild(mediaImg);
         mediaDiv.appendChild(mediaTitle);
         mediaDiv.appendChild(icone);

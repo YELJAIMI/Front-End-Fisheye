@@ -133,7 +133,7 @@
     position: absolute;
     border-radius: 5px;
     background-color: #DB8876;
-    width: 500px;
+    width: 600px;
     padding: 15px 35px;
     top: 6em;
     margin-left: 26em;
@@ -146,12 +146,15 @@
 
 .modal header img {
     cursor: pointer;
+    margin-top: -2em;
+    margin-left: 6em;
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 60px;
     font-weight: normal;
     text-align: center;
+    margin-top: 0.3em;
 }
 
 form {
@@ -205,3 +208,82 @@ form input {
   .formData[data-error-visible="true"] .text-control {
     border: 2px solid black;
   }
+
+  .lightbox{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 10;
+    overflow: auto;
+    animation: lightboxIn .5s;
+}
+
+.lightbox__next, 
+.lightbox__prev{
+    border: none;
+    background: url(assets/icons/arrows.svg) center center / 40px 40% no-repeat;
+    width: 50px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    margin-top: -14px;
+    z-index: 11;
+}
+
+.lightbox__prev{
+    right: auto;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.lightbox__close{
+    width: 40p;
+    height: 40px;
+    border:#d3573c;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="40" height="40" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="white" d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"/></svg>') center center / 40px 40px no-repeat transparent;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 12px;
+}
+
+.lightbox button{
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity .3s;
+    text-indent: -3000px;
+}
+
+.lightbox button:hover{
+    opacity: 1;
+}
+
+
+.lightbox__container img{
+    max-width: 100%;
+    height: auto;animation: lightboxIn .5s;
+
+}
+.lightbox__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    min-height: 100vh;
+}
+
+.lightbox__loader{
+    width: 30p;
+    height: 30px;
+    opacity: .5;
+    background:url(assets/icons/loader.svg) center center no-repeat;
+}
+@keyframes lightboxIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}

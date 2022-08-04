@@ -7,8 +7,6 @@ function displayModal() {
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
-
-    document.getElementsByName("form").reset();
 }
 
   const formData = document.querySelectorAll(".formData");
@@ -42,13 +40,25 @@ function closeModal() {
     }
   }
 
+   // ferme le formulaire avec boutton "ESC"
+   window.addEventListener('keydown', function (e) {
+    if (e.key === "Escape" || e.key === "Esc") {
+      closeModal(e);
+    };
+  })
+  //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
+  document.querySelector('.modal header img').addEventListener('keydown',function(e){
+    if (e.key === "Enter" ) {
+      closeModal(e);
+    };
+  })
+
   // header du formulaire
 /*const header = document.querySelector(".modal header");
-const {name} = this.filterPhotographer[0];
-
+const {name} = this.filterPhotographer();
 const namePhotograph = document.createElement('span');
 header.appendChild(namePhotograph);
-namePhotograph.textContent = 'name';
+namePhotograph.textContent = `${name}`;
 namePhotograph.setAttribute("class","namephotograph");*/
 
 //vérification prenom

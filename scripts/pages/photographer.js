@@ -72,7 +72,6 @@ async function init() {
         if(media[i].image){
         mediaImg = document.createElement('img');
         mediaImg.setAttribute('src',"/assets/images/" +media[i].image+"");
-        
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
         }else{
@@ -90,7 +89,7 @@ async function init() {
         icone.setAttribute('class','fas fa-heart');
         mediaTitle.innerText=media[i].title;
         medialikes.innerText=media[i].likes;
-
+        
         mediaDiv.appendChild(mediaImg);
         mediaDiv.appendChild(mediaTitle);
         mediaDiv.appendChild(icone);

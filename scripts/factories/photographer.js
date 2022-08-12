@@ -28,7 +28,7 @@ function photographerFactory(data) {
         article.appendChild(h4);
         article.appendChild(p);
         article.appendChild(div);
-        lien.appendChild(article)
+        lien.appendChild(article);
         return(lien);
     }
     return { name, picture, getUserCardDOM }

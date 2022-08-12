@@ -7,6 +7,7 @@
     background-color: #FAFAFA;
     height: 300px;
     justify-content: space-between;
+    margin: 2em;
 }
 
 .media{
@@ -81,16 +82,16 @@
 }
 
 .containerImg{
-    width: 18em;
-    height: 15em;
+    width: 350px;
+    height: 300px;
     object-fit: cover;
     border-radius: 0.2rem;
     box-shadow: 0.1px 0.5px 3px 0.3px;
 }
 
 .media img{
-    width: 18em;
-    height: 15em;
+    width: 350px;
+    height: 300px;
     object-fit: cover;
     border-radius: 0.3rem;
 }
@@ -99,7 +100,7 @@
     display: flex;
     justify-content: flex-end;
     margin-top: -1rem;
-    margin-right: -1.9rem;
+    margin-right: -5.3rem;
     color: #911C1C;
 }
 
@@ -108,6 +109,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    justify-content: center;
+    margin: 100px auto;
     cursor: pointer;
 }
 
@@ -115,7 +118,7 @@
     display: flex;
     justify-content: flex-end;
     margin-top: -1rem;
-    margin-right: -0.8rem;
+    margin-right: -4.2rem;
     line-height: 16px;
     color: #901C1C;
 }
@@ -140,21 +143,23 @@
 }
 
 .modal header {
+    display: grid;
     justify-content: space-between;
     width: 100%;
+    grid-template-columns: 80% 1fr;
 }
 
 .modal header img {
     cursor: pointer;
-    margin-top: -2em;
-    margin-left: 6em;
+    margin-top: -4em;
+    margin-left: 70%;
 }
 
 .modal header h2 {
     font-size: 60px;
     font-weight: normal;
-    text-align: center;
-    margin-top: 0.3em;
+    text-align:start;
+    margin-top: -0.3em;
 }
 
 form {
@@ -225,11 +230,12 @@ form input {
 .lightbox__next, 
 .lightbox__prev{
     border: none;
-    background: url(assets/icons/arrows.svg) center center / 40px 40% no-repeat;
+    background: url(../assets/icons/arrows.svg) center center / 100% 100% no-repeat;
     width: 50px;
     height: 100%;
     position: fixed;
-    top: 0;
+    color: #901C1C;
+    top: 36px;
     margin-top: -14px;
     z-index: 11;
 }
@@ -241,21 +247,22 @@ form input {
 }
 
 .lightbox__close{
-    width: 40p;
+    width: 40px;
     height: 40px;
-    border:#d3573c;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="40" height="40" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="white" d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"/></svg>') center center / 40px 40px no-repeat transparent;
+    color:#d3573c;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="40" height="40" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="black" d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"/></svg>') center center / 100% 100% no-repeat transparent;
     position: fixed;
-    top: 40px;
-    right: 40px;
-    z-index: 12px;
+    border: 0px;
+    top: 3px;
+    right: 7px;
+    z-index: 12;
 }
 
 .lightbox button{
     opacity: .5;
     cursor: pointer;
     transition: opacity .3s;
-    text-indent: -3000px;
+    /*text-indent: -3000px;*/
 }
 
 .lightbox button:hover{
@@ -265,7 +272,8 @@ form input {
 
 .lightbox__container img{
     max-width: 100%;
-    height: auto;animation: lightboxIn .5s;
+    height: 100%;
+    animation: lightboxIn .5s;
 
 }
 .lightbox__container{
@@ -281,9 +289,85 @@ form input {
     width: 30p;
     height: 30px;
     opacity: .5;
-    background:url(assets/icons/loader.svg) center center no-repeat;
+    background:url(/assets/icons/loader.svg) center center no-repeat;
 }
 @keyframes lightboxIn{
     from{opacity: 0;}
     to{opacity: 1;}
 }
+
+.lightbox_child{
+    display: flex;
+    justify-content: center;
+    width: inherit;
+}
+
+
+.lightbox__next{
+    right: 0;
+}
+
+#main-media #filter {
+    display: flex;
+    position: absolute;
+    margin-top: -2em;
+    margin-right: 50em;
+    align-items: flex-start;
+}
+
+#main-photograph .trierpar{
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 6.4em;
+    margin-right: 5em;
+    color: black;
+    margin-top: -92.3em;
+  }
+
+
+  #main-photograph #select{
+    position: absolute;
+    background-color: #901C1C;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: -92.4em;
+    margin-left: 12em;
+    width: 140px;
+    height: 61px;
+    border: 0em;
+    cursor: pointer;
+  }
+
+  .divselect{
+    margin: -1em;
+  }
+
+  .footerinfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    background-color: #DB8876;
+    width: 376px;
+    border-radius: 5px 5px 0px 0px;
+    padding: 18px 0;
+    z-index: 9;
+  }
+
+  .numberlikes{
+    display: flex;
+    align-items: center;
+  }
+
+  .totalnumber{
+    font-size: 24px;
+  }
+
+  .footerinfo .fa-heart, .totalnumber{
+    color: black;
+  }

@@ -1,44 +1,102 @@
-class lightbox{
-static init (){
-    const links = document.querySelectorAll('video[src$=".mp4"], img[src$=".jpg"], img[src$=".jpeg"]')
-    .forEach(link => link.addEventListener('click', e => {
+function initlightbox(){
+
+    const links = document.querySelectorAll('.containerImg');
+    console.log(links)
+    buildDOM();
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxContainer = document.querySelector('.lightbox__container');
+
+
+    links.forEach((link,index) => link.addEventListener('click', e => {
         e.preventDefault()
-        new lightbox(e.currentTarget.getAttribute('href'))
-        console.log(links)
+        //new lightbox(e.currentTarget.getAttribute('href'))
+        lightbox.style.display = 'flex';
+        lightboxContainer.appendChild(link);
+        console.log(link);
+        console.log(index);
+
+        const lightboxNext = document.querySelector('.lightbox__next');
+        lightboxNext.addEventListener('click', function(){
+
+            if(index<links.length-1){
+                index+=1;
+            }else{
+                index=0;
+            }
+            link=links[index];
+            lightboxContainer.removeChild(lightboxContainer.firstChild);
+            lightboxContainer.appendChild(link);
+        })
+
+        const lightboxPrev = document.querySelector('.lightbox__prev');
+        lightboxPrev.addEventListener('click', function(){
+
+            if(index<links.length-1){
+                index+=1;
+            }else{
+                index=0;
+            }
+            link=links[index];
+            lightboxContainer.removeChild(lightboxContainer.firstChild);
+            lightboxContainer.appendChild(link);
+        })
+
+
+        
+   /* //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
+    lightboxPrev.addEventListener('keydown', function(e) {
+        if (e.key === "Enter") {
+            prev();
+        }
+    })
+    
+    // fait défiler les photos avec le bouton du clavier "<--"
+    window.addEventListener('keydown', function (e) {
+        if (e.key === "ArrowLeft") {
+           prev();
+        }
+    })
+
+    // function qui fait défiler les photos au click du bouton NEXT
+    lightboxNext.addEventListener('click', (e) => {
+        e.preventDefault();
+          next();
+    })
+    //function qui fait défiler les photos en appuyant sur le bouton ENTER quand NEXT sélectionner
+    lightboxNext.addEventListener('keydown', function(e) {
+        if (e.key === "Enter") {
+          next();
+        }
+    })
+    
+    // fait défiler les photos avec le bouton du clavier "-->"
+    window.addEventListener('keydown', function (e) {
+        if (e.key === "ArrowRight") {
+          next();
+        }
+    })*/
+
     }))
+
+
+    //fermeture de la lightbox
+    const lightboxClose = document.querySelector(".lightbox__close");
+    lightboxClose.addEventListener('click', function(){
+        lightbox.removeChild(lightbox.firstChild);
+        //lightbox.appendChild(lightboxClose);
+        lightbox.style.display = "none";
+    })
 }
 
-constructor(url){
-    this.element = this.buildDOM(url);
-    this.loadImages(url);
-    document.body.appendChild(this.element)
-}
+function buildDOM(){
+    const lightbox = document.querySelector('.lightbox');
+    const dom = document.createElement('div');
 
-loadImage(url){
-    const images = new Image();
-    const container = this.element.querySelector('.lightbox__container');
-    const loader = document.createElement('div');
-    loader.classList.add('lightbox__loader');
-    container.appendChild(loader);
-    images.onload = function(){
-        console.log('charger');
-    container.removeChild(loader);
-    container.appendChild(images)
-    }
-    images.src = url;
-}
-
-buildDOM(url){
-    const dom = document.createElement('div')
-    dom.classList.add('lightbox')
-    dom.innerHTML = `    <div class="lightbox">
-    <button class="lightbox__close">Fermer</button>
-    <button class="lightbox__next">suivant</button>
-    <button class="lightbox__prev">précédent</button>
+    dom.classList.add('lightbox_child')
+    dom.innerHTML = `
+    <button class="lightbox__close"></button>
+    <button class="lightbox__next"></button>
     <div class="lightbox__container"></div>
-  </div>`
-  return dom;
-}
-
-
+    <button class="lightbox__prev"></button>`
+  lightbox.appendChild(dom);
 }

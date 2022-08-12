@@ -65,24 +65,25 @@ async function init() {
 
     // Création de la liste des médias
     const mediaList = document.getElementById('main-media');
+    let countertotalLikes = 0;
     for (i=0;i<media.length;i++){
         const mediaDiv = document.createElement('article');
         mediaDiv.className = 'media';
         const lienImg = document.createElement('a');
         lienImg.className = 'lienimg';
-        lienImg.setAttribute("href",media[i].video);
         lienImg.setAttribute("href",media[i].image);   
         lienImg.setAttribute("title",media[i].title);
         lienImg.setAttribute("aria-label",media[i].title);
         let mediaImg = null;
         if(media[i].image){
         mediaImg = document.createElement('img');
-        lienImg.setAttribute("href", media[i].video);
-        mediaImg.setAttribute("class", "artImg");
-        mediaImg.setAttribute('src',"/assets/images/" +media[i].image+"");
+        lienImg.setAttribute("href", media[i].image);
+        mediaImg.setAttribute("class", "containerImg");
+        mediaImg.setAttribute('src',"./assets/images/" +media[i].image+"");
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
         }else{
+            lienImg.setAttribute("href", media[i].video);
             mediaImg = document.createElement('video');
             mediaImg.setAttribute('src',"/assets/images/" +media[i].video+"");
             mediaImg.setAttribute('class', 'containerImg');
@@ -95,17 +96,74 @@ async function init() {
         const icone = document.createElement('i');
         const medialikes = document.createElement('span');
         icone.setAttribute('class','fas fa-heart');
+        medialikes.setAttribute('class', 'numberlikes');
         mediaTitle.innerText=media[i].title;
         medialikes.innerText=media[i].likes;
         
         lienImg.appendChild(mediaImg);
         mediaDiv.appendChild(lienImg);
-        mediaDiv.appendChild(mediaImg);
+        //mediaDiv.appendChild(mediaImg);
         mediaDiv.appendChild(mediaTitle);
         mediaDiv.appendChild(icone);
         mediaDiv.appendChild(medialikes);
         mediaList.appendChild(mediaDiv);
+
+//likes.forEach(like => {
+    
+    //let spanLikes = like.nextSibling;
+    //console.log(spanLikes);
+    //let valueLikes = spanLikes.innerHTML;
+    countertotalLikes+= parseInt(media[i].likes);
+    //spanLikes.innerHTML = parseInt(valueLikes) +1;
+//})
+    
+    } 
+
+      // DOM FOOTER    *************************************
+      counterlike();
+      function counterlike(){ 
+        const footer = document.createElement('footer');
+        body.appendChild(footer);
+        
+        const footerInfo = document.createElement('div');
+        footer.appendChild(footerInfo);
+        footerInfo.setAttribute("class","footerinfo");
+  
+      const totalLikes = document.createElement('div');
+      footerInfo.appendChild(totalLikes);
+      totalLikes.setAttribute("class","totallikes");
+  
+      const textNumber = document.createElement('span');
+      totalLikes.appendChild(textNumber);
+      textNumber.setAttribute("class","textnumber");
+      textNumber.setAttribute("aria-label","nombre total de likes");
+      textNumber.textContent = countertotalLikes;
+  
+      const HeartFooter = document.createElement('i');
+      totalLikes.appendChild(HeartFooter);
+      //totalLikes.insertAdjacentText('afterbegin', countertotalLikes);
+      HeartFooter.setAttribute("class","fas fa-heart");
+  
+      //ECRIT le prix/jour dans le FOOTER
+      const price = document.createElement('div');
+      footerInfo.appendChild(price);
+      price.setAttribute("class","price");
+      price.innerHTML = `<span class="price">${photographer.price}'€/jour</span>`;
     }
+
+     //compteur des likes 
+     const likes = document.querySelectorAll('.fas', '.fa-heart');
+     likes.forEach(like => like.addEventListener('click', e =>{
+         e.preventDefault();
+         let spanLikes = like.nextSibling;
+         let valueLikes = spanLikes.innerHTML;
+         let spanTotalLikes = document.querySelector('.textnumber');
+         console.log(spanTotalLikes);
+         spanLikes.innerHTML = parseInt(valueLikes) +1;
+         spanTotalLikes.innerText = parseInt(spanTotalLikes.textContent) +1;
+         //counterlike();
+     }))
+    initlightbox();
 };
 
 init();

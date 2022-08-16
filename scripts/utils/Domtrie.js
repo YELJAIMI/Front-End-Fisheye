@@ -3,11 +3,11 @@ const body = document.querySelector('body');
 
 // DOM   SECTION trier avec menu déroulant  ****************
 
-const mainPhotograph = document.getElementById('main-photograph');
+const mainMedia = document.getElementById('main-media');
 
 const sectionTrier = document.createElement('section');
 sectionTrier.id = 'filter';
-mainPhotograph.appendChild(sectionTrier);
+mainMedia.appendChild(sectionTrier);
 sectionTrier.setAttribute("role","listbox");
 
 
@@ -50,20 +50,21 @@ sectionTrier.setAttribute("role","listbox");
 
 
            
-           function sortMedia(filterMedia) {
+         function sortMedia(filterMedia) {
     
    
             const selectMenu = document.getElementById('select');
         
             selectMenu.addEventListener('change', function() {
         
-             document.getElementById('main-photograph').innerHTML = "";
+             document.getElementById('main-media').innerHTML = "";
         
              // classement alphabethique des titres
           
                 if (this.value == "titre") {
         
                     filterMedia = filterMedia.sort((a, b) => {
+                       console.log(media);
                        if (a.title < b.title) { return -1;}
                        else {return 1;};
                        
@@ -75,7 +76,7 @@ sectionTrier.setAttribute("role","listbox");
                  // classement des likes décroissant  
                 } else if (this.value == "popularite") {
         
-                    filterMedia = filterMedia.sort((a, b) => {
+                   filterMedia = filterMedia.sort((a, b) => {
                        return b.likes - a.likes;
         
                     }); 
@@ -85,7 +86,7 @@ sectionTrier.setAttribute("role","listbox");
                     // classement par date
                 }else if (this.value == "date") {
         
-                    filterMedia = filterMedia.sort((a, b) => {
+                     filterMedia = filterMedia.sort((a, b) => {
                        let aDate = a.date;
                        let bDate = b.date;
                     
@@ -101,13 +102,32 @@ sectionTrier.setAttribute("role","listbox");
                     
                     
                  }
-                 
-                 filterMedia.forEach((media) => {
-                    init(media);
-                    
-                 })
-        
-        
               });
               
-           }
+         }
+
+         async function displayData(filterMedia) {
+                
+            photographerFactory();
+            
+            filterMedia.sort((a, b) => {
+                let aDate = a.date;
+                let bDate = b.date;
+             
+                if (aDate < bDate) {
+                    return -1;
+                 } else if (aDate == bDate) {
+                    return 0;
+                 } else {
+                    return 1;
+                 }
+             
+             });
+            // créer un article pour chaque photo
+            filterMedia.forEach((media) => {
+                
+                photographerFactory(media);         
+                
+            });
+            
+        };

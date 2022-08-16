@@ -56,7 +56,20 @@
           photographerfactory(media);         
           
       });
-      
+      // compteur de likes au clic         
+           HeartFooter.addEventListener('click',function(e){
+            e.preventDefault();   
+            countertotalLikes();
+
+      }) 
+
+// compteur de likes au clavier
+            HeartFooter.addEventListener('keydown', function(e) {
+            if (e.key === "Enter") {
+            countertotalLikes();     
+         }
+     
+     })
   };*/
   
              

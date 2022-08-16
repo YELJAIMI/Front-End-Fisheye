@@ -32,9 +32,9 @@ async function init() {
         return photographer.id == idphotographe;
     }
     );
-
-    console.log(photographer.name);
     
+    console.log(photographer.name);
+
     const media = medias.filter(function(media){
         return media.photographerId == idphotographe;
     }
@@ -108,14 +108,14 @@ async function init() {
         mediaDiv.appendChild(medialikes);
         mediaList.appendChild(mediaDiv);
 
-//likes.forEach(like => {
+        //likes.forEach(like => {
     
-    //let spanLikes = like.nextSibling;
-    //console.log(spanLikes);
-    //let valueLikes = spanLikes.innerHTML;
-    countertotalLikes+= parseInt(media[i].likes);
-    //spanLikes.innerHTML = parseInt(valueLikes) +1;
-//})
+        //let spanLikes = like.nextSibling;
+        //console.log(spanLikes);
+        //let valueLikes = spanLikes.innerHTML;
+        countertotalLikes+= parseInt(media[i].likes);
+        //spanLikes.innerHTML = parseInt(valueLikes) +1;
+        //})
     
     } 
 
@@ -148,7 +148,7 @@ async function init() {
       const price = document.createElement('div');
       footerInfo.appendChild(price);
       price.setAttribute("class","price");
-      price.innerHTML = `<span class="price">${photographer.price}'€/jour</span>`;
+      price.innerHTML = `<span class="price">${photographer.price}€/jour</span>`;
     }
 
      //compteur des likes 

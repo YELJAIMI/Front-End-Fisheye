@@ -230,8 +230,8 @@ form input {
 .lightbox__next, 
 .lightbox__prev{
     border: none;
-    background: url(../assets/icons/arrows.svg) center center / 100% 100% no-repeat;
-    width: 50px;
+    background: url(/assets/icons/arrows.svg) center center / 100% 100% no-repeat;
+    width: 60px;
     height: 100%;
     position: fixed;
     color: #901C1C;
@@ -249,11 +249,10 @@ form input {
 .lightbox__close{
     width: 40px;
     height: 40px;
-    color:#d3573c;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="40" height="40" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="black" d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"/></svg>') center center / 100% 100% no-repeat transparent;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="40" height="40" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="Darkred" d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"/></svg>') center center / 150% 150% no-repeat transparent;
     position: fixed;
     border: 0px;
-    top: 3px;
+    top: 11px;
     right: 7px;
     z-index: 12;
 }
@@ -262,7 +261,6 @@ form input {
     opacity: .5;
     cursor: pointer;
     transition: opacity .3s;
-    /*text-indent: -3000px;*/
 }
 
 .lightbox button:hover{
@@ -299,7 +297,7 @@ form input {
 .lightbox_child{
     display: flex;
     justify-content: center;
-    width: inherit;
+    width: 100%;
 }
 
 
@@ -319,10 +317,9 @@ form input {
     position: absolute;
     font-size: 18px;
     font-weight: bold;
-    margin-left: 6.4em;
-    margin-right: 5em;
+    margin-left: -9.4em;
     color: black;
-    margin-top: -92.3em;
+    margin-top: -4.6em;
   }
 
 
@@ -333,10 +330,10 @@ form input {
     color: white;
     font-size: 18px;
     font-weight: 700;
-    margin-top: -92.4em;
-    margin-left: 12em;
+    margin-top: -3.6em;
+    margin-left: -3em;
     width: 140px;
-    height: 61px;
+    height: 60px;
     border: 0em;
     cursor: pointer;
   }
@@ -364,7 +361,11 @@ form input {
     align-items: center;
   }
 
-  .totalnumber{
+  .totallikes{
+    font-size: 24px;
+  }
+
+  .price {
     font-size: 24px;
   }
 

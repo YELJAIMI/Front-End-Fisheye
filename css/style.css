@@ -34,6 +34,10 @@ h1 {
     font-size: 12px;
 }
 
+.photographer_section .price {
+    font-size: 12px;
+}
+
 .photographer_section article {
     justify-self: center;
     display: flex;

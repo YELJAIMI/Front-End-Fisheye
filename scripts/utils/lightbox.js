@@ -43,36 +43,36 @@ function initlightbox(){
 
 
         
-   /* //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
+   /*//function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
     lightboxPrev.addEventListener('keydown', function(e) {
         if (e.key === "Enter") {
-            prev();
+            lightboxPrev();
         }
     })
     
     // fait défiler les photos avec le bouton du clavier "<--"
     window.addEventListener('keydown', function (e) {
         if (e.key === "ArrowLeft") {
-           prev();
+           lightboxPrev();
         }
     })
 
     // function qui fait défiler les photos au click du bouton NEXT
     lightboxNext.addEventListener('click', (e) => {
         e.preventDefault();
-          next();
+          lightboxNext();
     })
     //function qui fait défiler les photos en appuyant sur le bouton ENTER quand NEXT sélectionner
     lightboxNext.addEventListener('keydown', function(e) {
         if (e.key === "Enter") {
-          next();
+          lightboxNext();
         }
     })
     
     // fait défiler les photos avec le bouton du clavier "-->"
     window.addEventListener('keydown', function (e) {
         if (e.key === "ArrowRight") {
-          next();
+          lightboxNext();
         }
     })*/
 

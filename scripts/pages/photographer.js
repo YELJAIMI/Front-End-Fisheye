@@ -88,13 +88,13 @@ export function displayMedia(media){
         mediaImg = document.createElement('img');
         lienImg.setAttribute("href", media[i].image);
         mediaImg.setAttribute("class", "containerImg");
-        mediaImg.setAttribute('src',"/assets/images/" +media[i].image+"");
+        mediaImg.setAttribute('src',"./assets/images/" +media[i].image+"");
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
         }else{
             lienImg.setAttribute("href", media[i].video);
             mediaImg = document.createElement('video');
-            mediaImg.setAttribute('src',"/assets/images/" +media[i].video+"");
+            mediaImg.setAttribute('src', "./assets/images/"  +media[i].video+"");
             mediaImg.setAttribute('class', 'containerImg');
             mediaImg.setAttribute('alt',media[i].title);
             mediaImg.setAttribute('controls','controls');

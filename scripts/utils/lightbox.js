@@ -11,7 +11,26 @@ function initlightbox(){
         e.preventDefault()
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
-        lightboxContainer.appendChild(link);
+
+        function clonelink(link){
+            let format = link.src.split('.');
+            let med = null;
+            if (format.at(-1) == 'mp4') {
+                med = document.createElement('video');
+                med.setAttribute('class','container');
+                med.setAttribute('controls', 'controls');
+                med.setAttribute('title', link.title);
+                med.setAttribute('src', link.src); 
+            }else{ 
+                med = document.createElement('img');
+                med.setAttribute('class', 'image-full-screen');
+                med.setAttribute('alt', link.alt);
+                med.setAttribute('src', link.src);
+            }
+            return med;
+        }
+
+        lightboxContainer.appendChild(clonelink(link));
         console.log(link);
         console.log(index);
 
@@ -23,22 +42,24 @@ function initlightbox(){
             }else{
                 index=0;
             }
-            link=links[index];
-            lightboxContainer.removeChild(lightboxContainer.firstChild);
-            lightboxContainer.appendChild(link);
+            let newlink=links[index];
+            lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
+            lightboxContainer.appendChild(clonelink(newlink));
         })
 
         const lightboxPrev = document.querySelector('.lightbox__prev');
         lightboxPrev.addEventListener('click', function(){
 
-            if(index<links.length-1){
-                index+=1;
+            console.log(index);
+            console.log(links.length);
+            if(index>0){
+                index-=1;
             }else{
-                index=0;
+                index=links.length-1;
             }
-            link=links[index];
-            lightboxContainer.removeChild(lightboxContainer.firstChild);
-            lightboxContainer.appendChild(link);
+            let newlink=links[index];
+            lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
+            lightboxContainer.appendChild(clonelink(link));
         })
 
 

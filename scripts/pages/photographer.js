@@ -1,3 +1,6 @@
+import {sortMedia} from '../utils/Domtrie.js';
+
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idphotographe = urlParams.get('idphotographe');
@@ -39,6 +42,8 @@ async function init() {
         return media.photographerId == idphotographe;
     }
     );
+
+    sortMedia(media);
     console.log(media);
     //début header photographe
     const mainphotographer = document.querySelector('.photograph-header');
@@ -64,9 +69,13 @@ async function init() {
     button.insertAdjacentHTML('afterend', profil.outerHTML);
 
     // Création de la liste des médias
-    const mediaList = document.getElementById('main-media');
+
+    displayMedia(media);
+}
+export function displayMedia(media){
     let countertotalLikes = 0;
-    for (i=0;i<media.length;i++){
+    const mediaList = document.getElementById('main-media');
+    for (let i=0;i<media.length;i++){
         const mediaDiv = document.createElement('article');
         mediaDiv.className = 'media';
         const lienImg = document.createElement('a');
@@ -79,7 +88,7 @@ async function init() {
         mediaImg = document.createElement('img');
         lienImg.setAttribute("href", media[i].image);
         mediaImg.setAttribute("class", "containerImg");
-        mediaImg.setAttribute('src',"./assets/images/" +media[i].image+"");
+        mediaImg.setAttribute('src',"/assets/images/" +media[i].image+"");
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
         }else{
@@ -123,6 +132,8 @@ async function init() {
       counterlike();
       function counterlike(){ 
         const footer = document.createElement('footer');
+        const body = document.querySelector('body');
+
         body.appendChild(footer);
         
         const footerInfo = document.createElement('div');

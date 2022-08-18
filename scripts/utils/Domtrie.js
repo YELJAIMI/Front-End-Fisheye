@@ -1,14 +1,21 @@
+export{sortMedia}
+import { displayMedia } from "../pages/photographer.js";
+
+
 const body = document.querySelector('body');
 
 
 // DOM   SECTION trier avec menu déroulant  ****************
 
-const mainMedia = document.getElementById('main-media');
+let mainMedia = document.getElementById('main-media');
+const photographerHeader = document.querySelector('.photograph-header');
 
 const sectionTrier = document.createElement('section');
 sectionTrier.id = 'filter';
-mainMedia.appendChild(sectionTrier);
-sectionTrier.setAttribute("role","listbox");
+//mainMedia.appendChild(sectionTrier);
+sectionTrier.setAttribute("class","select");
+photographerHeader.insertAdjacentElement('afterend', sectionTrier);
+sectionTrier.setAttribute("role", "listbox");
 
 
     const label = document.createElement('span');
@@ -57,18 +64,19 @@ sectionTrier.setAttribute("role","listbox");
         
             selectMenu.addEventListener('change', function() {
         
-             document.getElementById('main-media').innerHTML = "";
+             mainMedia.innerHTML = "";
         
              // classement alphabethique des titres
           
                 if (this.value == "titre") {
         
                     filterMedia = filterMedia.sort((a, b) => {
-                       console.log(media);
+                     console.log(filterMedia);
                        if (a.title < b.title) { return -1;}
                        else {return 1;};
                        
-                    });
+                     });
+                     displayMedia(filterMedia);
         
               
              
@@ -76,17 +84,17 @@ sectionTrier.setAttribute("role","listbox");
                  // classement des likes décroissant  
                 } else if (this.value == "popularite") {
         
-                   filterMedia = filterMedia.sort((a, b) => {
+                  filterMedia = filterMedia.sort((a, b) => {
                        return b.likes - a.likes;
         
                     }); 
-           
+                    displayMedia(filterMedia);
                  
         
                     // classement par date
                 }else if (this.value == "date") {
         
-                     filterMedia = filterMedia.sort((a, b) => {
+                  filterMedia = filterMedia.sort((a, b) => {
                        let aDate = a.date;
                        let bDate = b.date;
                     
@@ -96,9 +104,10 @@ sectionTrier.setAttribute("role","listbox");
                            return 0;
                         } else {
                            return 1;
-                        }
-                    
+                        } 
+                                     
                     });
+                    displayMedia(filterMedia);
                     
                     
                  }
@@ -106,11 +115,11 @@ sectionTrier.setAttribute("role","listbox");
               
          }
 
-         async function displayData(filterMedia) {
+        /* async function displayData(filterMedia) {
                 
             photographerFactory();
             
-            filterMedia.sort((a, b) => {
+           filterMedia.sort((a, b) => {
                 let aDate = a.date;
                 let bDate = b.date;
              
@@ -123,11 +132,5 @@ sectionTrier.setAttribute("role","listbox");
                  }
              
              });
-            // créer un article pour chaque photo
-            filterMedia.forEach((media) => {
-                
-                photographerFactory(media);         
-                
-            });
             
-        };
+        };*/

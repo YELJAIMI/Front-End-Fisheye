@@ -9,6 +9,11 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+  const header = document.querySelector('.modal header');
+  const namePhotograph = document.createElement('span');
+  namePhotograph.setAttribute("class","namephotograph");
+  header.appendChild(namePhotograph);
+  namePhotograph.textContent = `${namePhotograph}`;
   const formData = document.querySelectorAll(".formData");
   const envoyer = document.getElementById("send");
   envoyer.addEventListener('click', InputValidModal);
@@ -39,19 +44,6 @@ function closeModal() {
       console.log(textarea);
     }
   }
-
-   // ferme le formulaire avec boutton "ESC"
-   window.addEventListener('keydown', function (e) {
-    if (e.key === "Escape" || e.key === "Esc") {
-      closeModal(e);
-    };
-  })
-  //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
-  document.querySelector('.modal header img').addEventListener('keydown',function(e){
-    if (e.key === "Enter" ) {
-      closeModal(e);
-    };
-  })
 
   // header du formulaire
 /*const header = document.querySelector(".modal header");

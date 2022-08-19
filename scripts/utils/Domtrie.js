@@ -115,7 +115,7 @@ sectionTrier.setAttribute("role", "listbox");
               
          }
 
-        /* async function displayData(filterMedia) {
+        async function displayData(filterMedia) {
                 
             photographerFactory();
             
@@ -133,4 +133,4 @@ sectionTrier.setAttribute("role", "listbox");
              
              });
             
-        };*/
+        };

@@ -1,4 +1,5 @@
 import {sortMedia} from '../utils/Domtrie.js';
+import {initlightbox} from '../utils/lightbox.js';
 
 
 const queryString = window.location.search;
@@ -19,6 +20,7 @@ async function getPhotographers() {
     console.log(datas);
     return datas; 
 }
+let photographerPrice = 0;
 
 async function init() {
     // Récupère les datas des photographes
@@ -60,6 +62,7 @@ async function init() {
     const profil = document.createElement('img');
     profil.setAttribute('src',"/assets/photographers/"+photographer.portrait);
     profil.setAttribute('class',"profil");
+    profil.setAttribute('alt', photographerTitle);
     country.setAttribute("class", "country");
     tagline.setAttribute("class", "tag");
     //mainphotographer.appendChild(profil);
@@ -69,6 +72,7 @@ async function init() {
     button.insertAdjacentHTML('afterend', profil.outerHTML);
 
     // Création de la liste des médias
+    photographerPrice = photographer.price;
 
     displayMedia(media);
 }
@@ -159,7 +163,7 @@ export function displayMedia(media){
       const price = document.createElement('div');
       footerInfo.appendChild(price);
       price.setAttribute("class","price");
-      price.innerHTML = `<span class="price">${photographer.price}€/jour</span>`;
+      price.innerHTML = `<span class="price">${photographerPrice}€/jour</span>`;
     }
 
      //compteur des likes 

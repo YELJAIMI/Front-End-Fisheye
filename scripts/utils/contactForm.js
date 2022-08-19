@@ -42,10 +42,61 @@ function closeModal() {
       console.log(inputnom);
       console.log(inputemail);
       console.log(textarea);
+      let from = document.querySelector('.form');
+      formData.reset();
+      closeModal();
     }
   }
 
-  // header du formulaire
+     // ferme le formulaire avec boutton "ESC"
+     window.addEventListener('keydown', function (e) {
+      if (e.key === "Escape" || e.key === "Esc") {
+        closeModal(e);
+      };
+    })
+    //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
+    document.querySelector('.modal header img').addEventListener('keydown',function(e){
+      if (e.key === "Enter" ) {
+        closeModal(e);
+      };
+    })
+
+    // annule la fonction par défaut du bouton d'envoi
+    document.querySelector('form').addEventListener('submit', (e) => {e.preventDefault();})
+
+  // selectionne la modale
+  const selectModal = document.querySelector('.contact_modal');
+
+  //selectionne "X" 
+  const closeModale = document.querySelector('.modal header img');
+
+  //selectionne LABEL et INPUT
+const firstName = document.querySelector('label');
+const inputFirst = document.querySelector('#first');
+const lastName = document.querySelector('label');
+const inputLast = document.querySelector('#name');
+const emailLabel = document.querySelector('label');
+const emailInput = document.querySelector('#email');
+const yourMessage = document.querySelector('#message');
+
+//selectionne le bouton "envoyez"
+const buttonSend = document.querySelector('#send');
+
+//selectionne tous les elements focusables
+const allFocusableElements = `${closeModale},${firstName},${inputFirst},
+${lastName},${inputLast},${emailLabel},${emailInput},${yourMessage}, ${buttonSend}`
+
+//premier élement focusable
+const firstFocusableElememt = closeModale;
+
+//contenu de tous
+const focusableContent = allFocusableElements;
+
+//dernier élement focusable
+const lastFocusableElement = buttonSend;
+
+
+// header du formulaire
 /*const header = document.querySelector(".modal header");
 const {name} = this.filterPhotographer();
 const namePhotograph = document.createElement('span');
@@ -55,7 +106,7 @@ namePhotograph.setAttribute("class","namephotograph");*/
 
 //vérification prenom
 function Validfirst(inputprenom){
-  const regexprenom = /^[a-zA-Z '.-]\s+$/;
+  const regexprenom = /^[a-zA-Z \-]+$/;
     console.log(inputprenom);
     if(inputprenom.length>2 && regexprenom.test(inputprenom)){
       formData[0].setAttribute("data-error-visible", "false");
@@ -70,7 +121,7 @@ function Validfirst(inputprenom){
 
   //verification nom
   function Validname(inputnom){
-    const regexnom = /^[a-zA-Z '.-]\s*$/;
+    const regexnom = /^[a-zA-Z \-]+$/;
     console.log(inputnom);
     if(inputnom.length>2 && regexnom.test(inputnom)){
       formData[1].setAttribute("data-error-visible", "false");

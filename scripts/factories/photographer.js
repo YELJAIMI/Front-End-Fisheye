@@ -20,7 +20,7 @@ function photographerFactory(data) {
         const div = document.createElement('div');
         div.setAttribute("class", "price");
         div.textContent = price+'€/jour';
-        let lien = document.createElement('a');
+        const lien = document.createElement('a');
         lien.setAttribute("href", "photographer.html?idphotographe="+id);
         article.appendChild(img);
         article.appendChild(h2);

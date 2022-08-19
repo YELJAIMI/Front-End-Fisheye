@@ -1,4 +1,4 @@
-function initlightbox(){
+export function initlightbox(){
 
     const links = document.querySelectorAll('.containerImg');
     console.log(links)
@@ -59,7 +59,7 @@ function initlightbox(){
             }
             let newlink=links[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
-            lightboxContainer.appendChild(clonelink(link));
+            lightboxContainer.appendChild(clonelink(newlink));
         })
 
 

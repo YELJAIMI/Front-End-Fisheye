@@ -6,6 +6,7 @@ function photographerFactory(data) {
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
+        img.setAttribute('class', 'photo');
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
         const h3 = document.createElement('h3');
@@ -20,7 +21,7 @@ function photographerFactory(data) {
         const div = document.createElement('div');
         div.setAttribute("class", "price");
         div.textContent = price+'€/jour';
-        const lien = document.createElement('a');
+        let lien = document.createElement('a');
         lien.setAttribute("href", "photographer.html?idphotographe="+id);
         article.appendChild(img);
         article.appendChild(h2);

@@ -1,7 +1,14 @@
+
+  const closeModale = document.querySelector('.modal header img');
+  //selectionne "X" 
+  //const closeModale = document.querySelector('.modalClose');
 //launch modal
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
+  const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
+  const namephotographer = document.getElementById('namephotographer');
+  namePhotograph.textContent = namephotographer.innerText;
+  setTimeout (closeModale.focus(),1000);
 }
 //fermeture de la modal
 function closeModal() {
@@ -10,10 +17,11 @@ function closeModal() {
 }
 
   const header = document.querySelector('.modal header');
+  closeModale.setAttribute('class', 'modalClose');
+  closeModale.setAttribute('alt', 'fermer le formulaire');
   const namePhotograph = document.createElement('span');
   namePhotograph.setAttribute("class","namephotograph");
   header.appendChild(namePhotograph);
-  namePhotograph.textContent = `${namePhotograph}`;
   const formData = document.querySelectorAll(".formData");
   const envoyer = document.getElementById("send");
   envoyer.addEventListener('click', InputValidModal);
@@ -42,67 +50,34 @@ function closeModal() {
       console.log(inputnom);
       console.log(inputemail);
       console.log(textarea);
-      let from = document.querySelector('.form');
-      formData.reset();
+      let form = document.querySelector('.form');
+      form.reset();
       closeModal();
     }
   }
 
-     // ferme le formulaire avec boutton "ESC"
+
+  // selectionne la modale
+      const selectModal = document.querySelector('#contact_modal');
+
+  //premier élement focusable
+      const firstFocusableElememt = closeModale;
+
+
+  // ferme le formulaire avec boutton "ESC"
      window.addEventListener('keydown', function (e) {
       if (e.key === "Escape" || e.key === "Esc") {
         closeModal(e);
       };
     })
-    //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
+
+  //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
     document.querySelector('.modal header img').addEventListener('keydown',function(e){
       if (e.key === "Enter" ) {
-        closeModal(e);
+          closeModal(e);
       };
     })
 
-    // annule la fonction par défaut du bouton d'envoi
-    document.querySelector('form').addEventListener('submit', (e) => {e.preventDefault();})
-
-  // selectionne la modale
-  const selectModal = document.querySelector('.contact_modal');
-
-  //selectionne "X" 
-  const closeModale = document.querySelector('.modal header img');
-
-  //selectionne LABEL et INPUT
-const firstName = document.querySelector('label');
-const inputFirst = document.querySelector('#first');
-const lastName = document.querySelector('label');
-const inputLast = document.querySelector('#name');
-const emailLabel = document.querySelector('label');
-const emailInput = document.querySelector('#email');
-const yourMessage = document.querySelector('#message');
-
-//selectionne le bouton "envoyez"
-const buttonSend = document.querySelector('#send');
-
-//selectionne tous les elements focusables
-const allFocusableElements = `${closeModale},${firstName},${inputFirst},
-${lastName},${inputLast},${emailLabel},${emailInput},${yourMessage}, ${buttonSend}`
-
-//premier élement focusable
-const firstFocusableElememt = closeModale;
-
-//contenu de tous
-const focusableContent = allFocusableElements;
-
-//dernier élement focusable
-const lastFocusableElement = buttonSend;
-
-
-// header du formulaire
-/*const header = document.querySelector(".modal header");
-const {name} = this.filterPhotographer();
-const namePhotograph = document.createElement('span');
-header.appendChild(namePhotograph);
-namePhotograph.textContent = `${name}`;
-namePhotograph.setAttribute("class","namephotograph");*/
 
 //vérification prenom
 function Validfirst(inputprenom){

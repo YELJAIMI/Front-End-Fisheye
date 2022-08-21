@@ -49,7 +49,10 @@ async function init() {
     console.log(media);
     //début header photographe
     const mainphotographer = document.querySelector('.photograph-header');
+    const imglogo = document.getElementById('imglogo');
+    imglogo.setAttribute('aria-label', 'lien vers la page d\'acceuil');
     const photographerTitle = document.createElement('h1');
+    photographerTitle.setAttribute("id", 'namephotographer');
     const country = document.createElement('h3');
     //const city = document.createElement('h4');
     const tagline = document.createElement('p');
@@ -62,7 +65,7 @@ async function init() {
     const profil = document.createElement('img');
     profil.setAttribute('src',"/assets/photographers/"+photographer.portrait);
     profil.setAttribute('class',"profil");
-    profil.setAttribute('alt', photographerTitle);
+    profil.setAttribute('alt', photographerTitle.outerHTML);
     country.setAttribute("class", "country");
     tagline.setAttribute("class", "tag");
     //mainphotographer.appendChild(profil);
@@ -109,6 +112,7 @@ export function displayMedia(media){
         const icone = document.createElement('i');
         const medialikes = document.createElement('span');
         icone.setAttribute('class','fas fa-heart');
+        icone.setAttribute('aria-lebel', 'likes');
         medialikes.setAttribute('class', 'numberlikes');
         mediaTitle.innerText=media[i].title;
         medialikes.innerText=media[i].likes;

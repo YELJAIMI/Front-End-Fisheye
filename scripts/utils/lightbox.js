@@ -36,7 +36,7 @@ export function initlightbox(){
 
         const lightboxNext = document.querySelector('.lightbox__next');
         lightboxNext.addEventListener('click', function(){
-
+          
             if(index<links.length-1){
                 index+=1;
             }else{
@@ -62,9 +62,18 @@ export function initlightbox(){
             lightboxContainer.appendChild(clonelink(newlink));
         })
 
+        
+    /*// ferme la lightbox en pressant ENTER quand "X" sélectionner
+    lightboxClose.addEventListener("keydown",function(e) {
+        if (e.key === "Enter") {
+        lightbox.removeChild(lightbox.firstChild);
+        lightbox.style.display = "block";
+        }
+    })*/
+
 
         
-   /*//function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
+   //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
     lightboxPrev.addEventListener('keydown', function(e) {
         if (e.key === "Enter") {
             lightboxPrev();
@@ -79,10 +88,11 @@ export function initlightbox(){
     })
 
     // function qui fait défiler les photos au click du bouton NEXT
-    lightboxNext.addEventListener('click', (e) => {
+    lightboxNext.addEventListener('click', function(e) {
         e.preventDefault();
           lightboxNext();
     })
+
     //function qui fait défiler les photos en appuyant sur le bouton ENTER quand NEXT sélectionner
     lightboxNext.addEventListener('keydown', function(e) {
         if (e.key === "Enter") {
@@ -95,9 +105,46 @@ export function initlightbox(){
         if (e.key === "ArrowRight") {
           lightboxNext();
         }
-    })*/
+    })
 
-    }))
+// selectionne l'image de la lightbox
+const focusImg = document.getElementsByClassName('image-full-screen');
+//selectionne la video de la lightbox
+const focusVideo = document.getElementsByClassName('container');
+//selectionne tous les éléments focusables
+ const focusableElements = `${lightboxClose},${lightboxNext},${focusImg},${focusVideo},${lightboxPrev},`;
+ //selectionne la lightbox
+ const selectLightbox = document.querySelector('.lightbox');
+//premier éléments focusable
+ const firstFocusableElememt = lightboxPrev;
+ //contenu de tous
+ const focusableElement = lightboxNext;
+ //dernier élément focusable
+ const lastFocusableElement = lightboxClose;
+
+ document.addEventListener('keydown', function(e) {
+    let isTabPressed = e.key === 'Tab';
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (e.shiftKey) { //les touches shift + tab (combinaison)
+        if (document.activeElement === firstFocusableElememt) {
+            firstFocusableElememt.focus();
+            lastFocusableElement.focus();
+            focusableElement.focus();
+            e.preventDefault();
+        }
+      } else { // la touche tabulation appuyer
+        if (document.activeElement === lastFocusableElement) { 
+          firstFocusableElememt.focus(); 
+          e.preventDefault();
+        }
+      }
+    }); 
+    //firstFocusableElememt.focus(); 
+
+}))
 
 
     //fermeture de la lightbox
@@ -106,6 +153,7 @@ export function initlightbox(){
         lightbox.removeChild(lightbox.firstChild);
         //lightbox.appendChild(lightboxClose);
         lightbox.style.display = "none";
+        initlightbox();
     })
 }
 

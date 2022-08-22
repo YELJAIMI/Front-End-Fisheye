@@ -78,6 +78,29 @@ function closeModal() {
       };
     })
 
+  //dernier élement focusable
+    const lastFocusableElement = buttonSend;
+
+    document.addEventListener('keydown', function(e) {
+      let isTabPressed = e.key === 'Tab';
+      if (!isTabPressed) {
+        return;
+      }
+    
+      if (e.shiftKey) { 
+        if (document.activeElement === firstFocusableElememt) {
+          lastFocusableElement.focus(); 
+          e.preventDefault();
+        }
+      } else { // if tab key is pressed
+        if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+          firstFocusableElememt.focus(); // add focus for the first focusable element
+          e.preventDefault();
+        }
+      }
+    });
+
+    
 //vérification prenom
 function Validfirst(inputprenom){
   const regexprenom = /^[a-zA-Z \-]+$/;

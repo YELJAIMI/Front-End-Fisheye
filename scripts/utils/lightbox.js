@@ -76,34 +76,34 @@ export function initlightbox(){
    //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
     lightboxPrev.addEventListener('keydown', function(e) {
         if (e.key === "Enter") {
-            lightboxPrev();
+            lightboxPrev;
         }
     })
     
     // fait défiler les photos avec le bouton du clavier "<--"
     window.addEventListener('keydown', function (e) {
         if (e.key === "ArrowLeft") {
-           lightboxPrev();
+           lightboxPrev;
         }
     })
 
     // function qui fait défiler les photos au click du bouton NEXT
     lightboxNext.addEventListener('click', function(e) {
         e.preventDefault();
-          lightboxNext();
+          lightboxNext;
     })
 
     //function qui fait défiler les photos en appuyant sur le bouton ENTER quand NEXT sélectionner
     lightboxNext.addEventListener('keydown', function(e) {
         if (e.key === "Enter") {
-          lightboxNext();
+          lightboxNext;
         }
     })
     
     // fait défiler les photos avec le bouton du clavier "-->"
     window.addEventListener('keydown', function (e) {
         if (e.key === "ArrowRight") {
-          lightboxNext();
+          lightboxNext;
         }
     })
 
@@ -130,14 +130,17 @@ const focusVideo = document.getElementsByClassName('container');
 
     if (e.shiftKey) { //les touches shift + tab (combinaison)
         if (document.activeElement === firstFocusableElememt) {
-            firstFocusableElememt.focus();
+            //firstFocusableElememt.focus()
             lastFocusableElement.focus();
             focusableElement.focus();
+            selectLightbox.focus();
             e.preventDefault();
         }
       } else { // la touche tabulation appuyer
         if (document.activeElement === lastFocusableElement) { 
           firstFocusableElememt.focus(); 
+          focusableElements.focus();
+          //focusImg.focus();
           e.preventDefault();
         }
       }

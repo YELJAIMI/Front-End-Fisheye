@@ -78,7 +78,6 @@ function closeModal() {
       };
     })
 
-
 //vérification prenom
 function Validfirst(inputprenom){
   const regexprenom = /^[a-zA-Z \-]+$/;

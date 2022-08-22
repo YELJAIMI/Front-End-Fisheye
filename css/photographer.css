@@ -290,7 +290,7 @@ form input {
 
 .lightbox__container img{
     max-width: 100%;
-    height: 100%;
+    height: 600px;
     animation: lightboxIn .5s;
 
 }

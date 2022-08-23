@@ -74,12 +74,12 @@ function closeModal() {
   //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
     document.querySelector('.modal header img').addEventListener('keydown',function(e){
       if (e.key === "Enter" ) {
-          closeModal(e);
+          closeModale(e);
       };
     })
 
   //dernier élement focusable
-    const lastFocusableElement = buttonSend;
+    const lastFocusableElement = send;
 
     document.addEventListener('keydown', function(e) {
       let isTabPressed = e.key === 'Tab';
@@ -92,18 +92,18 @@ function closeModal() {
           lastFocusableElement.focus(); 
           e.preventDefault();
         }
-      } else { // if tab key is pressed
-        if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
-          firstFocusableElememt.focus(); // add focus for the first focusable element
+      } else { // si tabulation est appuyer
+        if (document.activeElement === lastFocusableElement) { 
+          firstFocusableElememt.focus(); 
           e.preventDefault();
         }
       }
     });
 
-    
+
 //vérification prenom
 function Validfirst(inputprenom){
-  const regexprenom = /^[a-zA-Z \-]+$/;
+  const regexprenom = /^([a-zA-Z \-]\s)+$/;
     console.log(inputprenom);
     if(inputprenom.length>2 && regexprenom.test(inputprenom)){
       formData[0].setAttribute("data-error-visible", "false");

@@ -63,22 +63,32 @@ export function initlightbox(){
         })
 
         
-    /*// ferme la lightbox en pressant ENTER quand "X" sélectionner
-    lightboxClose.addEventListener("keydown",function(e) {
-        if (e.key === "Enter") {
-        lightbox.removeChild(lightbox.firstChild);
-        lightbox.style.display = "block";
-        }
-    })*/
+        //fermeture de la lightbox
+            const lightboxClose = document.querySelector(".lightbox__close");
+                lightboxClose.addEventListener('click', function(){
+                lightbox.removeChild(lightbox.firstChild);
+                //lightbox.appendChild(lightboxClose);
+                lightbox.style.display = "none";
+                initlightbox();
+            })
+
+        // Ferme la lighbox avec boutton "Escape"
+                window.addEventListener('keydown', function (e) {
+                    if (e.key === "Escape" || e.key === "Esc") {
+                        lightbox.removeChild(lightbox.firstChild);
+                        lightbox.style.display = "none"; 
+                        initlightbox();  
+                    };
+                    })
 
 
     /*// function qui fait défiler les photos au click du bouton PREV
-    lightboxPrev.addEventListener('click', (e) => {
+    lightboxPrev.addEventListener('click', function (e) {
         e.preventDefault();
         lightboxPrev;
     });
-
-   //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
+    
+    //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
     lightboxPrev.addEventListener('keydown', function(e) {
         if (e.key === "Enter") {
             lightboxPrev;
@@ -110,18 +120,18 @@ export function initlightbox(){
         if (e.key === "ArrowRight") {
           lightboxNext;
         }
-    })*/
+    })
 
 // selectionne l'image de la lightbox
-const focusImg = document.getElementsByClassName('.lightboxContainer');
+const images = document.getElementsByClassName('lightboxContainer');
 //selectionne la video de la lightbox
 const focusVideo = document.getElementsByClassName('container');
 //selectionne tous les éléments focusables
- const focusableElements = `${lightboxClose},${lightboxNext},${focusImg},${focusVideo},${lightboxPrev},`;
+ const focusableElements = `${lightboxClose},${lightboxNext},${images},${focusVideo},${lightboxPrev},`;
 //selectionne la lightbox
  const selectLightbox = document.querySelector('.lightbox');
 //premier éléments focusable
- const firstFocusableElememt = lightboxPrev;
+ const firstFocusableElememt = lightboxNext;
  //contenu de tous
  const focusableElement = focusableElements;
  //dernier élément focusable
@@ -135,34 +145,24 @@ const focusVideo = document.getElementsByClassName('container');
 
     if (e.shiftKey) { //les touches shift + tab (combinaison)
         if (document.activeElement === firstFocusableElememt) {
-            //firstFocusableElememt.focus()
+            firstFocusableElememt.focus();
             lastFocusableElement.focus();
-            focusableElement.focus();
-            selectLightbox.focus();
+            //selectLightbox.focus();
             e.preventDefault();
         }
       } else { // la touche tabulation appuyer
         if (document.activeElement === lastFocusableElement) { 
           firstFocusableElememt.focus(); 
           //focusableElements.focus();
-          //focusImg.focus();
+          //images.focus();
           e.preventDefault();
         }
       }
     }); 
-    firstFocusableElememt.focus();
+    firstFocusableElememt.focus();*/
 
 }))
 
-
-    //fermeture de la lightbox
-    const lightboxClose = document.querySelector(".lightbox__close");
-    lightboxClose.addEventListener('click', function(){
-        lightbox.removeChild(lightbox.firstChild);
-        //lightbox.appendChild(lightboxClose);
-        lightbox.style.display = "none";
-        initlightbox();
-    })
 }
 
 function buildDOM(){

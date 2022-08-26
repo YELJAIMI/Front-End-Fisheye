@@ -119,8 +119,8 @@ body {
 .media .fas{
     display: flex;
     justify-content: end;
-    margin-top: -2rem;
-    margin-right: -6.3rem;
+    margin-top: -1rem;
+    margin-right: -5.3rem;
     color: #911C1C;
 }
 
@@ -138,7 +138,7 @@ body {
     display: flex;
     justify-content: end;
     margin-top: -1rem;
-    margin-right: -5rem;
+    margin-right: -4rem;
     line-height: 16px;
     color: #901C1C;
 }

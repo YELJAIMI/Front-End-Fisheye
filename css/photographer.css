@@ -118,14 +118,14 @@ body {
 
 .media .fas{
     display: flex;
-    justify-content: flex-end;
-    margin-top: -1rem;
-    margin-right: -5.3rem;
+    justify-content: end;
+    margin-top: -2rem;
+    margin-right: -6.3rem;
     color: #911C1C;
 }
 
 #main-media {
-    padding: 4rem 2rem 2rem;
+    padding-top: 4rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /*justify-items: center;*/
@@ -136,9 +136,9 @@ body {
 
 #main-media span{
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
     margin-top: -1rem;
-    margin-right: -4.2rem;
+    margin-right: -5rem;
     line-height: 16px;
     color: #901C1C;
 }

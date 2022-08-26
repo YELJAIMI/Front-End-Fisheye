@@ -251,7 +251,7 @@ form input {
 .lightbox__next, 
 .lightbox__prev{
     border: none;
-    background: url(/assets/icons/arrows.svg) center center / 100% no-repeat;
+    background: url(/Front-End-Fisheye/assets/icons/arrows.svg) center center / 100% no-repeat;
     width: 60px;
     height: 52px;
     position: fixed;
@@ -307,7 +307,7 @@ form input {
     width: 30p;
     height: 30px;
     opacity: .5;
-    background:url(/assets/icons/loader.svg) center center no-repeat;
+    background:url(/Front-End-Fisheye/assets/icons/loader.svg) center center no-repeat;
 }
 @keyframes lightboxIn{
     from{opacity: 0;}

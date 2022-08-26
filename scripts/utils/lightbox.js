@@ -185,7 +185,7 @@ function buildDOM(){
     dom.innerHTML = `
     <button class="lightbox__close"></button>
     <button class="lightbox__next"></button>
-    <div class="lightbox__container"></div>
-    <button class="lightbox__prev"></button>`
+    <div class="lightbox__container"></div> 
+    <button class="lightbox__prev"></button>` 
   lightbox.appendChild(dom);
 }

@@ -1,5 +1,6 @@
 export function initlightbox(){
 
+    //const lienimage = document.querySelectorAll('.lienimg');
     const links = document.querySelectorAll('.containerImg');
     console.log(links)
     buildDOM();
@@ -62,7 +63,6 @@ export function initlightbox(){
             lightboxContainer.appendChild(clonelink(newlink));
         })
 
-        
         //fermeture de la lightbox
             const lightboxClose = document.querySelector(".lightbox__close");
                 lightboxClose.addEventListener('click', function(){
@@ -72,58 +72,70 @@ export function initlightbox(){
                 initlightbox();
             })
 
-        // Ferme la lighbox avec boutton "Escape"
-                window.addEventListener('keydown', function (e) {
-                    if (e.key === "Escape" || e.key === "Esc") {
+                    // Ferme la lighbox avec boutton "Escape"
+                        window.addEventListener('keydown', function (e) {
+                        if (e.key === "Escape" || e.key === "Esc") {
                         lightbox.removeChild(lightbox.firstChild);
                         lightbox.style.display = "none"; 
                         initlightbox();  
                     };
-                    })
+                    });
+
+                    
+                    /*// ouvre la lightbox avec touche "ENTER"
+                        links.addEventListener('keydown', function(e) {
+                        if (e.key === "Enter") {
+                            lightbox.add(lienimage);
+                            //lightbox.style.display = "none";
+                            initlightbox();
+                        }
+                    });*/
 
 
-    /*// function qui fait défiler les photos au click du bouton PREV
-    lightboxPrev.addEventListener('click', function (e) {
-        e.preventDefault();
-        lightboxPrev;
-    });
+ 
+        /*// function qui fait défiler les photos au click du bouton PREV
+                lightboxPrev.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    lightboxPrev;
+                });
+                
+        //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
+                lightboxPrev.addEventListener('keydown', function(e) {
+                    if (e.key === "Enter") {
+                        lightboxPrev;
+                    }
+                })
+        // fait défiler les photos avec le bouton du clavier "<--"
+                window.addEventListener('keydown', function (e) {
+                    if (e.key === "ArrowLeft") {
+                       lightboxPrev;
+                    }
+        
+                })
     
-    //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
-    lightboxPrev.addEventListener('keydown', function(e) {
-        if (e.key === "Enter") {
-            lightboxPrev;
-        }
-    })
-    
-    // fait défiler les photos avec le bouton du clavier "<--"
-    window.addEventListener('keydown', function (e) {
-        if (e.key === "ArrowLeft") {
-           lightboxPrev;
-        }
-    })
 
-    // function qui fait défiler les photos au click du bouton NEXT
-    lightboxNext.addEventListener('click', function(e) {
-        e.preventDefault();
-          lightboxNext;
-    })
+        // function qui fait défiler les photos au click du bouton NEXT
+                lightboxNext.addEventListener('click', function(e) {
+                e.preventDefault();
+                lightboxNext;
+            })
 
     //function qui fait défiler les photos en appuyant sur le bouton ENTER quand NEXT sélectionner
-    lightboxNext.addEventListener('keydown', function(e) {
-        if (e.key === "Enter") {
-          lightboxNext;
-        }
-    })
+                lightboxNext.addEventListener('keydown', function(e) {
+                if (e.key === "Enter") {
+                lightboxNext;
+            }
+        })
     
     // fait défiler les photos avec le bouton du clavier "-->"
-    window.addEventListener('keydown', function (e) {
-        if (e.key === "ArrowRight") {
-          lightboxNext;
-        }
-    })
+                window.addEventListener('keydown', function (e) {
+                if (e.key === "ArrowRight") {
+                lightboxNext;
+            }
+        })
 
 // selectionne l'image de la lightbox
-const images = document.getElementsByClassName('lightboxContainer');
+const images = document.getElementsByClassName('ContainerImg');
 //selectionne la video de la lightbox
 const focusVideo = document.getElementsByClassName('container');
 //selectionne tous les éléments focusables

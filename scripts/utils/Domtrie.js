@@ -1,5 +1,5 @@
 export{sortMedia}
-import { displayMedia } from "../pages/photographer.js";
+import { displayMedia } from "/Front-End-Fisheye/scripts/pages/photographer.js";
 
 
 const body = document.querySelector('body');

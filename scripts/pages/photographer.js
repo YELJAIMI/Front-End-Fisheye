@@ -1,5 +1,5 @@
-import {sortMedia} from '../utils/Domtrie.js';
-import {initlightbox} from '../utils/lightbox.js';
+import {sortMedia} from '/Front-End-Fisheye/scripts/utils/Domtrie.js';
+import {initlightbox} from '/Front-End-Fisheye/scripts/utils/lightbox.js';
 
 
 const queryString = window.location.search;
@@ -8,7 +8,7 @@ const idphotographe = urlParams.get('idphotographe');
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
     let datas = null;
-    await fetch('../../data/photographers.json')
+    await fetch('/Front-End-Fisheye/data/photographers.json')
     .then(function(data) {
     console.log(data)
     return data.json();
@@ -63,7 +63,7 @@ async function init() {
     //city.innerHTML = photographer.city;
     //mainphotographer.appendChild(photographerTitle)
     const profil = document.createElement('img');
-    profil.setAttribute('src',"/assets/photographers/"+photographer.portrait);
+    profil.setAttribute('src',"/Front-End-Fisheye/assets/photographers/"+photographer.portrait);
     profil.setAttribute('class',"profil");
     profil.setAttribute('alt', photographerTitle.outerHTML);
     country.setAttribute("class", "country");
@@ -95,13 +95,13 @@ export function displayMedia(media){
         mediaImg = document.createElement('img');
         lienImg.setAttribute("href", media[i].image);
         mediaImg.setAttribute("class", "containerImg");
-        mediaImg.setAttribute('src',"./assets/images/" +media[i].image+"");
+        mediaImg.setAttribute('src',"/Front-End-Fisheye/assets/images/" +media[i].image+"");
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
         }else{
             lienImg.setAttribute("href", media[i].video);
             mediaImg = document.createElement('video');
-            mediaImg.setAttribute('src', "./assets/images/"  +media[i].video+"");
+            mediaImg.setAttribute('src', "/Front-End-Fisheye/assets/images/"  +media[i].video+"");
             mediaImg.setAttribute('class', 'containerImg');
             mediaImg.setAttribute('alt',media[i].title);
             mediaImg.setAttribute('controls','controls');

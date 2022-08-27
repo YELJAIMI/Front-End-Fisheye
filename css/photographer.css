@@ -290,13 +290,14 @@ form input {
 
 
 .lightbox__container img{
+    max-width: 100%;
     width: 1050px;
     height: 700px;
     animation: lightboxIn .5s;
     border-radius: 5px;
     object-fit: cover;
-    margin-top: 25em;
-    margin-bottom: 20.5em;
+    margin-top: 20em;
+    margin-bottom: 19.5em;
 
 }
 .lightbox__container{

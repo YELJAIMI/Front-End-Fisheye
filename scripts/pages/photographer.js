@@ -65,7 +65,7 @@ async function init() {
     const profil = document.createElement('img');
     profil.setAttribute('src',"/Front-End-Fisheye/assets/photographers/"+photographer.portrait);
     profil.setAttribute('class',"profil");
-    profil.setAttribute('alt', photographerTitle.outerHTML);
+    profil.setAttribute('aria-label', photographerTitle.outerHTML);
     country.setAttribute("class", "country");
     tagline.setAttribute("class", "tag");
     //mainphotographer.appendChild(profil);

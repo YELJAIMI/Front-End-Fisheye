@@ -291,10 +291,12 @@ form input {
 
 .lightbox__container img{
     width: 1050px;
-    height: 900px;
+    height: 700px;
     animation: lightboxIn .5s;
     border-radius: 5px;
     object-fit: cover;
+    margin-top: 26em;
+    margin-bottom: 20.5em;
 
 }
 .lightbox__container{

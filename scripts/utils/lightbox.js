@@ -36,6 +36,8 @@ export function initlightbox(){
         console.log(index);
 
         const lightboxNext = document.querySelector('.lightbox__next');
+        lightboxNext.setAttribute('aria-label', 'lightboxnext');
+        lightboxNext.setAttribute('role', 'button');
         lightboxNext.addEventListener('click', function(){
           
             if(index<links.length-1){

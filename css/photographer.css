@@ -292,7 +292,7 @@ form input {
 .lightbox__container img{
     max-width: 100%;
     width: 1050px;
-    height: 700px;
+    height: 600px;
     animation: lightboxIn .5s;
     border-radius: 5px;
     object-fit: cover;

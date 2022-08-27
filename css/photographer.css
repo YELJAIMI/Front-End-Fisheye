@@ -18,9 +18,10 @@ body {
 .photograph-header {
     display: flex;
     background-color: #F0ECEC;
-    height: 300px;
+    height: 317px;
+    width: 1250px;
     justify-content: space-between;
-    margin: 2em;
+    margin: 2em auto;
 }
 
 .media{

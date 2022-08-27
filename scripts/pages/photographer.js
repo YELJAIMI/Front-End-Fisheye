@@ -49,6 +49,7 @@ async function init() {
     console.log(media);
     //début header photographe
     const mainphotographer = document.querySelector('.photograph-header');
+    mainphotographer.setAttribute('aria-label', 'information du photographe');
     const imglogo = document.getElementById('imglogo');
     imglogo.setAttribute('aria-label', 'lien vers la page d\'acceuil');
     const photographerTitle = document.createElement('h1');
@@ -65,7 +66,7 @@ async function init() {
     const profil = document.createElement('img');
     profil.setAttribute('src',"/Front-End-Fisheye/assets/photographers/"+photographer.portrait);
     profil.setAttribute('class',"profil");
-    profil.setAttribute('aria-label', photographerTitle.outerHTML);
+    profil.setAttribute('alt', photographerTitle.outerHTML);
     country.setAttribute("class", "country");
     tagline.setAttribute("class", "tag");
     //mainphotographer.appendChild(profil);

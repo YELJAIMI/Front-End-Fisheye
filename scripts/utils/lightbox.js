@@ -1,6 +1,5 @@
 export function initlightbox(){
 
-    //const lienimage = document.querySelectorAll('.lienimg');
     const links = document.querySelectorAll('.containerImg');
     console.log(links)
     buildDOM();
@@ -73,13 +72,24 @@ export function initlightbox(){
             })
 
         // Ferme la lighbox avec boutton "Escape"
-                window.addEventListener('keydown', function (e) {
+            window.addEventListener('keydown', function (e) {
                 if (e.key === "Escape" || e.key === "Esc") {
                 lightbox.removeChild(lightbox.firstChild);
                 lightbox.style.display = "none"; 
                 initlightbox();  
                 };
-                });
+            });
+
+                let i = 0;
+                let lienimage = document.querySelectorAll('.lienimg');
+                //const lienimage = document.querySelectorAll('.lienimg');
+                
+                let allMedia = [];
+                
+            
+                for (let href of lienimage ) {
+                   allMedia.push(href);
+                }
 
 
 // selectionne l'image de la lightbox
@@ -122,14 +132,14 @@ const focusVideo = document.getElementsByClassName('container');
     }); 
     firstFocusableElememt.focus();
                     
-                    /*// ouvre la lightbox avec touche "ENTER"
+                    // ouvre la lightbox avec touche "ENTER"
                         links.addEventListener('keydown', function(e) {
                         if (e.key === "Enter") {
                             lightbox.add(lienimage);
-                            //lightbox.style.display = "none";
+                            lightbox.style.display = "none";
                             initlightbox();
                         }
-                    });*/
+                    });
 
 
  

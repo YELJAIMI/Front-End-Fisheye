@@ -190,7 +190,7 @@ form {
     align-items: flex-start;
 }
 
-form #message {
+form #votre_message {
     width: 100%;
     font-size: 18px;
 }

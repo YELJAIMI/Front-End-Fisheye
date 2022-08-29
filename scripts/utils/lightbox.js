@@ -72,15 +72,55 @@ export function initlightbox(){
                 initlightbox();
             })
 
-                    // Ferme la lighbox avec boutton "Escape"
-                        window.addEventListener('keydown', function (e) {
-                        if (e.key === "Escape" || e.key === "Esc") {
-                        lightbox.removeChild(lightbox.firstChild);
-                        lightbox.style.display = "none"; 
-                        initlightbox();  
-                    };
-                    });
+        // Ferme la lighbox avec boutton "Escape"
+                window.addEventListener('keydown', function (e) {
+                if (e.key === "Escape" || e.key === "Esc") {
+                lightbox.removeChild(lightbox.firstChild);
+                lightbox.style.display = "none"; 
+                initlightbox();  
+                };
+                });
 
+
+// selectionne l'image de la lightbox
+const images = document.getElementsByClassName('image-full-screen');
+//selectionne la video de la lightbox
+const focusVideo = document.getElementsByClassName('container');
+//selectionne tous les éléments focusables
+ const focusableElements = `${lightboxClose},${lightboxNext},${images},${focusVideo},${lightboxPrev},`;
+//selectionne la lightbox
+ const selectLightbox = document.querySelector('.lightbox');
+//premier éléments focusable
+ const firstFocusableElememt = lightboxNext;
+ //contenu de tous
+ const focusableElement = focusableElements;
+ //dernier élément focusable
+ const lastFocusableElement = lightboxClose;
+
+ document.addEventListener('keydown', function(e) {
+    let isTabPressed = e.key === 'Tab';
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (e.shiftKey) { //les touches shift + tab (combinaison)
+        if (document.activeElement === firstFocusableElememt) {
+            firstFocusableElememt.focus();
+            lastFocusableElement.focus();
+            selectLightbox.focus();
+            //selectLightbox.focus();
+            e.preventDefault();
+        }
+      } else { // la touche tabulation appuyer
+        if (document.activeElement === lastFocusableElement) { 
+          firstFocusableElememt.focus(); 
+          //focusableElements.focus();
+          //images.focus();
+          e.preventDefault();
+        }
+      }
+    }); 
+    firstFocusableElememt.focus();
                     
                     /*// ouvre la lightbox avec touche "ENTER"
                         links.addEventListener('keydown', function(e) {
@@ -132,46 +172,7 @@ export function initlightbox(){
                 if (e.key === "ArrowRight") {
                 lightboxNext;
             }
-        })
-
-// selectionne l'image de la lightbox
-const images = document.getElementsByClassName('ContainerImg');
-//selectionne la video de la lightbox
-const focusVideo = document.getElementsByClassName('container');
-//selectionne tous les éléments focusables
- const focusableElements = `${lightboxClose},${lightboxNext},${images},${focusVideo},${lightboxPrev},`;
-//selectionne la lightbox
- const selectLightbox = document.querySelector('.lightbox');
-//premier éléments focusable
- const firstFocusableElememt = lightboxNext;
- //contenu de tous
- const focusableElement = focusableElements;
- //dernier élément focusable
- const lastFocusableElement = lightboxClose;
-
- document.addEventListener('keydown', function(e) {
-    let isTabPressed = e.key === 'Tab';
-    if (!isTabPressed) {
-      return;
-    }
-
-    if (e.shiftKey) { //les touches shift + tab (combinaison)
-        if (document.activeElement === firstFocusableElememt) {
-            firstFocusableElememt.focus();
-            lastFocusableElement.focus();
-            //selectLightbox.focus();
-            e.preventDefault();
-        }
-      } else { // la touche tabulation appuyer
-        if (document.activeElement === lastFocusableElement) { 
-          firstFocusableElememt.focus(); 
-          //focusableElements.focus();
-          //images.focus();
-          e.preventDefault();
-        }
-      }
-    }); 
-    firstFocusableElememt.focus();*/
+        })*/
 
 }))
 

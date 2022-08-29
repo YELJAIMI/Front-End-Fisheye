@@ -117,7 +117,6 @@ const focusVideo = document.getElementsByClassName('container');
         if (document.activeElement === firstFocusableElememt) {
             firstFocusableElememt.focus();
             lastFocusableElement.focus();
-            selectLightbox.focus();
             //selectLightbox.focus();
             e.preventDefault();
         }
@@ -133,7 +132,7 @@ const focusVideo = document.getElementsByClassName('container');
     firstFocusableElememt.focus();
                     
                     // ouvre la lightbox avec touche "ENTER"
-                        links.addEventListener('keydown', function(e) {
+                        lightbox.addEventListener('keydown', function(e) {
                         if (e.key === "Enter") {
                             lightbox.add(lienimage);
                             lightbox.style.display = "none";

@@ -158,6 +158,7 @@ const focusVideo = document.getElementsByClassName('container');
                 window.addEventListener('keydown', function (e) {
                     if (e.key === "ArrowLeft") {
                        lightboxPrev;
+                       initlightbox;
                     }
         
                 })

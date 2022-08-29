@@ -134,7 +134,7 @@ const focusVideo = document.getElementsByClassName('container');
                     // ouvre la lightbox avec touche "ENTER"
                         lightbox.addEventListener('keydown', function(e) {
                         if (e.key === "Enter") {
-                            lightbox.add(lienimage);
+                            lightbox.remove(lienimage);
                             lightbox.style.display = "none";
                             initlightbox();
                         }
@@ -158,8 +158,8 @@ const focusVideo = document.getElementsByClassName('container');
                 window.addEventListener('keydown', function (e) {
                     if (e.key === "ArrowLeft") {
                        lightboxPrev;
-                       initlightbox;
                     }
+                    initlightbox;
         
                 })
     

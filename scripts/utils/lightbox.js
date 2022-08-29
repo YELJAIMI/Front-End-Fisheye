@@ -142,7 +142,7 @@ const focusVideo = document.getElementsByClassName('container');
 
 
  
-        /*// function qui fait défiler les photos au click du bouton PREV
+        // function qui fait défiler les photos au click du bouton PREV
                 lightboxPrev.addEventListener('click', function (e) {
                     e.preventDefault();
                     lightboxPrev;
@@ -163,7 +163,7 @@ const focusVideo = document.getElementsByClassName('container');
                 })
     
 
-        // function qui fait défiler les photos au click du bouton NEXT
+        /*// function qui fait défiler les photos au click du bouton NEXT
                 lightboxNext.addEventListener('click', function(e) {
                 e.preventDefault();
                 lightboxNext;

@@ -66,9 +66,10 @@ function closeModal() {
 
  const focusableElements = '${href}, ${inputfirst}, ${inputname}, ${inputemail}, ${texterea}, ${modalClose}, ${namephotograph},';
   // selectionne la modale
-    const modalClose = document.querySelector('#contact_modal');
-    const firstFocusableElement = modalClose.querySelectorAll(focusableElements);
-    const focusablecontent = modalClose.querySelectorAll(focusableElements);
+    const modale = document.querySelector('.modalClose');
+    const modal = document.querySelector('#contact_modal');
+    const firstFocusableElement = modale.querySelectorAll(focusableElements);
+    const focusablecontent = modal.querySelectorAll(focusableElements);
     const lastFocusableElement = focusablecontent[focusablecontent.length-1];
 
     document.addEventListener('keydown', function(e){

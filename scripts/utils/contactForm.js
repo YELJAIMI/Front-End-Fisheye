@@ -62,11 +62,46 @@ function closeModal() {
       if (e.key === "Escape" || e.key === "Esc") {
         closeModal(e);
       };
-    })
+    });
 
+    //selectionner la modal 
+    const modal = document.querySelector('#contact_modal');
+    //selectionner x de la modal 
+    const closeModal = document.querySelector('.modalClose');
+    //selectionner les elements focusable
+    const inputfirst = document.querySelector('#first');
+    const inputname = document.querySelector('#name');
+    const inputemail = document.querySelector('#email');
+    const textarea = document.querySelector('#votre_message');
+    const send = document.querySelector('#send');
+    //selectionner tous les elements
+    const focusableElements = `${closeModal}, ${inputfirst}, ${inputname}, ${inputemail}, ${textarea}, ${send}`;
+    const firstFocusableElememt = closeModale;
+    const focusablecontent = focusableElements;
+    const lastFocusableElement = send;
+
+    document.addEventListener('keydown', function(e) {
+      let isTabPressed = e.key === 'Tab';
+      if (!isTabPressed) {
+        return;
+      }
+
+      if (e.shiftKey) { 
+        if (document.activeElement === firstFocusableElememt) {
+          lastFocusableElement.focus(); 
+          e.preventDefault();
+        }
+      } else { 
+        if (document.activeElement === lastFocusableElement) { 
+          firstFocusableElememt.focus(); 
+          e.preventDefault();
+        }
+      }
+    });
+    
+    firstFocusableElememt.focus();
     /*const focusableElements = '${href}, ${inputfirst}, ${inputname}, ${inputemail}, ${texterea}, ${modalClose}, ${namephotograph},';
   // selectionne la modale
-    const modal = document.querySelector('#contact_modal');
     const modale = document.querySelector('.modalClose');
     const firstFocusableElements = closeModale.querySelectorAll(focusableElements);
     const focusablecontent = closeModale.querySelectorAll(focusableElements);
@@ -93,7 +128,7 @@ function closeModal() {
     });
     firstFocusableElement.focus();*/
 
-      //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
+      /*//ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
       document.querySelector('.modal header img').addEventListener('keydown',function(e){
         if (e.key === "Enter" ) {
             closeModal(e);
@@ -117,7 +152,7 @@ function closeModal() {
           e.preventDefault();
         }
       }
-    });
+    });*/
 
 
 //vérification prenom

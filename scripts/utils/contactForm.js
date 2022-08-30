@@ -57,19 +57,21 @@ function closeModal() {
   }
 
 
-  /*// selectionne la modale
-      //const selectModal = document.querySelector('#contact_modal');
-
-  //premier élement focusable
-      const firstFocusableElememt = modalClose;
-
-
   // ferme le formulaire avec boutton "ESC"
      window.addEventListener('keydown', function (e) {
       if (e.key === "Escape" || e.key === "Esc") {
         closeModal(e);
       };
     })
+
+    const focusableElements = '[href],inputfirst, inputname, inputemail, texterea, modalClose, namephotograph,';
+  // selectionne la modale
+      //const modale = document.querySelector('#contact_modal');
+
+  /*//premier élement focusable
+      const firstFocusableElememt = modalClose;
+
+
 
   //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
     document.querySelector('.modal header img').addEventListener('keydown',function(e){

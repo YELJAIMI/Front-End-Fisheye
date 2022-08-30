@@ -64,7 +64,7 @@ function closeModal() {
       };
     })
 
-    const focusableElements = '[href],inputfirst, inputname, inputemail, texterea, modalClose, namephotograph,';
+   /* const focusableElements = '[href],inputfirst, inputname, inputemail, texterea, modalClose, namephotograph,';
   // selectionne la modale
     const modal = document.querySelector('#contact_modal');
     const firstFocusableElement = modal.querySelectorAll(focusableElements);
@@ -90,7 +90,7 @@ function closeModal() {
         }
       }
     });
-    firstFocusableElement.focus();
+    firstFocusableElement.focus();*/
 
       //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
       document.querySelector('.modal header img').addEventListener('keydown',function(e){

@@ -64,7 +64,7 @@ function closeModal() {
       };
     })
 
-    const focusableElements = '${href}, ${inputfirst}, ${inputname}, ${inputemail}, ${texterea}, ${modalClose}, ${namephotograph},';
+    /*const focusableElements = '${href}, ${inputfirst}, ${inputname}, ${inputemail}, ${texterea}, ${modalClose}, ${namephotograph},';
   // selectionne la modale
     const modal = document.querySelector('#contact_modal');
     const modale = document.querySelector('.modalClose');
@@ -91,10 +91,10 @@ function closeModal() {
         }
       }
     });
-    firstFocusableElement.focus();
+    firstFocusableElement.focus();*/
 
-      /*//ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
-      document.querySelector('.modalClose').addEventListener('keydown',function(e){
+      //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
+      document.querySelector('.modal header img').addEventListener('keydown',function(e){
         if (e.key === "Enter" ) {
             closeModal(e);
         };
@@ -117,7 +117,7 @@ function closeModal() {
           e.preventDefault();
         }
       }
-    });*/
+    });
 
 
 //vérification prenom

@@ -64,11 +64,11 @@ function closeModal() {
       };
     })
 
- /*const focusableElements = '${href}, ${inputfirst}, ${inputname}, ${inputemail}, ${texterea}, ${modalClose}, ${namephotograph},';
-  */// selectionne la modale
-    const modale = document.querySelector('.modalClose');
+    const focusableElements = '${href}, ${inputfirst}, ${inputname}, ${inputemail}, ${texterea}, ${modalClose}, ${namephotograph},';
+  // selectionne la modale
     const modal = document.querySelector('#contact_modal');
-    const firstFocusableElement = closeModale.querySelectorAll(focusableElements);
+    const modale = document.querySelector('.modalClose');
+    const firstFocusableElements = closeModale.querySelectorAll(focusableElements);
     const focusablecontent = closeModale.querySelectorAll(focusableElements);
     const lastFocusableElement = focusablecontent[focusablecontent.length-1];
 

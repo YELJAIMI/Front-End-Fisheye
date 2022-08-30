@@ -72,7 +72,7 @@ function closeModal() {
     const lastFocusableElement = focusablecontent[focusablecontent.length-1];
 
     document.addEventListener('keydown', function(e){
-      let isTabPressed = e.key === 'Tab' || e.keyboardEvent.keycode === 9;
+      let isTabPressed = e.key === 'Tab' || e.key === 'Tab';
 
       if(!isTabPressed){
         return;
@@ -93,12 +93,12 @@ function closeModal() {
     firstFocusableElement.focus();*/
 
       //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
-      document.querySelector('.modal header img').addEventListener('keydown',function(e){
+      document.querySelector('.modalClose').addEventListener('keydown',function(e){
         if (e.key === "Enter" ) {
             modalClose(e);
         };
       })
-  /*//premier élement focusable
+  //premier élement focusable
       const firstFocusableElememt = modalClose;
 
   //dernier élement focusable
@@ -121,7 +121,7 @@ function closeModal() {
           e.preventDefault();
         }
       }
-    });*/
+    });
 
 
 //vérification prenom

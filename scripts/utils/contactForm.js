@@ -95,7 +95,7 @@ function closeModal() {
       //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
       document.querySelector('.modalClose').addEventListener('keydown',function(e){
         if (e.key === "Enter" ) {
-            modalClose(e);
+            closeModal(e);
         };
       })
 

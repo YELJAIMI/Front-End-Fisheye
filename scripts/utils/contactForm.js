@@ -75,8 +75,8 @@ function closeModal() {
     const textarea = document.querySelector('#votre_message');
     const send = document.querySelector('#send');
     //selectionner tous les elements
-    const focusableElements = `${modal} ${inputfirst}, ${inputname}, ${inputemail}, ${textarea}, ${send}`;
-    const firstFocusableElememt = modal;
+    const focusableElements = `${closeModale} ${inputfirst}, ${inputname}, ${inputemail}, ${textarea}, ${send}`;
+    const firstFocusableElememt = closeModale;
     const focusablecontent = focusableElements;
     const lastFocusableElement = send;
 

@@ -58,10 +58,10 @@ function closeModal() {
 
 
   // selectionne la modale
-      const selectModal = document.querySelector('#contact_modal');
+      //const selectModal = document.querySelector('#contact_modal');
 
   //premier élement focusable
-      const firstFocusableElememt = closeModale;
+      const firstFocusableElememt = modalClose;
 
 
   // ferme le formulaire avec boutton "ESC"

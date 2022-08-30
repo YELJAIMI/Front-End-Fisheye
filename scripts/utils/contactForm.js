@@ -57,7 +57,7 @@ function closeModal() {
   }
 
 
-  // selectionne la modale
+  /*// selectionne la modale
       //const selectModal = document.querySelector('#contact_modal');
 
   //premier élement focusable
@@ -98,7 +98,7 @@ function closeModal() {
           e.preventDefault();
         }
       }
-    });
+    });*/
 
 
 //vérification prenom

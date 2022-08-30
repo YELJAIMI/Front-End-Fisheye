@@ -1,5 +1,5 @@
 
-  const closeModale = document.querySelector('.modal header img');
+  
   //selectionne "X" 
   //const closeModale = document.querySelector('.modalClose');
 //launch modal
@@ -64,6 +64,7 @@ function closeModal() {
       };
     });
 
+    const closeModale = document.querySelector('.modal header img');
     //selectionner la modal 
     const modal = document.querySelector('#contact_modal');
     //selectionner x de la modal 

@@ -64,7 +64,7 @@ function closeModal() {
       };
     })
 
- const focusableElements = '${href}, ${inputfirst}, ${inputn4ame}, ${inputemail}, ${texterea}, ${modalClose}, namephotograph,';
+ const focusableElements = '${href}, ${inputfirst}, ${inputname}, ${inputemail}, ${texterea}, ${modalClose}, ${namephotograph},';
   // selectionne la modale
     const modal = document.querySelector('#contact_modal');
     const firstFocusableElement = modal.querySelectorAll(focusableElements);

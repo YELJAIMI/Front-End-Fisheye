@@ -65,9 +65,9 @@ function closeModal() {
     });
 
     //selectionner la modal 
-    //const modal = document.querySelector('#contact_modal');
+    const modal = document.querySelector('#contact_modal');
     //selectionner x de la modal 
-    const closeModal = document.querySelector('.modalClose');
+    //const closeModal = document.querySelector('.modalClose');
     //selectionner les elements focusable
     const inputfirst = document.querySelector('#first');
     const inputname = document.querySelector('#name');
@@ -75,8 +75,8 @@ function closeModal() {
     const textarea = document.querySelector('#votre_message');
     const send = document.querySelector('#send');
     //selectionner tous les elements
-    const focusableElements = `${closeModale} ${inputfirst}, ${inputname}, ${inputemail}, ${textarea}, ${send}`;
-    const firstFocusableElememt = closeModale;
+    const focusableElements = `${inputfirst}, ${inputname}, ${inputemail}, ${textarea}, ${send}`;
+    const firstFocusableElememt = modal;
     const focusablecontent = focusableElements;
     const lastFocusableElement = send;
 

@@ -91,17 +91,15 @@ function closeModal() {
       }
     });
     firstFocusableElement.focus();
+
+      //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
+      document.querySelector('.modal header img').addEventListener('keydown',function(e){
+        if (e.key === "Enter" ) {
+            modalClose(e);
+        };
+      })
   /*//premier élement focusable
       const firstFocusableElememt = modalClose;
-
-
-
-  //ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
-    document.querySelector('.modal header img').addEventListener('keydown',function(e){
-      if (e.key === "Enter" ) {
-          closeModale(e);
-      };
-    })
 
   //dernier élement focusable
     const lastFocusableElement = send;

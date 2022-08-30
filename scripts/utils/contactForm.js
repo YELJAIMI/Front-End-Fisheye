@@ -66,8 +66,31 @@ function closeModal() {
 
     const focusableElements = '[href],inputfirst, inputname, inputemail, texterea, modalClose, namephotograph,';
   // selectionne la modale
-      //const modale = document.querySelector('#contact_modal');
+    const modal = document.querySelector('#contact_modal');
+    const focusableElement = modal.querySelectorAll(focusableElements);
+    const focusablecontent = modal.querySelectorAll(focusableElements);
+    const lastFocusableElement = focusablecontent[focusablecontent.length-1];
 
+    document.addEventListener('keydown', function(e){
+      let isTabPressed = e.key === 'Tab' || e.keyboardEvent.keycode === 9;
+
+      if(!isTabPressed){
+        return;
+      }
+
+      if(e.shiftKey){
+        if(document.activeElement === firstFocusableElement){
+          lastFocusableElement.focus();
+          e.preventDefault();
+        }
+      }else{
+        if(document.activeElement === lastFocusableElement){
+          firstFocusableElement.focus();
+          e.preventDefault();
+        }
+      }
+    });
+    firstFocusableElement.focus();
   /*//premier élement focusable
       const firstFocusableElememt = modalClose;
 

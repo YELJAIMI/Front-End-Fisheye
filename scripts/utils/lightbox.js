@@ -116,7 +116,7 @@ const focusVideo = document.getElementsByClassName('container');
     if (e.shiftKey) { //les touches shift + tab (combinaison)
         if (document.activeElement === firstFocusableElememt) {
             firstFocusableElememt.focus();
-            focusableElement.focus();
+            //focusableElement.focus();
             //selectLightbox.focus();
             e.preventDefault();
         }
@@ -132,7 +132,7 @@ const focusVideo = document.getElementsByClassName('container');
     firstFocusableElememt.focus();
                     
                     // ouvre la lightbox avec touche "ENTER"
-                        lightbox.addEventListener('keydown', function(e) {
+                        links.addEventListener('keydown', function(e) {
                         if (e.key === "Enter") {
                             lightbox.remove(lienimage);
                             lightbox.style.display = "none";

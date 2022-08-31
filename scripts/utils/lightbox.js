@@ -124,7 +124,7 @@ const focusVideo = document.getElementsByClassName('container');
         if (document.activeElement === lastFocusableElement) { 
           firstFocusableElememt.focus(); 
           //focusableElements.focus();
-          //lightboxContainer.focus();
+          lightboxContainer.focus();
           e.preventDefault();
         }
       }

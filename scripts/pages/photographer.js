@@ -58,6 +58,7 @@ async function init() {
     //const city = document.createElement('h4');
     const tagline = document.createElement('p');
     const button = document.getElementById('contact_button');
+    button.setAttribute('title', 'contactez-moi');
     photographerTitle.innerHTML = photographer.name;
     country.innerHTML = photographer.country+', '+photographer.city;
     tagline.innerHTML = photographer.tagline;

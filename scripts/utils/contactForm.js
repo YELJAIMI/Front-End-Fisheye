@@ -67,7 +67,7 @@ function closeModal() {
     //selectionner la modal 
     const modal = document.querySelector('#contact_modal');
     //selectionner x de la modal 
-    //const select = document.querySelector('.modalClose');
+    const select = document.querySelector('.modal header .modalClose');
     //selectionner les elements focusable
     const inputfirst = document.querySelector('#first');
     const inputname = document.querySelector('#name');

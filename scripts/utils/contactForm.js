@@ -100,60 +100,6 @@ function closeModal() {
     });
     
     firstFocusableElememt.focus();
-    /*const focusableElements = '${href}, ${inputfirst}, ${inputname}, ${inputemail}, ${texterea}, ${modalClose}, ${namephotograph},';
-  // selectionne la modale
-    const modale = document.querySelector('.modalClose');
-    const firstFocusableElements = closeModale.querySelectorAll(focusableElements);
-    const focusablecontent = closeModale.querySelectorAll(focusableElements);
-    const lastFocusableElement = focusablecontent[focusablecontent.length-1];
-
-    document.addEventListener('keydown', function(e){
-      let isTabPressed = e.key === 'Tab' || e.key === 'Tab';
-
-      if(!isTabPressed){
-        return;
-      }
-
-      if(e.shiftKey){
-        if(document.activeElement === firstFocusableElement){
-          lastFocusableElement.focus();
-          e.preventDefault();
-        }
-      }else{
-        if(document.activeElement === lastFocusableElement){
-          firstFocusableElement.focus();
-          e.preventDefault();
-        }
-      }
-    });
-    firstFocusableElement.focus();*/
-
-      /*//ferme le formulaire avec "ENTER " quand button close est selectionné avec TAB
-      document.querySelector('.modal header img').addEventListener('keydown',function(e){
-        if (e.key === "Enter" ) {
-            closeModal(e);
-        };
-      })
-
-    document.addEventListener('keydown', function(e) {
-      let isTabPressed = e.key === 'Tab';
-      if (!isTabPressed) {
-        return;
-      }
-    
-      if (e.shiftKey) { 
-        if (document.activeElement === firstFocusableElememt) {
-          lastFocusableElement.focus(); 
-          e.preventDefault();
-        }
-      } else { // si tabulation est appuyer
-        if (document.activeElement === lastFocusableElement) { 
-          firstFocusableElememt.focus(); 
-          e.preventDefault();
-        }
-      }
-    });*/
-
 
 //vérification prenom
 function Validfirst(inputprenom){

@@ -101,7 +101,7 @@ const focusVideo = document.getElementsByClassName('container');
 //selectionne la lightbox
  const selectLightbox = document.querySelector('.lightbox');
 //premier éléments focusable
- const firstFocusableElememt = lightboxNext;
+ const firstFocusableElememt = lightbox;
  //contenu de tous
  const focusableElement = focusableElements;
  //dernier élément focusable

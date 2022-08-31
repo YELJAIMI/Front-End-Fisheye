@@ -93,11 +93,11 @@ export function initlightbox(){
 
 
 // selectionne l'image de la lightbox
-const images = document.getElementsByClassName('image-full-screen');
+const modalImage = document.getElementsByClassName('image-full-screen');
 //selectionne la video de la lightbox
 const focusVideo = document.getElementsByClassName('container');
 //selectionne tous les éléments focusables
- const focusableElements = `${lightboxClose},${lightboxNext},${images},${focusVideo},${lightboxPrev},`;
+ const focusableElements = `${lightboxClose},${lightboxNext},${modalImage},${focusVideo},${lightboxPrev},`;
 //selectionne la lightbox
  const selectLightbox = document.querySelector('.lightbox');
 //premier éléments focusable
@@ -125,6 +125,7 @@ const focusVideo = document.getElementsByClassName('container');
           //firstFocusableElememt.focus(); 
           focusableElements.focus();
           lightboxContainer.focus();
+          modalImage.focus();
           e.preventDefault();
         }
       }

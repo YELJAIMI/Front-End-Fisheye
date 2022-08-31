@@ -123,8 +123,8 @@ const focusVideo = document.getElementsByClassName('container');
       } else { // la touche tabulation appuyer
         if (document.activeElement === lastFocusableElement) { 
           firstFocusableElememt.focus(); 
-          //focusableElements.focus();
-          //images.focus();
+          focusableElements.focus();
+          images.focus();
           e.preventDefault();
         }
       }

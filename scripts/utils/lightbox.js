@@ -93,7 +93,7 @@ export function initlightbox(){
 
 
 // selectionne l'image de la lightbox
-const modalImage = document.getElementById('imglogo');
+const modalImage = document.getElementsByClassName('containerImg');
 //selectionne la video de la lightbox
 const focusVideo = document.getElementsByClassName('container');
 //selectionne tous les éléments focusables

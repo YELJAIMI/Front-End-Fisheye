@@ -91,7 +91,6 @@ export function displayMedia(media){
         lienImg.className = 'lienimg';
         lienImg.setAttribute("href",media[i].image);   
         lienImg.setAttribute("title",media[i].title);
-        lienImg.setAttribute('src',"/Front-End-Fisheye/assets/images/" +media[i].image+"");
         lienImg.setAttribute("aria-label",media[i].title);
         let mediaImg = null;
         if(media[i].image){

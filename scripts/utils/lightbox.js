@@ -116,8 +116,8 @@ const focusVideo = document.getElementsByClassName('container');
     if (e.shiftKey) { //les touches shift + tab (combinaison)
         if (document.activeElement === firstFocusableElememt) {
             firstFocusableElememt.focus();
-            focusableElement.focus();
-            selectLightbox.focus();
+            lastFocusableElement.focus();
+            //selectLightbox.focus();
             e.preventDefault();
         }
       } else { // la touche tabulation appuyer

@@ -80,7 +80,7 @@ export function initlightbox(){
                 };
             });
 
-                let i = 0;
+                /*let i = 0;
                 let lienimage = document.querySelectorAll('.lienimg');
                 //const lienimage = document.querySelectorAll('.lienimg');
                 
@@ -89,7 +89,7 @@ export function initlightbox(){
             
                 for (let href of lienimage ) {
                    allMedia.push(href);
-                }
+                }*/
 
 
 // selectionne l'image de la lightbox
@@ -101,7 +101,7 @@ const focusVideo = document.getElementsByClassName('container');
 //selectionne la lightbox
  const selectLightbox = document.querySelector('.lightbox');
 //premier éléments focusable
- const firstFocusableElememt = lightboxNext;
+ const firstFocusableElememt = lightbox;
  //contenu de tous
  const focusableElement = focusableElements;
  //dernier élément focusable
@@ -116,7 +116,7 @@ const focusVideo = document.getElementsByClassName('container');
     if (e.shiftKey) { //les touches shift + tab (combinaison)
         if (document.activeElement === firstFocusableElememt) {
             firstFocusableElememt.focus();
-            lastFocusableElement.focus();
+            focusableElement.focus();
             //selectLightbox.focus();
             e.preventDefault();
         }

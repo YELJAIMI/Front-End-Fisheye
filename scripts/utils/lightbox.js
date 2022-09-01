@@ -11,7 +11,6 @@ export function initlightbox(){
         e.preventDefault()
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
-
         function clonelink(link){
             let format = link.src.split('.');
             let med = null;
@@ -125,7 +124,7 @@ const focusVideo = document.getElementsByClassName('container');
           firstFocusableElememt.focus(); 
           //focusableElements.focus();
           lightboxContainer.focus();
-          modalImage.focus();
+          //modalImage.focus();
           e.preventDefault();
         }
       }

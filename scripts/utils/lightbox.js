@@ -122,7 +122,7 @@ const focusVideo = document.getElementsByClassName('container');
       } else { // la touche tabulation appuyer
         if (document.activeElement === lastFocusableElement) { 
           firstFocusableElememt.focus(); 
-          focusableElements.focus();
+          //focusableElements.focus();
           //lightboxContainer.focus();
           //modalImage.focus();
           e.preventDefault();

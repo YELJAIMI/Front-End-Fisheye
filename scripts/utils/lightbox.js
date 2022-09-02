@@ -92,7 +92,7 @@ export function initlightbox(){
 
 
 // selectionne l'image de la lightbox
-const modalImage = document.getElementsByClassName('containerImg');
+const modalImage = document.getElementsByClassName('image-full-screen');
 //selectionne la video de la lightbox
 const focusVideo = document.getElementsByClassName('container');
 //selectionne tous les éléments focusables
@@ -114,7 +114,7 @@ const focusVideo = document.getElementsByClassName('container');
 
     if (e.shiftKey) { //les touches shift + tab (combinaison)
         if (document.activeElement === firstFocusableElememt) {
-            //firstFocusableElememt.focus();
+            firstFocusableElememt.focus();
             lastFocusableElement.focus();
             //selectLightbox.focus();
             e.preventDefault();
@@ -122,7 +122,7 @@ const focusVideo = document.getElementsByClassName('container');
       } else { // la touche tabulation appuyer
         if (document.activeElement === lastFocusableElement) { 
           firstFocusableElememt.focus(); 
-          focusableElements.focus();
+          //focusableElements.focus();
           //lightboxContainer.focus();
           //modalImage.focus();
           e.preventDefault();

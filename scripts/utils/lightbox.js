@@ -100,7 +100,7 @@ const focusVideo = document.getElementsByClassName('container');
 //selectionne la lightbox
  const selectLightbox = document.querySelector('.lightbox');
 //premier éléments focusable
- const firstFocusableElememt = lightboxClose;
+ const firstFocusableElememt = lightbox;
  //contenu de tous
  const focusableElement = focusableElements;
  //dernier élément focusable
@@ -122,7 +122,7 @@ const focusVideo = document.getElementsByClassName('container');
       } else { // la touche tabulation appuyer
         if (document.activeElement === lastFocusableElement) { 
           firstFocusableElememt.focus(); 
-          //focusableElements.focus();
+          focusableElements.focus();
           //lightboxContainer.focus();
           //modalImage.focus();
           e.preventDefault();

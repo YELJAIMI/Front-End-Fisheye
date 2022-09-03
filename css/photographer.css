@@ -119,11 +119,13 @@ body {
 }
 
 .media .fas{
+    position: absolute;
     display: flex;
     justify-content: end;
-    margin-top: 1.4rem;
-    margin-right: -0.3rem;
-    margin-left: 25rem;
+    margin-top: -5.5rem;
+    margin-right: 1.7rem;
+    margin-left: 20.5rem;
+    margin-bottom: 0rem;
     color: #911C1C;
     border: none;
 }
@@ -139,10 +141,11 @@ body {
 }
 
 #main-media span{
+    position: absolute;
     display: flex;
-    justify-content: end;
-    margin-top: -2.8rem;
-    margin-right: 1.2rem;
+    justify-content: center;
+    margin-top: 5.5rem;
+    margin-right: 18.9rem;
     line-height: 16px;
     color: #901C1C;
 }

@@ -38,18 +38,18 @@ function closeModal() {
     const ValidfirstReturn = Validfirst(inputprenom.value);
     const ValidnameReturn = Validname(inputnom.value);
     const ValidmailReturn = Validmail(inputemail.value);
-    const ValidmessageReturn = Validmessage(textarea.value);
+    const ValidMessageReturn = Validmessage(textarea.value);
 
     console.log(ValidfirstReturn);
     console.log(ValidnameReturn);
     console.log(ValidmailReturn);
-    console.log(ValidmessageReturn);
+    console.log(ValidMessageReturn);
 
     const formInputIsValid =
     ValidnameReturn &&      
     ValidfirstReturn&&   
     ValidmailReturn&&     
-    ValidmessageReturn;
+    ValidMessageReturn;
 
     console.log(formInputIsValid);
     if(formInputIsValid){

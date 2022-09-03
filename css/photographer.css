@@ -26,8 +26,8 @@ body {
 
 .media{
     width: 60%;
-    display: inline-block;
-    margin: 1rem;
+    display: grid;
+    margin: 3rem;
 }
 
 .container{
@@ -120,9 +120,10 @@ body {
 .media .fas{
     display: flex;
     justify-content: end;
-    margin-top: -1rem;
-    margin-right: -5.3rem;
+    margin-top: 2.4rem;
+    /*margin-right: -5.3rem;*/
     color: #911C1C;
+    border: none;
 }
 
 #main-media {
@@ -138,8 +139,8 @@ body {
 #main-media span{
     display: flex;
     justify-content: end;
-    margin-top: -1rem;
-    margin-right: -4rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
     line-height: 16px;
     color: #901C1C;
 }

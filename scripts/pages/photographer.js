@@ -88,20 +88,18 @@ export function displayMedia(media){
         const mediaDiv = document.createElement('article');
         mediaDiv.className = 'media';
         const lienImg = document.createElement('a');
-        lienImg.className = 'lienimg';
-        lienImg.setAttribute("href",media[i].image);   
+        lienImg.className = 'containerImg';
+        //lienImg.setAttribute("href",media[i].image);   
         lienImg.setAttribute("title",media[i].title);
         lienImg.setAttribute("aria-label",media[i].title);
         let mediaImg = null;
         if(media[i].image){
         mediaImg = document.createElement('img');
-        lienImg.setAttribute("href", media[i].image);
         mediaImg.setAttribute("class", "containerImg");
         mediaImg.setAttribute('src',"/Front-End-Fisheye/assets/images/" +media[i].image+"");
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
         }else{
-            lienImg.setAttribute("href", media[i].video);
             mediaImg = document.createElement('video');
             mediaImg.setAttribute('src', "/Front-End-Fisheye/assets/images/"  +media[i].video+"");
             mediaImg.setAttribute('class', 'containerImg');
@@ -111,18 +109,18 @@ export function displayMedia(media){
         }
 
         const mediaTitle = document.createElement('h2');
-        const icone = document.createElement('i');
+        const icone = document.createElement('button');
         const medialikes = document.createElement('span');
         icone.setAttribute('class','fas fa-heart');
+        icone.setAttribute('id', 'heart');
         icone.setAttribute('aria-lebel', 'likes');
         medialikes.setAttribute('class', 'numberlikes');
         mediaTitle.innerText=media[i].title;
         medialikes.innerText=media[i].likes;
         
         lienImg.appendChild(mediaImg);
+        lienImg.appendChild(mediaTitle);
         mediaDiv.appendChild(lienImg);
-        //mediaDiv.appendChild(mediaImg);
-        mediaDiv.appendChild(mediaTitle);
         mediaDiv.appendChild(icone);
         mediaDiv.appendChild(medialikes);
         mediaList.appendChild(mediaDiv);

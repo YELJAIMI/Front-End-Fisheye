@@ -119,7 +119,6 @@ body {
 }
 
 .media .fas{
-    position: absolute;
     display: flex;
     justify-content: end;
     margin-top: 2.4rem;
@@ -139,7 +138,6 @@ body {
 }
 
 #main-media span{
-    position: absolute;
     display: flex;
     justify-content: center;
     margin-top: 2rem;

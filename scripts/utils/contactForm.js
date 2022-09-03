@@ -96,7 +96,7 @@ function closeModal() {
     //fermer le formulaire avec "ENTER" quand le button close est selectionner par TAB
     document.querySelector('.modal header img').addEventListener('keydown', function(e){
       if (e.key === "Enter" ) {
-        closeModale(e);
+        closeModal();
       };
     })
     //dernier element focusable

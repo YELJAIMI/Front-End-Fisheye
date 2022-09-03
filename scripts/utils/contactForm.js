@@ -33,7 +33,7 @@ function closeModal() {
     let inputprenom = document.getElementById("first");
     let inputnom = document.getElementById("name");
     let inputemail = document.getElementById("email");
-    let textarea = document.getElementById("message");
+    let textarea = document.getElementById("votre_message");
   
     const ValidfirstReturn = Validfirst(inputprenom.value);
     const ValidnameReturn = Validname(inputnom.value);

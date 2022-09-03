@@ -8,7 +8,10 @@ function displayModal() {
 	modal.style.display = "block";
   const namephotographer = document.getElementById('namephotographer');
   namePhotograph.textContent = namephotographer.innerText;
-  setTimeout (closeModale.focus(),1000);
+  //setTimeout (closeModale.focus(),1000);
+  const crossCloseModale = document.querySelector('.modalClose');
+  crossCloseModale.setAttribute('tabindex', '0');
+  crossCloseModale.focus();
 }
 //fermeture de la modal
 function closeModal() {
@@ -28,30 +31,39 @@ function closeModal() {
 
   function InputValidModal(e){
     e.preventDefault();
-    const inputprenom = document.getElementById("first").value;
-    const inputnom = document.getElementById("name").value;
-    const inputemail = document.getElementById("email").value;
-    const textarea = document.getElementById("message").value;
+    let inputprenom = document.getElementById("first");
+    let inputnom = document.getElementById("name");
+    let inputemail = document.getElementById("email");
+    let textarea = document.getElementById("message");
   
-    const ValidfirstReturn = Validfirst(inputprenom);
-    const ValidnameReturn = Validname(inputnom);
-    const ValidmailReturn = Validmail(inputemail);
-    const ValidmessageReturn = Validmessage(textarea);
+    const ValidfirstReturn = Validfirst(inputprenom.value);
+    const ValidnameReturn = Validname(inputnom.value);
+    const ValidmailReturn = Validmail(inputemail.value);
+    const ValidmessageReturn = Validmessage(textarea.value);
+
+    console.log(ValidfirstReturn);
+    console.log(ValidnameReturn);
+    console.log(ValidmailReturn);
+    console.log(ValidmessageReturn);
 
     const formInputIsValid =
     ValidnameReturn &&      
     ValidfirstReturn&&   
     ValidmailReturn&&     
-    ValidmessageReturn&&
+    ValidmessageReturn;
 
     console.log(formInputIsValid);
     if(formInputIsValid){
-      console.log(inputprenom);
+      /*console.log(inputprenom);
       console.log(inputnom);
       console.log(inputemail);
       console.log(textarea);
       let form = document.querySelector('.form');
-      form.reset();
+      form.reset();*/
+      inputprenom = '';
+      inputnom = '';
+      inputemail = '';
+      textarea = '';
       closeModal();
     }
   }
@@ -65,10 +77,12 @@ function closeModal() {
     });
 
     //selectionner la modal 
-    const modal = document.querySelector('#contact_modal');
-    //selectionner x de la modal 
-    const selectModal = document.querySelector('.modalClose');
-    //selectionner les elements focusable
+    const selectModal = document.querySelector('#contact_modal');
+
+    //prremier element focusable
+    const firstFocusableElememt = closeModale;
+
+    /*//selectionner les elements focusable
     const inputfirst = document.querySelector('#first');
     const inputname = document.querySelector('#name');
     const inputemail = document.querySelector('#email');
@@ -76,8 +90,16 @@ function closeModal() {
     const send = document.querySelector('#send');
     //selectionner tous les elements
     const focusableElements = `${modal} ${selectModal} ${closeModale} ${inputfirst}, ${inputname}, ${inputemail}, ${textarea}, ${send}`;
-    const firstFocusableElememt = modal;
-    const focusablecontent = focusableElements;
+    const firstFocusableElememt = closeModale;
+    const focusablecontent = focusableElements;*/
+
+    //fermer le formulaire avec "ENTER" quand le button close est selectionner par TAB
+    document.querySelector('.modal header img').addEventListener('keydown', function(e){
+      if (e.key === "Enter" ) {
+        closeModale(e);
+      };
+    })
+    //dernier element focusable
     const lastFocusableElement = send;
 
     document.addEventListener('keydown', function(e) {
@@ -99,7 +121,7 @@ function closeModal() {
       }
     });
     
-    firstFocusableElememt.focus();
+    //firstFocusableElememt.focus();
 
 //vérification prenom
 function Validfirst(inputprenom){

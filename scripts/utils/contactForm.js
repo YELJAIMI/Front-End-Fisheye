@@ -125,7 +125,7 @@ function closeModal() {
 
 //vérification prenom
 function Validfirst(inputprenom){
-  const regexprenom = /^([a-zA-Z \-])+$/;
+  const regexprenom = /^([a-zA-Z]{3,30}\s*)+$/;
     console.log(inputprenom);
     if(inputprenom.length>2 && regexprenom.test(inputprenom)){
       formData[0].setAttribute("data-error-visible", "false");

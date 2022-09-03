@@ -121,7 +121,7 @@ body {
 .media .fas{
     display: flex;
     justify-content: end;
-    margin-top: 2.4rem;
+    margin-top: 1.4rem;
     color: #911C1C;
     background-color: inherit;
     border: none;
@@ -139,9 +139,9 @@ body {
 
 #main-media span{
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    margin-right: 2rem;
+    justify-content: end;
+    margin-top: -0.9rem;
+    margin-right: 1.4rem;
     line-height: 16px;
     color: #901C1C;
 }

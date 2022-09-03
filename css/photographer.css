@@ -139,8 +139,8 @@ body {
 #main-media span{
     display: flex;
     justify-content: end;
-    margin-top: 2rem;
-    margin-right: 2rem;
+    margin-top: -1rem;
+    margin-right: 1.2rem;
     line-height: 16px;
     color: #901C1C;
 }

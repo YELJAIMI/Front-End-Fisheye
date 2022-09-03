@@ -37,12 +37,13 @@ body {
 }
 
 .media h2{
-    display: ruby;
+    display: flex;
     font-family: 'DM sans';
     font-style: normal;
     font-weight: 200;
     font-size: 18px;
     line-height: 20px;
+    margin-top: 1rem;
     color: #911C1C;
 }
 

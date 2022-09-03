@@ -1,7 +1,6 @@
 
    const closeModale = document.querySelector('.modal header img');
-  //selectionne "X" 
-  //const closeModale = document.querySelector('.modalClose');
+ 
 //launch modal
 function displayModal() {
   const modal = document.getElementById("contact_modal");
@@ -64,6 +63,7 @@ function closeModal() {
       inputnom = '';
       inputemail = '';
       textarea = '';
+
       closeModal();
     }
   }
@@ -125,7 +125,7 @@ function closeModal() {
 
 //vérification prenom
 function Validfirst(inputprenom){
-  const regexprenom = /^([a-zA-Z \-]\s)+$/;
+  const regexprenom = /^([a-zA-Z \-])+$/;
     console.log(inputprenom);
     if(inputprenom.length>2 && regexprenom.test(inputprenom)){
       formData[0].setAttribute("data-error-visible", "false");

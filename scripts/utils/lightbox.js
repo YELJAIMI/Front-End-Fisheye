@@ -1,18 +1,18 @@
 export function initlightbox(){
 
-    const links = document.querySelectorAll('.containerImg');
-    console.log(links)
+    const link = document.querySelectorAll('.containerImg');
+    console.log(link)
     buildDOM();
     const lightbox = document.querySelector('.lightbox');
     const lightboxContainer = document.querySelector('.lightbox__container');
 
 
-    links.forEach((link,index) => link.addEventListener('click', e => {
+    link.forEach((link,index) => link.addEventListener('click', e => {
         e.preventDefault()
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
-        function clonelink(links){
-            let format = links.src.split('.');
+        function clonelink(link){
+            let format = link.src.split('.');
             let med = null;
             if (format.at(-1) == 'mp4') {
                 med = document.createElement('video');

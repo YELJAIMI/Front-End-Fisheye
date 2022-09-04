@@ -29,7 +29,7 @@ export function initlightbox(){
             return med;
         }
 
-        lightboxContainer.appendChild(clonelink(links));
+        lightboxContainer.appendChild(clonelink(link));
         console.log(link);
         console.log(index);
 

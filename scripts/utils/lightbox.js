@@ -36,7 +36,7 @@ export function initlightbox(){
         const lightboxNext = document.querySelector('.lightbox__next');
         lightboxNext.addEventListener('click', function(){
           
-            if(index<links.length-1){
+            if(index<link.length-1){
                 index+=1;
             }else{
                 index=0;
@@ -50,13 +50,13 @@ export function initlightbox(){
         lightboxPrev.addEventListener('click', function(){
 
             console.log(index);
-            console.log(links.length);
+            console.log(link.length);
             if(index>0){
                 index-=1;
             }else{
-                index=links.length-1;
+                index=link.length-1;
             }
-            let newlink=links[index];
+            let newlink=link[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
             lightboxContainer.appendChild(clonelink(newlink));
         })

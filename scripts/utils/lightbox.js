@@ -41,7 +41,7 @@ export function initlightbox(){
             }else{
                 index=0;
             }
-            let newlink=links[index];
+            let newlink=link[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
             lightboxContainer.appendChild(clonelink(newlink));
         })

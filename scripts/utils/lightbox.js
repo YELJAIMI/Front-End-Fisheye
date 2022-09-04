@@ -88,7 +88,7 @@ export function initlightbox(){
             
                 for (let href of lienimage ) {
                    allMedia.push(href);
-                }*/
+                }
 
 
 // selectionne l'image de la lightbox
@@ -161,10 +161,10 @@ const focusVideo = document.getElementsByClassName('container');
                     }
                     initlightbox;
         
-                })
+                })*/
     
 
-        /*// function qui fait défiler les photos au click du bouton NEXT
+        // function qui fait défiler les photos au click du bouton NEXT
                 lightboxNext.addEventListener('click', function(e) {
                 e.preventDefault();
                 lightboxNext;
@@ -182,7 +182,7 @@ const focusVideo = document.getElementsByClassName('container');
                 if (e.key === "ArrowRight") {
                 lightboxNext;
             }
-        })*/
+        })
 
 }))
 

@@ -12,7 +12,7 @@ export function initlightbox(){
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
         function clonelink(link){
-            let format = link.src.split('.');
+            let format = links.src.split('.');
             let med = null;
             if (format.at(-1) == 'mp4') {
                 med = document.createElement('video');
@@ -92,7 +92,7 @@ export function initlightbox(){
 
 
 // selectionne l'image de la lightbox
-const modalImage = document.getElementsByClassName('image-full-screen');
+const modalImage = document.getElementsByClassName('containerImg');
 //selectionne la video de la lightbox
 const focusVideo = document.getElementsByClassName('container');
 //selectionne tous les éléments focusables

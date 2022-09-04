@@ -140,7 +140,7 @@ function Validfirst(inputprenom){
 
   //verification nom
   function Validname(inputnom){
-    const regexnom = /^[a-zA-Z \-]+$/;
+    const regexnom = /^([a-zA-Z]{3,30}\s*)+$/;
     console.log(inputnom);
     if(inputnom.length>2 && regexnom.test(inputnom)){
       formData[1].setAttribute("data-error-visible", "false");

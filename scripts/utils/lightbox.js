@@ -11,10 +11,10 @@ export function initlightbox(){
         e.preventDefault()
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
-        function clonelink(links){
-            let format = links.src.split('.');
+        function clonelink(link){
+            let format = link.src.split('.');
             let med = null;
-            if (format.at(-1) == 'mp4') {
+            if (typeof format.at(-1) == 'mp4') {
                 med = document.createElement('video');
                 med.setAttribute('class','container');
                 med.setAttribute('controls', 'controls');
@@ -29,8 +29,8 @@ export function initlightbox(){
             return med;
         }
 
-        lightboxContainer.appendChild(clonelink(links));
-        console.log(links);
+        lightboxContainer.appendChild(clonelink(link));
+        console.log(link);
         console.log(index);
 
         const lightboxNext = document.querySelector('.lightbox__next');

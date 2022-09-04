@@ -12,9 +12,9 @@ export function initlightbox(){
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
         function clonelink(link){
-            let format = link.src.split('.');
+            let format = links.src.split('.');
             let med = null;
-            if (typeof format.at(-1) == 'mp4') {
+            if (format.at(-1) == 'mp4') {
                 med = document.createElement('video');
                 med.setAttribute('class','container');
                 med.setAttribute('controls', 'controls');

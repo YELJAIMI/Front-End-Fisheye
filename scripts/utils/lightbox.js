@@ -1,13 +1,13 @@
 export function initlightbox(){
 
-    const link = document.querySelectorAll('.containerImg');
-    console.log(link)
+    const links = document.querySelectorAll('.containerImg');
+    console.log(links)
     buildDOM();
     const lightbox = document.querySelector('.lightbox');
     const lightboxContainer = document.querySelector('.lightbox__container');
 
 
-    link.forEach((link,index) => link.addEventListener('click', e => {
+    links.forEach((link,index) => link.addEventListener('click', e => {
         e.preventDefault()
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
@@ -36,12 +36,12 @@ export function initlightbox(){
         const lightboxNext = document.querySelector('.lightbox__next');
         lightboxNext.addEventListener('click', function(){
           
-            if(index<link.length-1){
+            if(index<links.length-1){
                 index+=1;
             }else{
                 index=0;
             }
-            let newlink=link[index];
+            let newlink=links[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
             lightboxContainer.appendChild(clonelink(newlink));
         })
@@ -50,13 +50,13 @@ export function initlightbox(){
         lightboxPrev.addEventListener('click', function(){
 
             console.log(index);
-            console.log(link.length);
+            console.log(links.length);
             if(index>0){
                 index-=1;
             }else{
-                index=link.length-1;
+                index=links.length-1;
             }
-            let newlink=link[index];
+            let newlink=links[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
             lightboxContainer.appendChild(clonelink(newlink));
         })

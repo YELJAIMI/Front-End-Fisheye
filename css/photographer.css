@@ -150,10 +150,6 @@ body {
     margin: 0em;
 }
 
-.titlephoto {
-    text-decoration: none;
-}
-
 .modal {
     display: flex;
     flex-direction: column;

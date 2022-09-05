@@ -1,7 +1,7 @@
 export function initlightbox(){
 
-    const links = document.querySelectorAll('.containerImg');
-    console.log(links)
+    const link = document.querySelectorAll('.containerImg');
+    console.log(link)
     buildDOM();
     const lightbox = document.querySelector('.lightbox');
     const lightboxContainer = document.querySelector('.lightbox__container');

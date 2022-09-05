@@ -109,6 +109,7 @@ export function displayMedia(media){
         }
 
         const mediaTitle = document.createElement('h2');
+        mediaDiv.setAttribute('class', 'titlephoto');
         const icone = document.createElement('button');
         const medialikes = document.createElement('span');
         icone.setAttribute('class','fas fa-heart');
@@ -119,7 +120,7 @@ export function displayMedia(media){
         medialikes.innerText=media[i].likes;
         
         lienImg.appendChild(mediaImg);
-        mediaDiv.appendChild(mediaTitle);
+        lienImg.appendChild(mediaTitle);
         mediaDiv.appendChild(lienImg);
         mediaDiv.appendChild(icone);
         mediaDiv.appendChild(medialikes);

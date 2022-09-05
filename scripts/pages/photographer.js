@@ -120,7 +120,7 @@ export function displayMedia(media){
         medialikes.innerText=media[i].likes;
         
         lienImg.appendChild(mediaImg);
-        lienImg.appendChild(mediaTitle);
+        //lienImg.appendChild(mediaTitle);
         mediaDiv.appendChild(lienImg);
         mediaDiv.appendChild(icone);
         mediaDiv.appendChild(medialikes);

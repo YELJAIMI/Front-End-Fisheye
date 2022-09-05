@@ -109,6 +109,7 @@ export function displayMedia(media){
         }
 
         const mediaTitle = document.createElement('h2');
+        mediaTitle.setAttribute('class', 'titlephoto');
         const icone = document.createElement('button');
         const medialikes = document.createElement('span');
         icone.setAttribute('class','fas fa-heart');

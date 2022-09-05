@@ -150,10 +150,6 @@ body {
     margin: 0em;
 }
 
-.media #text {
-    text-decoration: none;
-}
-
 .modal {
     display: flex;
     flex-direction: column;

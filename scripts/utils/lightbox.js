@@ -12,8 +12,8 @@ export function initlightbox(){
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
 
-        function clonelink(links){
-            let format = links.src.split('.');
+        function clonelink(link){
+            let format = link.src.split('.');
             let med = null;
             if (format.at(-1) == 'mp4') {
                 med = document.createElement('video');

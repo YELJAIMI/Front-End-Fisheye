@@ -111,6 +111,10 @@ body {
     box-shadow: 0.1px 0.5px 3px 0.3px;
 }
 
+.containerImg .titlephoto {
+    text-decoration: none;
+}
+
 .media img{
     width: 350px;
     height: 300px;
@@ -150,7 +154,7 @@ body {
     margin: 0em;
 }
 
-.titlephoto {
+a .titlephoto {
     text-decoration: none;
 }
 

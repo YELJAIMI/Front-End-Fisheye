@@ -108,8 +108,10 @@ export function displayMedia(media){
             mediaImg.style.width = '';
         }
 
+        const div = document.createElement('h2')
+        div.setAttribute('class', 'titlephoto');
         const mediaTitle = document.createElement('h2');
-        mediaTitle.setAttribute('class', 'titlephoto');
+        //mediaTitle.setAttribute('class', 'titlephoto');
         const icone = document.createElement('button');
         const medialikes = document.createElement('span');
         icone.setAttribute('class','fas fa-heart');

@@ -1,13 +1,13 @@
 export function initlightbox(){
 
-    const links = document.querySelectorAll('.containerImg');
-    console.log(links)
+    const link = document.querySelectorAll('.containerImg');
+    console.log(link)
     buildDOM();
     const lightbox = document.querySelector('.lightbox');
     const lightboxContainer = document.querySelector('.lightbox__container');
 
 
-    links.forEach((link,index) => link.addEventListener('click', e => {
+    link.forEach((link,index) => link.addEventListener('click', e => {
         e.preventDefault()
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';

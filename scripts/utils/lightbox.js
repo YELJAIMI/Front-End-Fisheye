@@ -12,20 +12,20 @@ export function initlightbox(){
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
 
-        function clonelink(link){
-            let format = link.src.split('.');
+        function clonelink(links){
+            let format = links.src.split('.');
             let med = null;
             if (typeof format.at(-1) == 'mp4') {
                 med = document.createElement('video');
                 med.setAttribute('class','container');
                 med.setAttribute('controls', 'controls');
-                med.setAttribute('title', link.title);
-                med.setAttribute('src', link.src); 
+                med.setAttribute('title', links.title);
+                med.setAttribute('src', links.src); 
             }else{ 
                 med = document.createElement('img');
                 med.setAttribute('class', 'image-full-screen');
-                med.setAttribute('alt', link.alt);
-                med.setAttribute('src', link.src);
+                med.setAttribute('alt', links.alt);
+                med.setAttribute('src', links.src);
             }
             return med;
         }

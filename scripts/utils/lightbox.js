@@ -1,31 +1,31 @@
 export function initlightbox(){
 
-    const links = document.querySelectorAll('.containerImg');
-    console.log(links)
+    const link = document.querySelectorAll('.containerImg');
+    console.log(link)
     buildDOM();
     const lightbox = document.querySelector('.lightbox');
     const lightboxContainer = document.querySelector('.lightbox__container');
 
 
-    links.forEach((link,index) => link.addEventListener('click', e => {
+    link.forEach((link,index) => link.addEventListener('click', e => {
         e.preventDefault()
         //new lightbox(e.currentTarget.getAttribute('href'))
         lightbox.style.display = 'flex';
 
-        function clonelink(links){
-            let format = links.src.split('.');
+        function clonelink(link){
+            let format = link.src.split('.');
             let med = null;
-            if (typeof format.at(-1) == 'mp4') {
+            if (format.at(-1) == 'mp4') {
                 med = document.createElement('video');
                 med.setAttribute('class','container');
                 med.setAttribute('controls', 'controls');
-                med.setAttribute('title', links.title);
-                med.setAttribute('src', links.src); 
+                med.setAttribute('title', link.title);
+                med.setAttribute('src', link.src); 
             }else{ 
                 med = document.createElement('img');
                 med.setAttribute('class', 'image-full-screen');
-                med.setAttribute('alt', links.alt);
-                med.setAttribute('src', links.src);
+                med.setAttribute('alt', link.alt);
+                med.setAttribute('src', link.src);
             }
             return med;
         }

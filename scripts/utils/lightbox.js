@@ -13,7 +13,7 @@ export function initlightbox(){
         lightbox.style.display = 'flex';
 
         function clonelink(link){
-            let format = link.src.split('.');
+            let format = typeof link.src.split('.');
             let med = null;
             if (format.at(-1) == 'mp4') {
                 med = document.createElement('video');

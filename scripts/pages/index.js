@@ -13,7 +13,7 @@ return result.photographers;
 async function getPhotographers() {
         // Penser à remplacer par les données récupérées dans le json
         let photographers = null;
-        await fetch('/Front-End-Fisheye/data/photographers.json')
+        await fetch('./data/photographers.json')
         .then(function(data) {
         console.log(data)
         return data.json();

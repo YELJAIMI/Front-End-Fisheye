@@ -1,5 +1,5 @@
-import {sortMedia} from '/Front-End-Fisheye/scripts/utils/Domtrie.js';
-import {initlightbox} from '/Front-End-Fisheye/scripts/utils/lightbox.js';
+import {sortMedia} from '../utils/Domtrie.js';
+import {initlightbox} from '../utils/lightbox.js';
 
 
 const queryString = window.location.search;
@@ -8,7 +8,7 @@ const idphotographe = urlParams.get('idphotographe');
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
     let datas = null;
-    await fetch('/Front-End-Fisheye/data/photographers.json')
+    await fetch('./data/photographers.json')
     .then(function(data) {
     console.log(data)
     return data.json();
@@ -65,7 +65,7 @@ async function init() {
     //city.innerHTML = photographer.city;
     //mainphotographer.appendChild(photographerTitle)
     const profil = document.createElement('img');
-    profil.setAttribute('src',"/Front-End-Fisheye/assets/photographers/"+photographer.portrait);
+    profil.setAttribute('src',"./assets/photographers/"+photographer.portrait);
     profil.setAttribute('class',"profil");
     profil.setAttribute('alt', photographerTitle.outerHTML);
     country.setAttribute("class", "country");
@@ -89,19 +89,19 @@ export function displayMedia(media){
         mediaDiv.className = 'media';
         const lienImg = document.createElement('a');
         lienImg.className = 'containerImg';
-        lienImg.setAttribute("href","/Front-End-Fisheye/assets/images/" +media[i].image+"");   
+        lienImg.setAttribute("href","./assets/images/" +media[i].image+"");   
         lienImg.setAttribute("title",media[i].title);
         lienImg.setAttribute("aria-label",media[i].title);
         let mediaImg = null;
         if(media[i].image){
         mediaImg = document.createElement('img');
         mediaImg.setAttribute("class", "containerImg");
-        mediaImg.setAttribute('src',"/Front-End-Fisheye/assets/images/" +media[i].image+"");
+        mediaImg.setAttribute('src',"./assets/images/" +media[i].image+"");
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
         }else{
             mediaImg = document.createElement('video');
-            mediaImg.setAttribute('src', "/Front-End-Fisheye/assets/images/"  +media[i].video+"");
+            mediaImg.setAttribute('src', "./assets/images/"  +media[i].video+"");
             mediaImg.setAttribute('class', 'containerImg');
             mediaImg.setAttribute('alt',media[i].title);
             mediaImg.setAttribute('controls','controls');

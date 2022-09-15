@@ -31,7 +31,7 @@ export function initlightbox(){
             return med;
         }
 
-        lightboxContainer.appendChild(clonelink(link));
+        lightbox.appendChild(clonelink(link));
         console.log(link);
         console.log(index);
 
@@ -44,8 +44,8 @@ export function initlightbox(){
                 index=0;
             }
             let newlink=links[index];
-            lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
-            lightboxContainer.appendChild(clonelink(newlink));
+            lightbox.removeChild(lightboxContainer.childNodes[0]);
+            lightbox.appendChild(clonelink(newlink));
         })
 
         const lightboxPrev = document.querySelector('.lightbox__prev');

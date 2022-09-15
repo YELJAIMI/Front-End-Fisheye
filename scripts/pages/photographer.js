@@ -1,4 +1,4 @@
-import {sortMedia} from '../utils/Domtrie.js';
+import {sortMedia} from'../utils/Domtrie.js';
 import {initlightbox} from '../utils/lightbox.js';
 
 

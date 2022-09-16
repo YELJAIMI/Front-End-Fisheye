@@ -15,6 +15,7 @@ export function initlightbox(){
         function clonelink(link){
             console.log(link);
             let format = link.src.split('.');
+            console.log(link.src);
             let med = null;
             if (format.at(-1) == 'mp4') {
                 med = document.createElement('video');
@@ -43,7 +44,7 @@ export function initlightbox(){
             }else{
                 index=0;
             }
-            let newlink=links[index];
+            let newlink=link[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
             lightboxContainer.appendChild(clonelink(newlink));
         })
@@ -56,9 +57,9 @@ export function initlightbox(){
             if(index>0){
                 index-=1;
             }else{
-                index=links.length-1;
+                index=link.length-1;
             }
-            let newlink=links[index];
+            let newlink=link[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
             lightboxContainer.appendChild(clonelink(newlink));
         })

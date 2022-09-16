@@ -88,7 +88,7 @@ export function displayMedia(media){
         const mediaDiv = document.createElement('article');
         mediaDiv.className = 'media';
         const lienImg = document.createElement('a');
-        lienImg.className = 'containerImg';
+        lienImg.className = 'containerLink';
         lienImg.setAttribute("href","./assets/images/" +media[i].image+"");   
         lienImg.setAttribute("title",media[i].title);
         lienImg.setAttribute("aria-label",media[i].title);

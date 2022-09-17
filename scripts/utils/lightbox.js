@@ -15,7 +15,7 @@ export function initlightbox(){
         function clonelink(link){
             console.log(link);
             let format = link.href.split('.');
-            const img = link.querySelector('img');
+            const img = link.querySelector('img', 'video');
             console.log(format);
             let med = null;
             if (format.at(-1) == 'mp4') {
@@ -38,7 +38,8 @@ export function initlightbox(){
         console.log(index);
 
         const lightboxNext = document.querySelector('.lightbox__next');
-        lightboxNext.addEventListener('click', function(){
+        const lightboxPrev = document.querySelector('.lightbox__prev');
+         function next(){
           
             if(index<links.length-1){
                 index+=1;
@@ -48,9 +49,44 @@ export function initlightbox(){
             let newlink=links[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
             lightboxContainer.appendChild(clonelink(newlink));
-        })
+        }
+            function prev(){       
 
-        const lightboxPrev = document.querySelector('.lightbox__prev');
+            console.log(index);
+            console.log(links.length);
+            if(index>0){
+                index-=1;
+            }else{
+                index=links.length-1;
+            }
+            let newlink=links[index];
+            lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
+            lightboxContainer.appendChild(clonelink(newlink));
+        
+            }
+
+    // function qui fait défiler les photos au click du bouton NEXT
+      lightboxNext.addEventListener("click", function (e) {
+        e.preventDefault();
+        next();
+      });
+
+      lightboxPrev.addEventListener("click", function () {
+        e.preventDefault();
+        prev();
+      });
+
+    // fait défiler les photos avec le bouton du clavier "-->"
+      window.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") {
+          next();
+        }
+        if (e.key === "ArrowLeft") {
+          prev();
+        }
+      });
+
+        /*const lightboxPrev = document.querySelector('.lightbox__prev');
         lightboxPrev.addEventListener('click', function(){
 
             console.log(index);
@@ -63,7 +99,7 @@ export function initlightbox(){
             let newlink=links[index];
             lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
             lightboxContainer.appendChild(clonelink(newlink));
-        })
+        })*/
 
         //fermeture de la lightbox
             const lightboxClose = document.querySelector(".lightbox__close");

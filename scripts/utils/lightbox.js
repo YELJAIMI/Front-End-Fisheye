@@ -1,242 +1,162 @@
-export function initlightbox(){
-
-    const links = document.querySelectorAll('.containerImg');
-    console.log(links)
+export function initlightbox() {
+    const links = document.querySelectorAll(".containerLink");
+    console.log(links);
     buildDOM();
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxContainer = document.querySelector('.lightbox__container');
+    const lightbox = document.querySelector(".lightbox");
+    const lightboxContainer = document.querySelector(".lightbox__container");
+    const main = document.querySelector("#main-photograph");
+    const contactModal = document.querySelector("#contact_modal");
+    const lightboxClose = document.querySelector(".lightbox__close");
 
 
-    links.forEach((link,index) => link.addEventListener('click', e => {
-        e.preventDefault()
-        //new lightbox(e.currentTarget.getAttribute('href'))
-        lightbox.style.display = 'flex';
 
-        function clonelink(link){
-            console.log(link);
-            let format = link.href.split('.');
-            const img = link.querySelector('img', 'video');
-            console.log(format);
-            let med = null;
-            if (format.at(-1) == 'mp4') {
-                med = document.createElement('video');
-                med.setAttribute('class','container');
-                med.setAttribute('controls', 'controls');
-                med.setAttribute('title', img.title);
-                med.setAttribute('src', img.src); 
-            }else{ 
-                med = document.createElement('img');
-                med.setAttribute('class', 'image-full-screen');
-                med.setAttribute('alt', img.alt);
-                med.setAttribute('src', img.src);
-            }
-            return med;
+    links.forEach((link, index) =>
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        main.style.display = "none"
+        // contactModal.style.display = "none"
+        lightbox.style.display = "flex";
+        lightboxClose.focus()
+
+
+  
+        console.log(link);
+        function clonelink(link) {
+          let format = link.href.split(".");
+          const img = link.querySelector("img") || link.querySelector("video");
+          console.log(format);
+          let med = null;
+          if (format.at(-1) == "mp4") {
+            med = document.createElement("video");
+            med.setAttribute("class", "container");
+            med.setAttribute("controls", "controls");
+            med.setAttribute("title", img.title);
+            med.setAttribute("src", img.src);
+            med.setAttribute("tabindex", "3");
+            
+          } else {
+            med = document.createElement("img");
+            med.setAttribute("class", "image-full-screen");
+            med.setAttribute("alt", img.alt);
+            med.setAttribute("src", img.src);
+            med.setAttribute("tabindex", "3");
+          }
+          return med;
         }
-
+  
         lightboxContainer.appendChild(clonelink(link));
         console.log(link);
         console.log(index);
-
-        const lightboxNext = document.querySelector('.lightbox__next');
-        const lightboxPrev = document.querySelector('.lightbox__prev');
-         function next(){
-          
-            if(index<links.length-1){
-                index+=1;
-            }else{
-                index=0;
-            }
-            let newlink=links[index];
-            lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
-            lightboxContainer.appendChild(clonelink(newlink));
+  
+        const lightboxNext = document.querySelector(".lightbox__next");
+        const lightboxPrev = document.querySelector(".lightbox__prev");
+  
+        function next() {
+        //   lightboxNext.addEventListener('click', function(){
+  
+          if (index < links.length - 1) {
+            index += 1;
+          } else {
+            index = 0;
+          }
+          let newlink = links[index];
+          lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
+          lightboxContainer.appendChild(clonelink(newlink));
         }
-            function prev(){       
-
-            console.log(index);
-            console.log(links.length);
-            if(index>0){
-                index-=1;
-            }else{
-                index=links.length-1;
-            }
-            let newlink=links[index];
-            lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
-            lightboxContainer.appendChild(clonelink(newlink));
+  
+        function prev() {
+        //   lightboxPrev.addEventListener('click', function(){
+  
+          console.log(index);
+          console.log(links.length);
+          if (index > 0) {
+            index -= 1;
+          } else {
+            index = links.length - 1;
+          }
+          let newlink = links[index];
+          lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
+          lightboxContainer.appendChild(clonelink(newlink));
+        }
         
-            }
-
-    // function qui fait défiler les photos au click du bouton NEXT
-      lightboxNext.addEventListener("click", function (e) {
-        e.preventDefault();
-        next();
-      });
-
-      lightboxPrev.addEventListener("click", function () {
-        e.preventDefault();
-        prev();
-      });
-
-    // fait défiler les photos avec le bouton du clavier "-->"
-      window.addEventListener("keydown", function (e) {
-        if (e.key === "ArrowRight") {
-          next();
-        }
-        if (e.key === "ArrowLeft") {
-          prev();
-        }
-      });
-
-        /*const lightboxPrev = document.querySelector('.lightbox__prev');
-        lightboxPrev.addEventListener('click', function(){
-
-            console.log(index);
-            console.log(links.length);
-            if(index>0){
-                index-=1;
-            }else{
-                index=links.length-1;
-            }
-            let newlink=links[index];
-            lightboxContainer.removeChild(lightboxContainer.childNodes[0]);
-            lightboxContainer.appendChild(clonelink(newlink));
-        })*/
-
         //fermeture de la lightbox
-            const lightboxClose = document.querySelector(".lightbox__close");
-                lightboxClose.addEventListener('click', function(){
-                lightbox.removeChild(lightbox.firstChild);
-                //lightbox.appendChild(lightboxClose);
-                lightbox.style.display = "none";
-                initlightbox();
-            })
-
+        lightboxClose.addEventListener("click", function () {
+          lightbox.removeChild(lightbox.firstChild);
+          //lightbox.appendChild(lightboxClose);
+          lightbox.style.display = "none";
+          main.style.display = "block"
+        //   contactModal.style.display = "flex"
+          initlightbox();
+        });
+  
         // Ferme la lighbox avec boutton "Escape"
-            window.addEventListener('keydown', function (e) {
-                if (e.key === "Escape" || e.key === "Esc") {
-                lightbox.removeChild(lightbox.firstChild);
-                lightbox.style.display = "none"; 
-                initlightbox();  
-                };
-            });
-
-                /*let i = 0;
-                let lienimage = document.querySelectorAll('.lienimg');
-                //const lienimage = document.querySelectorAll('.lienimg');
-                
-                let allMedia = [];
-                
-            
-                for (let href of lienimage ) {
-                   allMedia.push(href);
-                }
-
-
-// selectionne l'image de la lightbox
-const modalImage = document.getElementsByClassName('containerImg');
-//selectionne la video de la lightbox
-const focusVideo = document.getElementsByClassName('container');
-//selectionne tous les éléments focusables
- const focusableElements = `${lightboxClose},${lightboxNext},${modalImage},${focusVideo},${lightboxPrev},`;
-//selectionne la lightbox
- const selectLightbox = document.querySelector('.lightbox');
-//premier éléments focusable
- const firstFocusableElememt = lightbox;
- //contenu de tous
- const focusableElement = focusableElements;
- //dernier élément focusable
- const lastFocusableElement = lightboxClose;
-
- document.addEventListener('keydown', function(e) {
-    let isTabPressed = e.key === 'Tab';
-    if (!isTabPressed) {
-      return;
-    }
-
-    if (e.shiftKey) { //les touches shift + tab (combinaison)
-        if (document.activeElement === firstFocusableElememt) {
-            firstFocusableElememt.focus();
-            lastFocusableElement.focus();
-            //selectLightbox.focus();
-            e.preventDefault();
-        }
-      } else { // la touche tabulation appuyer
-        if (document.activeElement === lastFocusableElement) { 
-          firstFocusableElememt.focus(); 
-          //focusableElements.focus();
-          //lightboxContainer.focus();
-          //modalImage.focus();
-          e.preventDefault();
-        }
-      }
-    }); 
-    firstFocusableElememt.focus();
-                    
-                    // ouvre la lightbox avec touche "ENTER"
-                        lightboxContainer.addEventListener('keydown', function(e) {
-                        if (e.key === "Enter") {
-                            lightbox.remove(lienimage);
-                            lightbox.style.display = "none";
-                            initlightbox();
-                        }
-                    });
-
-
- 
-        // function qui fait défiler les photos au click du bouton PREV
-                lightboxPrev.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    lightboxPrev;
-                });
-                
-        //function qui fait défiler les photos en appuyant sur le bouton ENTER quand PREV sélectionner
-                lightboxPrev.addEventListener('keydown', function(e) {
-                    if (e.key === "Enter") {
-                        lightboxPrev;
-                    }
-                })
-        // fait défiler les photos avec le bouton du clavier "<--"
-                window.addEventListener('keydown', function (e) {
-                    if (e.key === "ArrowLeft") {
-                       lightboxPrev;
-                    }
-                    initlightbox;
-        
-                })*/
-    
-
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" || e.key === "Esc") {
+            lightbox.removeChild(lightbox.firstChild);
+            lightbox.style.display = "none";
+            main.style.display = "block"
+            // contactModal.style.display = "flex"
+            initlightbox();
+          }
+        });
+  
+        // function qui fait défiler les photos en appuyant sur le bouton ENTER quand NEXT sélectionner
+        // lightboxNext.addEventListener("keydown", function (e) {
+        //   if (e.key === "Enter") {
+        //     next()
+        //   }
+        // });
+  
+   // function qui fait défiler les photos au click du bouton NEXT
+        //   lightboxNext.addEventListener("click", function (e) {
+        //     e.preventDefault();
+        //     lightboxNext;
+        //   });
+  
+        // fait défiler les photos avec le bouton du clavier "-->"
+        //   window.addEventListener("keydown", function (e) {
+        //     if (e.key === "ArrowRight") {
+        //       lightboxNext;
+        //     }
+        //   });
+  
+  
         // function qui fait défiler les photos au click du bouton NEXT
-                lightboxNext.addEventListener('click', function(e) {
-                e.preventDefault();
-                lightboxNext;
-            })
-
-    //function qui fait défiler les photos en appuyant sur le bouton ENTER quand NEXT sélectionner
-                lightboxNext.addEventListener('keydown', function(e) {
-                if (e.key === "Enter") {
-                lightboxNext;
-            }
-        })
-    
-    // fait défiler les photos avec le bouton du clavier "-->"
-                window.addEventListener('keydown', function (e) {
-                if (e.key === "ArrowRight") {
-                lightboxNext;
-            }
-        })
-
-}))
-
-}
-
-function buildDOM(){
-    const lightbox = document.querySelector('.lightbox');
-    const dom = document.createElement('div');
-
-    dom.classList.add('lightbox_child')
+        lightboxNext.addEventListener("click", function (e) {
+          e.preventDefault();
+          next();
+        });
+  
+        lightboxPrev.addEventListener("click", function () {
+          e.preventDefault();
+          prev();
+        });
+  
+        // fait défiler les photos avec le bouton du clavier "-->"
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowRight"){
+            next();
+          }
+          if (e.key === "ArrowLeft") {
+            prev();
+          }
+        });
+  
+        
+      })
+    );
+  }
+  
+  function buildDOM() {
+    const lightbox = document.querySelector(".lightbox");
+    const dom = document.createElement("div");
+  
+    dom.classList.add("lightbox_child");
     dom.innerHTML = `
-    <button class="lightbox__close"></button>
-    <button class="lightbox__next"></button>
-    <div class="lightbox__container"></div> 
-    <button class="lightbox__prev"></button>` 
-  lightbox.appendChild(dom);
-}
+      <button class="lightbox__close" tabindex="1"></button>
+      <button class="lightbox__next"tabindex="4"></button>
+      <div class="lightbox__container"></div> 
+      <button class="lightbox__prev" tabindex="2"></button>`;
+    lightbox.appendChild(dom);
+  }
+  

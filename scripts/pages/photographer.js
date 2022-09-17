@@ -89,20 +89,21 @@ export function displayMedia(media){
         mediaDiv.className = 'media';
         const lienImg = document.createElement('a');
         lienImg.className = 'containerLink';
-        //lienImg.setAttribute("href","./assets/images/" +media[i].image+"");   
+        // lienImg.setAttribute("href","./assets/images/" +media[i].image+"");   
         lienImg.setAttribute("title",media[i].title);
         lienImg.setAttribute("aria-label",media[i].title);
         let mediaImg = null;
         if(media[i].image){
-        lienImg.setAttribute("href","./assets/images/" +media[i].image+"");
+        lienImg.setAttribute("href","./assets/images/" +media[i].image+""); 
         mediaImg = document.createElement('img');
         mediaImg.setAttribute("class", "containerImg");
         mediaImg.setAttribute('src',"./assets/images/" +media[i].image+"");
         mediaImg.setAttribute('alt',media[i].title);
         mediaImg.style.width = '';
         }else{
-            lienImg.setAttribute('src', "./assets/images/"  +media[i].video+"");
+            lienImg.setAttribute("href","./assets/images/" +media[i].video+""); 
             mediaImg = document.createElement('video');
+            mediaImg.setAttribute('src', "./assets/images/"  +media[i].video+"");
             mediaImg.setAttribute('class', 'containerImg');
             mediaImg.setAttribute('alt',media[i].title);
             mediaImg.setAttribute('controls','controls');

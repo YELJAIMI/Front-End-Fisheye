@@ -14,20 +14,21 @@ export function initlightbox(){
 
         function clonelink(link){
             console.log(link);
-            let format = link.src.split('.');
-            console.log(link.src);
+            let format = link.href.split('.');
+            const img = link.querySelector('img');
+            console.log(format);
             let med = null;
             if (format.at(-1) == 'mp4') {
                 med = document.createElement('video');
                 med.setAttribute('class','container');
                 med.setAttribute('controls', 'controls');
-                med.setAttribute('title', link.title);
-                med.setAttribute('src', link.src); 
+                med.setAttribute('title', img.title);
+                med.setAttribute('src', img.src); 
             }else{ 
                 med = document.createElement('img');
                 med.setAttribute('class', 'image-full-screen');
-                med.setAttribute('alt', link.alt);
-                med.setAttribute('src', link.src);
+                med.setAttribute('alt', img.alt);
+                med.setAttribute('src', img.src);
             }
             return med;
         }

@@ -120,8 +120,6 @@ function closeModal() {
         }
       }
     });
-    
-    //firstFocusableElememt.focus();
 
 //vérification prenom
 function Validfirst(inputprenom){

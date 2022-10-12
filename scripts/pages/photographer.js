@@ -117,6 +117,7 @@ export function displayMedia(media){
         icone.setAttribute('class','fas fa-heart');
         icone.setAttribute('id', 'heart');
         icone.setAttribute('aria-lebel', 'likes');
+        icone.setAttribute('title', 'button');
         medialikes.setAttribute('class', 'numberlikes');
         mediaTitle.innerText=media[i].title;
         medialikes.innerText=media[i].likes;

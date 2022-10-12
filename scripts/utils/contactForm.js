@@ -40,11 +40,6 @@ function closeModal() {
     const ValidmailReturn = Validmail(inputemail.value);
     const ValidMessageReturn = Validmessage(textarea.value);
 
-    console.log(ValidfirstReturn);
-    console.log(ValidnameReturn);
-    console.log(ValidmailReturn);
-    console.log(ValidMessageReturn);
-
     const formInputIsValid =
     ValidnameReturn &&      
     ValidfirstReturn&&   
@@ -53,12 +48,6 @@ function closeModal() {
 
     console.log(formInputIsValid);
     if(formInputIsValid){
-      /*console.log(inputprenom);
-      console.log(inputnom);
-      console.log(inputemail);
-      console.log(textarea);
-      let form = document.querySelector('.form');
-      form.reset();*/
       inputprenom = '';
       inputnom = '';
       inputemail = '';

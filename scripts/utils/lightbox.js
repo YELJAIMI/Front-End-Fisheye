@@ -1,3 +1,4 @@
+// ouverture de la lightbox 
 export function initlightbox() {
     const links = document.querySelectorAll(".containerLink");
     console.log(links);
@@ -14,7 +15,6 @@ export function initlightbox() {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         main.style.display = "none"
-        // contactModal.style.display = "none"
         lightbox.style.display = "flex";
         lightboxClose.focus()
 
@@ -99,27 +99,6 @@ export function initlightbox() {
             initlightbox();
           }
         });
-  
-        // function qui fait défiler les photos en appuyant sur le bouton ENTER quand NEXT sélectionner
-        // lightboxNext.addEventListener("keydown", function (e) {
-        //   if (e.key === "Enter") {
-        //     next()
-        //   }
-        // });
-  
-   // function qui fait défiler les photos au click du bouton NEXT
-        //   lightboxNext.addEventListener("click", function (e) {
-        //     e.preventDefault();
-        //     lightboxNext;
-        //   });
-  
-        // fait défiler les photos avec le bouton du clavier "-->"
-        //   window.addEventListener("keydown", function (e) {
-        //     if (e.key === "ArrowRight") {
-        //       lightboxNext;
-        //     }
-        //   });
-  
   
         // function qui fait défiler les photos au click du bouton NEXT
         lightboxNext.addEventListener("click", function (e) {

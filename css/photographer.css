@@ -19,9 +19,9 @@ body {
     display: flex;
     background-color: #F0ECEC;
     height: 317px;
-    width: 1250px;
     justify-content: space-between;
-    margin: 2em auto;
+    margin-left: 5em;
+    margin-right: 2em;
 }
 
 .media{
@@ -307,22 +307,24 @@ form input {
 
 
 .lightbox__container img{
-    max-width: 100%;
-    width: 1050px;
-    height: 600px;
+    max-width: 100vh;
+    width: 900px;
+    height: 96vh;
     animation: lightboxIn .5s;
     border-radius: 5px;
     object-fit: cover;
-    margin-top: 20em;
-    margin-bottom: 19.5em;
+    margin-top: 62px;
+    margin-bottom: 62px;
+    margin-left: 109px;
+    margin-right: 109px;
 
 }
 .lightbox__container{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 20em;
+    margin-right: 20em;
     min-height: 100vh;
 }
 
@@ -360,9 +362,9 @@ form input {
     position: relative;
     font-size: 18px;
     font-weight: bold;
-    margin-left: 6.3em;
+    margin-left: 4.3em;
     color: black;
-    top: -1.1em;
+    top: 1.8em;
   }
 
 
@@ -374,7 +376,7 @@ form input {
     font-size: 18px;
     font-weight: 700;
     top: 26em;
-    margin-left: 13.5em;
+    margin-left: 10.5em;
     width: 140px;
     height: 60px;
     border: 0em;

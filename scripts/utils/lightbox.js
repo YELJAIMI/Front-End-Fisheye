@@ -65,8 +65,6 @@ export function initlightbox() {
         }
   
         function prev() {
-        //   lightboxPrev.addEventListener('click', function(){
-  
           console.log(index);
           console.log(links.length);
           if (index > 0) {
@@ -132,10 +130,10 @@ export function initlightbox() {
   
     dom.classList.add("lightbox_child");
     dom.innerHTML = `
-      <button class="lightbox__close" tabindex="1"></button>
-      <button class="lightbox__next"tabindex="4"></button>
+      <button title="button"  class="lightbox__close" tabindex="1"></button>
+      <button title="button"  class="lightbox__next"tabindex="4"></button>
       <div class="lightbox__container"></div> 
-      <button class="lightbox__prev" tabindex="2"></button>`;
+      <button title="button"  class="lightbox__prev" tabindex="2"></button>`;
     lightbox.appendChild(dom);
   }
   

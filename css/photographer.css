@@ -10,7 +10,7 @@ body {
 
 .logo {
     height: 50px;
-    margin-left: 5em;
+    margin-left: 6em;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -311,7 +311,7 @@ form input {
 
 .lightbox__container img{
     max-width: 100vh;
-    width: 900px;
+    width: 1050px;
     height: 96vh;
     animation: lightboxIn .5s;
     border-radius: 5px;

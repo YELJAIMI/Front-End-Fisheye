@@ -55,32 +55,28 @@ async function init() {
     const photographerTitle = document.createElement('h1');
     photographerTitle.setAttribute("id", 'namephotographer');
     const country = document.createElement('h3');
-    //const city = document.createElement('h4');
     const tagline = document.createElement('p');
     const button = document.getElementById('contact_button');
     button.setAttribute('title', 'contactez-moi');
     photographerTitle.innerHTML = photographer.name;
     country.innerHTML = photographer.country+', '+photographer.city;
     tagline.innerHTML = photographer.tagline;
-    //city.innerHTML = photographer.city;
-    //mainphotographer.appendChild(photographerTitle)
     const profil = document.createElement('img');
     profil.setAttribute('src',"./assets/photographers/"+photographer.portrait);
     profil.setAttribute('class',"profil");
     profil.setAttribute('alt', photographerTitle.outerHTML);
     country.setAttribute("class", "country");
     tagline.setAttribute("class", "tag");
-    //mainphotographer.appendChild(profil);
     button.insertAdjacentHTML('beforebegin', photographerTitle.outerHTML);
     button.insertAdjacentHTML('beforebegin', country.outerHTML);
     button.insertAdjacentHTML('beforebegin', tagline.outerHTML);
     button.insertAdjacentHTML('afterend', profil.outerHTML);
 
-    // Création de la liste des médias
     photographerPrice = photographer.price;
-
+    
     displayMedia(media);
 }
+// Création de la liste des médias
 export function displayMedia(media){
     let countertotalLikes = 0;
     const mediaList = document.getElementById('main-media');
@@ -88,8 +84,7 @@ export function displayMedia(media){
         const mediaDiv = document.createElement('article');
         mediaDiv.className = 'media';
         const lienImg = document.createElement('a');
-        lienImg.className = 'containerLink';
-        // lienImg.setAttribute("href","./assets/images/" +media[i].image+"");   
+        lienImg.className = 'containerLink';   
         lienImg.setAttribute("title",media[i].title);
         lienImg.setAttribute("aria-label",media[i].title);
         let mediaImg = null;
@@ -118,6 +113,7 @@ export function displayMedia(media){
         icone.setAttribute('id', 'heart');
         icone.setAttribute('aria-lebel', 'likes');
         icone.setAttribute('title', 'button');
+        //icone.setAttribute('type', 'buttonHeart');
         medialikes.setAttribute('class', 'numberlikes');
         mediaTitle.innerText=media[i].title;
         medialikes.innerText=media[i].likes;
@@ -129,14 +125,8 @@ export function displayMedia(media){
         mediaDiv.appendChild(medialikes);
         mediaList.appendChild(mediaDiv);
 
-        //likes.forEach(like => {
-    
-        //let spanLikes = like.nextSibling;
-        //console.log(spanLikes);
-        //let valueLikes = spanLikes.innerHTML;
+ 
         countertotalLikes+= parseInt(media[i].likes);
-        //spanLikes.innerHTML = parseInt(valueLikes) +1;
-        //})
     
     } 
 
@@ -164,7 +154,6 @@ export function displayMedia(media){
   
       const HeartFooter = document.createElement('i');
       totalLikes.appendChild(HeartFooter);
-      //totalLikes.insertAdjacentText('afterbegin', countertotalLikes);
       HeartFooter.setAttribute("class","fas fa-heart");
   
       //ECRIT le prix/jour dans le FOOTER

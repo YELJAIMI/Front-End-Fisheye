@@ -111,10 +111,8 @@ export function displayMedia(media){
         const medialikes = document.createElement('span');
         icone.setAttribute('class','fas fa-heart');
         icone.setAttribute('id', 'heart');
-        icone.setAttribute('aria-lebel', 'likes');
-        icone.setAttribute('title', 'button');
-        //icone.setAttribute('type', 'buttonHeart');
-        medialikes.setAttribute('class', 'numberlikes');
+        icone.setAttribute('aria-label', 'likes');
+        icone.setAttribute('alt', 'button');
         mediaTitle.innerText=media[i].title;
         medialikes.innerText=media[i].likes;
     
@@ -170,7 +168,7 @@ export function displayMedia(media){
          let spanLikes = like.nextSibling;
          let valueLikes = spanLikes.innerHTML;
          let spanTotalLikes = document.querySelector('.textnumber');
-         console.log(spanTotalLikes);
+         //console.log(spanTotalLikes);
          spanLikes.innerHTML = parseInt(valueLikes) +1;
          spanTotalLikes.innerText = parseInt(spanTotalLikes.textContent) +1;
          //counterlike();

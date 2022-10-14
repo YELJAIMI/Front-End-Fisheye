@@ -71,17 +71,6 @@ function closeModal() {
     //prremier element focusable
     const firstFocusableElememt = closeModale;
 
-    /*//selectionner les elements focusable
-    const inputfirst = document.querySelector('#first');
-    const inputname = document.querySelector('#name');
-    const inputemail = document.querySelector('#email');
-    const textarea = document.querySelector('#votre_message');
-    const send = document.querySelector('#send');
-    //selectionner tous les elements
-    const focusableElements = `${modal} ${selectModal} ${closeModale} ${inputfirst}, ${inputname}, ${inputemail}, ${textarea}, ${send}`;
-    const firstFocusableElememt = closeModale;
-    const focusablecontent = focusableElements;*/
-
     //fermer le formulaire avec "ENTER" quand le button close est selectionner par TAB
     document.querySelector('.modal header img').addEventListener('keydown', function(e){
       if (e.key === "Enter" ) {

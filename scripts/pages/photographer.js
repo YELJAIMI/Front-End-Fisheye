@@ -10,14 +10,14 @@ async function getPhotographers() {
     let datas = null;
     await fetch('./data/photographers.json')
     .then(function(data) {
-    console.log(data)
+    //console.log(data)
     return data.json();
     })
     .then(function(result) {
-    console.log(result.photographers)
+    //console.log(result.photographers)
     datas = result;
     })
-    console.log(datas);
+    //console.log(datas);
     return datas; 
 }
 let photographerPrice = 0;
@@ -25,20 +25,20 @@ let photographerPrice = 0;
 async function init() {
     // Récupère les datas des photographes
     const  datas  = await getPhotographers();
-    console.log(datas);
+    //console.log(datas);
     
-    console.log(idphotographe);
+    //console.log(idphotographe);
 
     const photographers = datas.photographers;
     const medias = datas.media;
-    console.log(medias);
+    //console.log(medias);
     //recupére le photographe=>l'id
     const photographer = photographers.find(function(photographer){
         return photographer.id == idphotographe;
     }
     );
     
-    console.log(photographer.name);
+    //console.log(photographer.name);
 
     const media = medias.filter(function(media){
         return media.photographerId == idphotographe;
@@ -46,7 +46,7 @@ async function init() {
     );
 
     sortMedia(media);
-    console.log(media);
+    //console.log(media);
     //début header photographe
     const mainphotographer = document.querySelector('.photograph-header');
     mainphotographer.setAttribute('aria-label', 'information du photographe');

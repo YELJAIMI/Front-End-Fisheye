@@ -71,7 +71,7 @@ sectionTrier.setAttribute("role", "listbox");
                 if (this.value == "titre") {
         
                     filterMedia = filterMedia.sort((a, b) => {
-                     console.log(filterMedia);
+                     //console.log(filterMedia);
                        if (a.title < b.title) { return -1;}
                        else {return 1;};
                        

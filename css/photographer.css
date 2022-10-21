@@ -285,6 +285,7 @@ form input {
     right: auto;
     left: 0;
     transform: rotate(180deg);
+    margin-left: 16em;
 }
 
 .lightbox__close{
@@ -293,8 +294,9 @@ form input {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="40" height="40" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="Darkred" d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"/></svg>') center center / 150% 150% no-repeat transparent;
     position: fixed;
     border: 0px;
-    top: 11px;
+    top: 32px;
     right: 10px;
+    margin-right: 18em;
     z-index: 12;
 }
 
@@ -310,24 +312,36 @@ form input {
 
 
 .lightbox__container img{
-    max-width: 100vh;
+    position: relative;
+    max-width: 80%;
     width: 1050px;
-    height: 96vh;
+    height: 89%;
     animation: lightboxIn .5s;
     border-radius: 5px;
     object-fit: cover;
-    margin-top: 62px;
-    margin-bottom: 62px;
-    margin-left: 109px;
-    margin-right: 109px;
+    /*margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 18.8em;
+    margin-right: 109px;*/
 
 }
+
+.lightbox__container .phototitle {
+    position: absolute;
+    margin-bottom:-24em ;
+    margin-left: -36.4em;
+    color: #901C1C;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: DM Sans;
+}
 .lightbox__container{
+    /*position: absolute;*/
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 20em;
-    margin-right: 20em;
+    margin-right: 21em;
     min-height: 100vh;
 }
 
@@ -343,6 +357,7 @@ form input {
 }
 
 .lightbox_child{
+    /*position: absolute;*/
     display: flex;
     justify-content: center;
     width: 100%;
@@ -351,6 +366,7 @@ form input {
 
 .lightbox__next{
     right: 0;
+    margin-right: 17em;
 }
 
 #main-media #filter {

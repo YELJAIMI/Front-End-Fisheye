@@ -38,13 +38,18 @@ export function initlightbox() {
             med = document.createElement("img");
             med.setAttribute("class", "image-full-screen");
             med.setAttribute("alt", img.alt);
+            med.setAttribute('title', link.title);
             med.setAttribute("src", img.src);
             med.setAttribute("tabindex", "3");
           }
           return med;
         }
-  
+        
         lightboxContainer.appendChild(clonelink(link));
+        const title = document.createElement('span');
+        title.setAttribute("class", "phototitle");
+        //title.textContent = link.title;
+        lightboxContainer.appendChild(title);
         //console.log(link);
         //console.log(index);
   
@@ -130,10 +135,10 @@ export function initlightbox() {
   
     dom.classList.add("lightbox_child");
     dom.innerHTML = `
-      <button title="button"  class="lightbox__close" tabindex="1"></button>
-      <button title="button"  class="lightbox__next"tabindex="4"></button>
+      <button title="close"  class="lightbox__close" tabindex="1"></button>
+      <button title="next"  class="lightbox__next"tabindex="4"></button>
       <div class="lightbox__container"></div> 
-      <button title="button"  class="lightbox__prev" tabindex="2"></button>`;
+      <button title="prev"  class="lightbox__prev" tabindex="2"></button>`;
     lightbox.appendChild(dom);
   }
   

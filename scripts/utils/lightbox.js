@@ -33,6 +33,12 @@ export function initlightbox() {
             med.setAttribute("title", img.title);
             med.setAttribute("src", img.src);
             med.setAttribute("tabindex", "3");
+
+            //titre video lightbox
+           const titleVideo = document.createElement('span');
+           //lightboxContainer.appendChild(titleVideo);
+           titleVideo.setAttribute("class","titlemedia");
+           titleVideo.textContent = med.title; 
             
           } else {
             med = document.createElement("img");
@@ -46,9 +52,10 @@ export function initlightbox() {
         }
         
         lightboxContainer.appendChild(clonelink(link));
+        //titre image lightbox
         const title = document.createElement('span');
         title.setAttribute("class", "phototitle");
-        //title.textContent = link.title;
+        title.textContent = link.title;
         lightboxContainer.appendChild(title);
         //console.log(link);
         //console.log(index);

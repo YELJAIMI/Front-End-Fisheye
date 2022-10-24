@@ -22,6 +22,7 @@ export function initlightbox() {
   
         console.log(link);
         function clonelink(link) {
+          lightboxContainer.innerHTML = "";
           let format = link.href.split(".");
           const img = link.querySelector("img") || link.querySelector("video");
           //console.log(format);
@@ -36,7 +37,7 @@ export function initlightbox() {
 
             //titre video lightbox
            const titleVideo = document.createElement('span');
-           //lightboxContainer.appendChild(titleVideo);
+           lightboxContainer.appendChild(titleVideo);
            titleVideo.setAttribute("class","titlemedia");
            titleVideo.textContent = med.title; 
             
@@ -47,16 +48,17 @@ export function initlightbox() {
             med.setAttribute('title', link.title);
             med.setAttribute("src", img.src);
             med.setAttribute("tabindex", "3");
+            
+            //titre image lightbox
+            const title = document.createElement('span');
+            title.setAttribute("class", "phototitle");
+            title.textContent = link.title;
+            lightboxContainer.appendChild(title);
           }
           return med;
         }
         
         lightboxContainer.appendChild(clonelink(link));
-        //titre image lightbox
-        const title = document.createElement('span');
-        title.setAttribute("class", "phototitle");
-        title.textContent = link.title;
-        lightboxContainer.appendChild(title);
         //console.log(link);
         //console.log(index);
   

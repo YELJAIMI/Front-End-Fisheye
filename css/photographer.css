@@ -35,6 +35,8 @@ body {
     height: 26em;
     width: 46em;
     object-fit: contain;
+    margin-left: 12em;
+    margin-top: 4em;
 }
 
 .media h2{
@@ -258,7 +260,7 @@ form input {
 
   .lightbox{
     display: none;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -294,7 +296,7 @@ form input {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="40" height="40" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="Darkred" d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"/></svg>') center center / 150% 150% no-repeat transparent;
     position: fixed;
     border: 0px;
-    top: 51px;
+    top: 62px;
     right: 10px;
     margin-right: 18em;
     z-index: 12;
@@ -314,34 +316,34 @@ form input {
 .lightbox__container img{
     /*position: absolute;*/
     max-width: 80%;
-    width: 1050px;
-    height: 82%;
+    width: 700px;
+    height: 83%;
     animation: lightboxIn .5s;
     border-radius: 5px;
     object-fit: cover;
-    /*margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 18.8em;
+    margin-top: 4em;
+    margin-left: 12.5em;
+    /*margin-bottom: 20px;
     margin-right: 109px;*/
 
 }
 
 .lightbox__container .phototitle {
     position: absolute;
-    margin-bottom:-30em ;
-    margin-left: -27.4em;
+    margin-top:34em ;
+    margin-left: 11.1em;
     color: #901C1C;
     font-size: 18px;
     font-weight: 200;
     font-family: DM Sans;
 }
 .lightbox__container{
-    /*position: absolute;*/
+    /*position: inherit;
     display: flex;
-    align-items: center;
+    align-items: center*/
     justify-content: center;
-    margin-left: 20em;
-    margin-right: 21em;
+    margin-left: -13em;
+    /*margin-right: 21em;*/
     min-height: 100vh;
 }
 

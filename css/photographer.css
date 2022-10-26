@@ -279,7 +279,7 @@ form input {
     height: 52px;
     position: fixed;
     color: #901C1C;
-    top: 23em;
+    top: 21em;
     z-index: 11;
 }
 
@@ -297,8 +297,7 @@ form input {
     position: fixed;
     border: 0px;
     top: 62px;
-    right: 10px;
-    margin-right: 18em;
+    right: 17em;
     z-index: 12;
 }
 
@@ -330,6 +329,7 @@ form input {
 
 .lightbox__container .phototitle {
     position: absolute;
+    bottom: 0em;
     margin-top:34em ;
     margin-left: 11.1em;
     color: #901C1C;
@@ -338,9 +338,6 @@ form input {
     font-family: DM Sans;
 }
 .lightbox__container{
-    /*position: inherit;
-    display: flex;
-    align-items: center*/
     justify-content: center;
     margin-left: -13em;
     /*margin-right: 21em;*/
@@ -368,7 +365,7 @@ form input {
 
 .lightbox__next{
     right: 0;
-    margin-right: 17em;
+    margin-right: 16em;
 }
 
 #main-media #filter {

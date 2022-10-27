@@ -337,6 +337,19 @@ form input {
     font-weight: 200;
     font-family: DM Sans;
 }
+
+.lightbox__container .titlemedia{
+    position: absolute;
+    bottom: 5em;
+    margin-top:34em ;
+    margin-left: 10.6em;
+    color: #901C1C;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: DM Sans;
+}
+
+
 .lightbox__container{
     justify-content: center;
     margin-left: -13em;

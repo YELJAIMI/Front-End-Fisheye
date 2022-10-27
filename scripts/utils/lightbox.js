@@ -39,7 +39,7 @@ export function initlightbox() {
            const titleVideo = document.createElement('span');
            lightboxContainer.appendChild(titleVideo);
            titleVideo.setAttribute("class","titlemedia");
-           titleVideo.textContent = med.title; 
+           titleVideo.textContent = link.title; 
             
           } else {
             med = document.createElement("img");
@@ -48,7 +48,7 @@ export function initlightbox() {
             med.setAttribute('title', link.title);
             med.setAttribute("src", img.src);
             med.setAttribute("tabindex", "3");
-            
+
             //titre image lightbox
             const title = document.createElement('span');
             title.setAttribute("class", "phototitle");
@@ -150,4 +150,3 @@ export function initlightbox() {
       <button title="prev"  class="lightbox__prev" tabindex="2"></button>`;
     lightbox.appendChild(dom);
   }
-  

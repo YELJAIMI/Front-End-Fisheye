@@ -144,6 +144,6 @@ export function initlightbox() {
       <button title="close"  class="lightbox__close" tabindex="1"></button>
       <button title="next"  class="lightbox__next"tabindex="4"></button>
       <div class="lightbox__container"></div> 
-      <button title="prev"  class="lightbox__prev" tabindex="2"></button>`;
+      <button title="prev"  class=" lightbox__prev" tabindex="2"></button>`;
     lightbox.appendChild(dom);
   }

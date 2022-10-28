@@ -47,7 +47,7 @@ async function init() {
     imglogo.setAttribute('aria-label', 'lien vers la page d\'acceuil');
     const photographerTitle = document.createElement('h1');
     photographerTitle.setAttribute("id", 'namephotographer');
-    const country = document.createElement('h3');
+    const country = document.createElement('h2');
     const tagline = document.createElement('p');
     const button = document.getElementById('contact_button');
     button.setAttribute('title', 'contactez-moi');

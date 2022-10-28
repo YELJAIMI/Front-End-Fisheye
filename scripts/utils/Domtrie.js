@@ -32,11 +32,13 @@ sectionTrier.setAttribute("role", "listbox");
       const select = document.createElement('select');
       divSelect.appendChild(select);
       select.setAttribute("id","select");
+      select.setAttribute("aria-label", "select");
       
           
            const optiondate = document.createElement('option');
            select.appendChild(optiondate);
            optiondate.setAttribute("value","date");
+           optiondate.setAttribute("alt", 'date'),
            optiondate.setAttribute("class","new-option-date")
            optiondate.setAttribute("selected","");
            optiondate.textContent = "Date";
@@ -44,6 +46,7 @@ sectionTrier.setAttribute("role", "listbox");
            const optionPopularite = document.createElement('option');
            select.appendChild(optionPopularite);
            optionPopularite.setAttribute("value","popularite");
+           optionPopularite.setAttribute("alt", "popularite");
            optionPopularite.setAttribute("id","popularite");
            optionPopularite.setAttribute("class","new-option-popularite");
            optionPopularite.textContent = "Popularite";
@@ -51,6 +54,7 @@ sectionTrier.setAttribute("role", "listbox");
            const optionTitre = document.createElement('option');
            select.appendChild(optionTitre);
            optionTitre.setAttribute("value","titre");
+           optionTitre.setAttribute("alt", "titre");
            optionTitre.setAttribute("class","new-option-titre");
            optionTitre.setAttribute("id","titre");
            optionTitre.textContent = "Titre";

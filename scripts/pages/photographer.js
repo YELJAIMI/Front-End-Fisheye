@@ -1,7 +1,7 @@
 import {sortMedia} from '../utils/Domtrie.js';
 import {initlightbox} from '../utils/lightbox.js';
 
-
+ // OBTENIR les parametres URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idphotographe = urlParams.get('idphotographe');
@@ -10,14 +10,11 @@ async function getPhotographers() {
     let datas = null;
     await fetch('./data/photographers.json')
     .then(function(data) {
-    //console.log(data)
     return data.json();
     })
     .then(function(result) {
-    //console.log(result.photographers)
     datas = result;
     })
-    //console.log(datas);
     return datas; 
 }
 let photographerPrice = 0;
@@ -25,13 +22,9 @@ let photographerPrice = 0;
 async function init() {
     // Récupère les datas des photographes
     const  datas  = await getPhotographers();
-    //console.log(datas);
-    
-    //console.log(idphotographe);
-
     const photographers = datas.photographers;
     const medias = datas.media;
-    //console.log(medias);
+    
     //recupére le photographe=>l'id
     const photographer = photographers.find(function(photographer){
         return photographer.id == idphotographe;

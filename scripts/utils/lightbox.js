@@ -20,7 +20,7 @@ export function initlightbox() {
 
 
   
-        console.log(link);
+        //console.log(link);
         function clonelink(link) {
           lightboxContainer.innerHTML = "";
           let format = link.href.split(".");
@@ -94,10 +94,8 @@ export function initlightbox() {
         //fermeture de la lightbox
         lightboxClose.addEventListener("click", function () {
           lightbox.removeChild(lightbox.firstChild);
-          //lightbox.appendChild(lightboxClose);
           lightbox.style.display = "none";
           main.style.display = "block"
-        //   contactModal.style.display = "flex"
           initlightbox();
         });
   
@@ -107,7 +105,6 @@ export function initlightbox() {
             lightbox.removeChild(lightbox.firstChild);
             lightbox.style.display = "none";
             main.style.display = "block"
-            // contactModal.style.display = "flex"
             initlightbox();
           }
         });

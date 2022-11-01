@@ -39,7 +39,7 @@ export function initlightbox() {
            const titleVideo = document.createElement('span');
            lightboxContainer.appendChild(titleVideo);
            titleVideo.setAttribute("class","titlemedia");
-           titleVideo.textContent = link.title; 
+           titleVideo.textContent = link.title;
             
           } else {
             med = document.createElement("img");

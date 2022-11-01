@@ -358,7 +358,7 @@ form input {
 }
 
 .lightbox__loader{
-    width: 30p;
+    width: 30px;
     height: 30px;
     opacity: .5;
     background:url(../assets/icons/loader.svg) center center no-repeat;

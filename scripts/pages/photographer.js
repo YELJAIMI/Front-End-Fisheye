@@ -31,7 +31,6 @@ async function init() {
     }
     );
     
-    //console.log(photographer.name);
 
     const media = medias.filter(function(media){
         return media.photographerId == idphotographe;
@@ -39,7 +38,7 @@ async function init() {
     );
 
     sortMedia(media);
-    //console.log(media);
+  
     //début header photographe
     const mainphotographer = document.querySelector('.photograph-header');
     mainphotographer.setAttribute('aria-label', 'information du photographe');

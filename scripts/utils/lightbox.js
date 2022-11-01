@@ -1,7 +1,6 @@
 // ouverture de la lightbox 
 export function initlightbox() {
     const links = document.querySelectorAll(".containerLink");
-    //console.log(links);
     buildDOM();
     const lightbox = document.querySelector(".lightbox");
     const lightboxContainer = document.querySelector(".lightbox__container");
@@ -20,12 +19,10 @@ export function initlightbox() {
 
 
   
-        //console.log(link);
         function clonelink(link) {
           lightboxContainer.innerHTML = "";
           let format = link.href.split(".");
           const img = link.querySelector("img") || link.querySelector("video");
-          //console.log(format);
           let med = null;
           if (format.at(-1) == "mp4") {
             med = document.createElement("video");
@@ -59,15 +56,11 @@ export function initlightbox() {
         }
         
         lightboxContainer.appendChild(clonelink(link));
-        //console.log(link);
-        //console.log(index);
   
         const lightboxNext = document.querySelector(".lightbox__next");
         const lightboxPrev = document.querySelector(".lightbox__prev");
   
         function next() {
-        //   lightboxNext.addEventListener('click', function(){
-  
           if (index < links.length - 1) {
             index += 1;
           } else {
@@ -79,8 +72,6 @@ export function initlightbox() {
         }
   
         function prev() {
-          //console.log(index);
-          //console.log(links.length);
           if (index > 0) {
             index -= 1;
           } else {

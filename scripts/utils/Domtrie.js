@@ -12,7 +12,6 @@ const photographerHeader = document.querySelector('.photograph-header');
 
 const sectionTrier = document.createElement('section');
 sectionTrier.id = 'filter';
-//mainMedia.appendChild(sectionTrier);
 sectionTrier.setAttribute("class","select");
 photographerHeader.insertAdjacentElement('afterend', sectionTrier);
 sectionTrier.setAttribute("role", "listbox");
@@ -75,7 +74,6 @@ sectionTrier.setAttribute("role", "listbox");
                 if (this.value == "titre") {
         
                     filterMedia = filterMedia.sort((a, b) => {
-                     //console.log(filterMedia);
                        if (a.title < b.title) { return -1;}
                        else {return 1;};
                        

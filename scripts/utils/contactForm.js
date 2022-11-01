@@ -7,7 +7,6 @@ function displayModal() {
 	modal.style.display = "block";
   const namephotographer = document.getElementById('namephotographer');
   namePhotograph.textContent = namephotographer.innerText;
-  //setTimeout (closeModale.focus(),1000);
   const crossCloseModale = document.querySelector('.modalClose');
   crossCloseModale.setAttribute('tabindex', '0');
   crossCloseModale.focus();
